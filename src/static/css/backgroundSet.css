@@ -1,0 +1,521 @@
+.background-set {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100vw;
+	height: var(--dynamic-bg-height, 100vh);
+	z-index: 0;
+	pointer-events: none;
+	overflow: hidden;
+}
+
+.bg-item {
+	position: absolute;
+	pointer-events: none;
+	user-select: none;
+	height: auto;
+}
+
+/* ========== ITEM 1 ========== */
+.item1 {
+	--item1-size: 1460px;
+	--item1-x: 25vw;
+	--item1-y: 55vh;
+	--item1-rotation: 0deg;
+	left: var(--item1-x);
+	top: var(--item1-y);
+	width: var(--item1-size);
+	transform: rotate(var(--item1-rotation));
+}
+
+/* ========== ITEM 2 ========== */
+.item2 {
+	--item2-size: 1460px;
+	--item2-x: 76vh;
+	--item2-y: 28vh;
+	--item2-rotation: 90deg;
+	left: var(--item2-x);
+	top: var(--item2-y);
+	width: var(--item2-size);
+	transform: rotate(var(--item2-rotation));
+}
+
+/* ========== ITEM 3 ========== */
+.item3 {
+	--item3-x: 50vw;
+	--item3-y: 20vh;
+	--item3-rotation: 0deg;
+	left: var(--item3-x);
+	top: var(--item3-y);
+	transform: rotate(var(--item3-rotation));
+}
+
+/* ========== ITEM 4 ========== */
+.item4 {
+	--item4-x: 25vw;
+	--item4-y: 35vh;
+	--item4-rotation: 90deg;
+	left: var(--item4-x);
+	top: var(--item4-y);
+	transform: rotate(var(--item4-rotation));
+}
+
+/* ========== ITEM 5 ========== */
+.item5 {
+	--item5-x: 70vw;
+	--item5-y: 40vh;
+	--item5-rotation: 0deg;
+	left: var(--item5-x);
+	top: var(--item5-y);
+	transform: rotate(var(--item5-rotation));
+}
+
+/* ========== ITEM 6 ========== */
+.item6 {
+	--item6-x: 15vw;
+	--item6-y: 55vh;
+	--item6-rotation: 120deg;
+	left: var(--item6-x);
+	top: var(--item6-y);
+	transform: rotate(var(--item6-rotation));
+}
+
+/* ========== ITEM 7 ========== */
+.item7 {
+	--item7-x: 60vw;
+	--item7-y: 60vh;
+	--item7-rotation: 0deg;
+	left: var(--item7-x);
+	top: var(--item7-y);
+	transform: rotate(var(--item7-rotation));
+}
+
+/* ========== ITEM 8 ========== */
+.item8 {
+	--item8-x: 40vw;
+	--item8-y: 70vh;
+	--item8-rotation: 180deg;
+	left: var(--item8-x);
+	top: var(--item8-y);
+	transform: rotate(var(--item8-rotation));
+}
+
+/* ========== ITEM 9 ========== */
+.item9 {
+	--item9-x: 80vw;
+	--item9-y: 75vh;
+	--item9-rotation: 0deg;
+	left: var(--item9-x);
+	top: var(--item9-y);
+	transform: rotate(var(--item9-rotation));
+}
+
+/* ========== ITEM 10 ========== */
+.item10 {
+	--item10-x: 20vw;
+	--item10-y: 85vh;
+	--item10-rotation: 270deg;
+	left: var(--item10-x);
+	top: var(--item10-y);
+	transform: rotate(var(--item10-rotation));
+}
+
+/* ========== ITEM 11 ========== */
+.item11 {
+	--item11-x: 55vw;
+	--item11-y: 95vh;
+	--item11-rotation: 0deg;
+	left: var(--item11-x);
+	top: var(--item11-y);
+	transform: rotate(var(--item11-rotation));
+}
+
+/* ========== ITEM 12 ========== */
+.item12 {
+	--item12-x: 30vw;
+	--item12-y: 105vh;
+	--item12-rotation: 45deg;
+	left: var(--item12-x);
+	top: var(--item12-y);
+	transform: rotate(var(--item12-rotation));
+}
+
+/* ========== ITEM 13 ========== */
+.item13 {
+	--item13-x: 75vw;
+	--item13-y: 110vh;
+	--item13-rotation: 0deg;
+	left: var(--item13-x);
+	top: var(--item13-y);
+	transform: rotate(var(--item13-rotation));
+}
+
+/* ========== ITEM 14 ========== */
+.item14 {
+	--item14-x: 10vw;
+	--item14-y: 120vh;
+	--item14-rotation: 90deg;
+	left: var(--item14-x);
+	top: var(--item14-y);
+	transform: rotate(var(--item14-rotation));
+}
+
+/* ========== ITEM 15 ========== */
+.item15 {
+	--item15-x: 65vw;
+	--item15-y: 125vh;
+	--item15-rotation: 0deg;
+	left: var(--item15-x);
+	top: var(--item15-y);
+	transform: rotate(var(--item15-rotation));
+}
+
+/* ========== ITEM 16 ========== */
+.item16 {
+	--item16-x: 45vw;
+	--item16-y: 135vh;
+	--item16-rotation: 135deg;
+	left: var(--item16-x);
+	top: var(--item16-y);
+	transform: rotate(var(--item16-rotation));
+}
+
+/* ========== ITEM 17 ========== */
+.item17 {
+	--item17-x: 85vw;
+	--item17-y: 140vh;
+	--item17-rotation: 0deg;
+	left: var(--item17-x);
+	top: var(--item17-y);
+	transform: rotate(var(--item17-rotation));
+}
+
+/* ========== ITEM 18 ========== */
+.item18 {
+	--item18-x: 25vw;
+	--item18-y: 150vh;
+	--item18-rotation: 180deg;
+	left: var(--item18-x);
+	top: var(--item18-y);
+	transform: rotate(var(--item18-rotation));
+}
+
+/* ========== ITEM 19 ========== */
+.item19 {
+	--item19-x: 70vw;
+	--item19-y: 155vh;
+	--item19-rotation: 0deg;
+	left: var(--item19-x);
+	top: var(--item19-y);
+	transform: rotate(var(--item19-rotation));
+}
+
+/* ========== ITEM 20 ========== */
+.item20 {
+	--item20-x: 15vw;
+	--item20-y: 165vh;
+	--item20-rotation: 225deg;
+	left: var(--item20-x);
+	top: var(--item20-y);
+	transform: rotate(var(--item20-rotation));
+}
+
+/* ========== ITEM 21 ========== */
+.item21 {
+	--item21-x: 60vw;
+	--item21-y: 170vh;
+	--item21-rotation: 0deg;
+	left: var(--item21-x);
+	top: var(--item21-y);
+	transform: rotate(var(--item21-rotation));
+}
+
+/* ========== ITEM 22 ========== */
+.item22 {
+	--item22-x: 40vw;
+	--item22-y: 180vh;
+	--item22-rotation: 270deg;
+	left: var(--item22-x);
+	top: var(--item22-y);
+	transform: rotate(var(--item22-rotation));
+}
+
+/* ========== ITEM 23 ========== */
+.item23 {
+	--item23-x: 80vw;
+	--item23-y: 185vh;
+	--item23-rotation: 0deg;
+	left: var(--item23-x);
+	top: var(--item23-y);
+	transform: rotate(var(--item23-rotation));
+}
+
+/* ========== ITEM 24 ========== */
+.item24 {
+	--item24-x: 20vw;
+	--item24-y: 5vh;
+	--item24-rotation: 315deg;
+	left: var(--item24-x);
+	top: var(--item24-y);
+	transform: rotate(var(--item24-rotation));
+}
+
+/* ========== ITEM 25 ========== */
+.item25 {
+	--item25-x: 55vw;
+	--item25-y: 25vh;
+	--item25-rotation: 0deg;
+	left: var(--item25-x);
+	top: var(--item25-y);
+	transform: rotate(var(--item25-rotation));
+}
+
+/* ========== ITEM 26 ========== */
+.item26 {
+	--item26-x: 90vw;
+	--item26-y: 30vh;
+	--item26-rotation: 45deg;
+	left: var(--item26-x);
+	top: var(--item26-y);
+	transform: rotate(var(--item26-rotation));
+}
+
+/* ========== ITEM 27 ========== */
+.item27 {
+	--item27-x: 35vw;
+	--item27-y: 45vh;
+	--item27-rotation: 0deg;
+	left: var(--item27-x);
+	top: var(--item27-y);
+	transform: rotate(var(--item27-rotation));
+}
+
+/* ========== ITEM 28 ========== */
+.item28 {
+	--item28-x: 5vw;
+	--item28-y: 50vh;
+	--item28-rotation: 90deg;
+	left: var(--item28-x);
+	top: var(--item28-y);
+	transform: rotate(var(--item28-rotation));
+}
+
+/* ========== ITEM 29 ========== */
+.item29 {
+	--item29-x: 65vw;
+	--item29-y: 65vh;
+	--item29-rotation: 0deg;
+	left: var(--item29-x);
+	top: var(--item29-y);
+	transform: rotate(var(--item29-rotation));
+}
+
+/* ========== ITEM 30 ========== */
+.item30 {
+	--item30-x: 48vw;
+	--item30-y: 80vh;
+	--item30-rotation: 135deg;
+	left: var(--item30-x);
+	top: var(--item30-y);
+	transform: rotate(var(--item30-rotation));
+}
+
+/* ========== ITEM 31 ========== */
+.item31 {
+	--item31-x: 12vw;
+	--item31-y: 90vh;
+	--item31-rotation: 0deg;
+	left: var(--item31-x);
+	top: var(--item31-y);
+	transform: rotate(var(--item31-rotation));
+}
+
+/* ========== ITEM 32 ========== */
+.item32 {
+	--item32-x: 78vw;
+	--item32-y: 100vh;
+	--item32-rotation: 180deg;
+	left: var(--item32-x);
+	top: var(--item32-y);
+	transform: rotate(var(--item32-rotation));
+}
+
+/* ========== ITEM 33 ========== */
+.item33 {
+	--item33-x: 42vw;
+	--item33-y: 115vh;
+	--item33-rotation: 0deg;
+	left: var(--item33-x);
+	top: var(--item33-y);
+	transform: rotate(var(--item33-rotation));
+}
+
+/* ========== ITEM 34 ========== */
+.item34 {
+	--item34-x: 88vw;
+	--item34-y: 130vh;
+	--item34-rotation: 225deg;
+	left: var(--item34-x);
+	top: var(--item34-y);
+	transform: rotate(var(--item34-rotation));
+}
+
+/* ========== ITEM 35 ========== */
+.item35 {
+	--item35-x: 18vw;
+	--item35-y: 145vh;
+	--item35-rotation: 0deg;
+	left: var(--item35-x);
+	top: var(--item35-y);
+	transform: rotate(var(--item35-rotation));
+}
+
+/* ========== ITEM 36 ========== */
+.item36 {
+	--item36-x: 52vw;
+	--item36-y: 160vh;
+	--item36-rotation: 270deg;
+	left: var(--item36-x);
+	top: var(--item36-y);
+	transform: rotate(var(--item36-rotation));
+}
+
+/* ========== ITEM 37 ========== */
+.item37 {
+	--item37-x: 92vw;
+	--item37-y: 175vh;
+	--item37-rotation: 0deg;
+	left: var(--item37-x);
+	top: var(--item37-y);
+	transform: rotate(var(--item37-rotation));
+}
+
+/* ========== ITEM 38 ========== */
+.item38 {
+	--item38-x: 28vw;
+	--item38-y: 190vh;
+	--item38-rotation: 315deg;
+	left: var(--item38-x);
+	top: var(--item38-y);
+	transform: rotate(var(--item38-rotation));
+}
+
+/* ========== ITEM 39 ========== */
+.item39 {
+	--item39-x: 8vw;
+	--item39-y: 12vh;
+	--item39-rotation: 0deg;
+	left: var(--item39-x);
+	top: var(--item39-y);
+	transform: rotate(var(--item39-rotation));
+}
+
+/* ========== ITEM 40 ========== */
+.item40 {
+	--item40-x: 72vw;
+	--item40-y: 22vh;
+	--item40-rotation: 45deg;
+	left: var(--item40-x);
+	top: var(--item40-y);
+	transform: rotate(var(--item40-rotation));
+}
+
+/* ========== ITEM 41 ========== */
+.item41 {
+	--item41-x: 38vw;
+	--item41-y: 38vh;
+	--item41-rotation: 0deg;
+	left: var(--item41-x);
+	top: var(--item41-y);
+	transform: rotate(var(--item41-rotation));
+}
+
+/* ========== ITEM 42 ========== */
+.item42 {
+	--item42-x: 95vw;
+	--item42-y: 48vh;
+	--item42-rotation: 90deg;
+	left: var(--item42-x);
+	top: var(--item42-y);
+	transform: rotate(var(--item42-rotation));
+}
+
+/* ========== ITEM 43 ========== */
+.item43 {
+	--item43-x: 22vw;
+	--item43-y: 58vh;
+	--item43-rotation: 0deg;
+	left: var(--item43-x);
+	top: var(--item43-y);
+	transform: rotate(var(--item43-rotation));
+}
+
+/* ========== ITEM 44 ========== */
+.item44 {
+	--item44-x: 68vw;
+	--item44-y: 72vh;
+	--item44-rotation: 135deg;
+	left: var(--item44-x);
+	top: var(--item44-y);
+	transform: rotate(var(--item44-rotation));
+}
+
+/* ========== ITEM 45 ========== */
+.item45 {
+	--item45-x: 32vw;
+	--item45-y: 88vh;
+	--item45-rotation: 0deg;
+	left: var(--item45-x);
+	top: var(--item45-y);
+	transform: rotate(var(--item45-rotation));
+}
+
+/* ========== ITEM 46 ========== */
+.item46 {
+	--item46-x: 82vw;
+	--item46-y: 98vh;
+	--item46-rotation: 180deg;
+	left: var(--item46-x);
+	top: var(--item46-y);
+	transform: rotate(var(--item46-rotation));
+}
+
+/* ========== ITEM 47 ========== */
+.item47 {
+	--item47-x: 58vw;
+	--item47-y: 108vh;
+	--item47-rotation: 0deg;
+	left: var(--item47-x);
+	top: var(--item47-y);
+	transform: rotate(var(--item47-rotation));
+}
+
+/* ========== ITEM 48 ========== */
+.item48 {
+	--item48-x: 2vw;
+	--item48-y: 122vh;
+	--item48-rotation: 225deg;
+	left: var(--item48-x);
+	top: var(--item48-y);
+	transform: rotate(var(--item48-rotation));
+}
+
+/* ========== ITEM 49 ========== */
+.item49 {
+	--item49-x: 62vw;
+	--item49-y: 138vh;
+	--item49-rotation: 0deg;
+	left: var(--item49-x);
+	top: var(--item49-y);
+	transform: rotate(var(--item49-rotation));
+}
+
+/* ========== ITEM 50 ========== */
+.item50 {
+	--item50-x: 50vw;
+	--item50-y: 152vh;
+	--item50-rotation: 270deg;
+	left: var(--item50-x);
+	top: var(--item50-y);
+	transform: rotate(var(--item50-rotation));
+}

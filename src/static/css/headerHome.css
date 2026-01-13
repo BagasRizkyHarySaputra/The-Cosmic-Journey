@@ -1,0 +1,189 @@
+.header-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  justify-content: center;
+  padding: 10px 0 0 0;
+  gap: 0px;
+  z-index: 100;
+  background: transparent;
+}
+
+/* Header container untuk layout logo kiri dan menu center */
+.header-container {
+  width: 100vw;
+  height: auto;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: center;
+  gap: 0px;
+}
+
+.header-logo {
+  height: 180px;
+  width: auto;
+  display: block;
+  margin-left: 24px;
+  margin-right: 0px;
+  transition: transform 0.3s cubic-bezier(.4,1.6,.6,1);
+  flex-shrink: 0;
+}
+.header-logo:hover {
+  transform: scale(1.15);
+  .header-logo {
+    z-index: 1;
+  }
+}
+
+.menu-active {
+  color: #fff;
+  font-weight: bold;
+  text-shadow: 0 0 8px #fff, 0 0 16px #fff2;
+}
+
+.header-menu li:not(:first-child) .menu-active {
+  color: #fff;
+  text-shadow: none;
+  font-weight: normal;
+}
+
+/* Efek glow pada menu saat hover */
+
+/* Hover: menu-num dan teks menu menjadi menu-active, menu-slash tetap statis */
+.header-menu li:hover .menu-num,
+.header-menu li:focus .menu-num {
+  color: #fff;
+  font-weight: bold;
+  text-shadow: 0 0 8px #fff, 0 0 16px #fff2;
+  transition: text-shadow 0.3s, color 0.3s;
+}
+.header-menu li:hover span:not(.menu-slash):not(.menu-num),
+.header-menu li:focus span:not(.menu-slash):not(.menu-num) {
+  color: #fff;
+  font-weight: bold;
+  text-shadow: 0 0 8px #fff, 0 0 16px #fff2;
+  transition: text-shadow 0.3s, color 0.3s;
+}
+.header-menu li span:not(.menu-slash),
+.header-menu li .menu-num {
+  transition: text-shadow 0.3s, color 0.3s;
+}
+
+
+/* Animasi menu-active (glow) pada menu-num dan teks menu saat hover/focus */
+.header-menu li:hover .menu-num,
+.header-menu li:focus .menu-num {
+  color: #fff;
+  font-weight: bold;
+  animation: menu-glow 0.7s cubic-bezier(.4,1.6,.6,1) both;
+}
+.header-menu li:hover span:not(.menu-slash):not(.menu-num),
+.header-menu li:focus span:not(.menu-slash):not(.menu-num) {
+  color: #fff;
+  font-weight: bold;
+  animation: menu-glow 0.7s cubic-bezier(.4,1.6,.6,1) both;
+}
+.header-menu li span:not(.menu-slash),
+.header-menu li .menu-num {
+  transition: text-shadow 0.3s, color 0.3s;
+}
+
+@keyframes menu-glow {
+  0% {
+    text-shadow: 0 0 0px #fff, 0 0 0px #fff2;
+  }
+  60% {
+    text-shadow: 0 0 12px #fff, 0 0 24px #fff2;
+  }
+  100% {
+    text-shadow: 0 0 8px #fff, 0 0 16px #fff2;
+  }
+}
+
+/* Style untuk elemen menu */
+.header-menu {
+  --menu-offset-x: -200px; /* Ubah nilai ini untuk geser menu: positif = kanan, negatif = kiri */
+  display: flex;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  margin-left: var(--menu-offset-x);
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  font-family: 'Orbitron', 'Consolas', monospace;
+  color: #fff;
+  gap: 28px;
+  background: transparent;
+  justify-self: center;
+}
+.header-menu li {
+  color: #fff;
+  letter-spacing: 0.5px;
+  transition: color 0.2s;
+  min-width: 100px;
+  text-align: right;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: center;
+  height: auto;
+  white-space: nowrap;
+}
+.menu-num {
+  font-size: 11px;
+  margin-bottom: 2px;
+  color: #bcbcbc;
+  font-family: 'Orbitron', 'Consolas', monospace;
+  letter-spacing: 0.5px;
+  text-align: right;
+  width: 100%;
+  display: block;
+  pointer-events: none;
+}
+.menu-slash {
+  margin: 0 8px 0 8px;
+  color: #bcbcbc;
+}
+.menu-row {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  justify-content: flex-end;
+  gap: 6px;
+  margin-top: 2px;
+  width: 100%;
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 1600px) {
+  .header-menu {
+    font-size: 18px;
+    gap: 20px;
+  }
+  
+  .header-logo {
+    height: 140px;
+  }
+}
+
+@media (max-width: 1366px) {
+  .header-menu {
+    font-size: 16px;
+    gap: 16px;
+  }
+  
+  .menu-num {
+    font-size: 10px;
+  }
+  
+  .header-logo {
+    height: 120px;
+    margin-left: 16px;
+  }
+}

@@ -1,0 +1,27 @@
+@font-face {
+	font-family: 'KyivTypeSerif-Bold';
+	src: url('../../../public/font/kyiv/KyivTypeSerif-Bold.otf') format('opentype');
+	font-weight: bold;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'KyivTypeSerif-Bold3';
+	src: url('../../../public/font/kyiv/KyivTypeSerif-Bold3.otf') format('opentype');
+	font-weight: bold;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Jura-Bold';
+	src: url('../../../public/font/Jura/static/Jura-Bold.ttf') format('truetype');
+	font-weight: bold;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Jura-Regular';
+	src: url('../../../public/font/Jura/static/Jura-Regular.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+}

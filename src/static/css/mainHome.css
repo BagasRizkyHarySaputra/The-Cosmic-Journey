@@ -1,0 +1,133 @@
+@import './importFont.css';
+
+.main-home {
+	min-height: 100vh;
+	background-color: transparent;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	position: relative;
+	padding-top: 0px;
+	margin-left: -400px;
+	margin-top: -20px;
+}
+
+.main-container {
+	text-align: left;
+	color: white;
+	max-width: 600px;
+	padding: 00px;
+	padding-bottom: 120px;
+}
+
+.greeting-text {
+	font-size: clamp(1rem, 1.5vw, 1.8rem);
+	margin-bottom: 15px;
+	border: 1px solid #4a4a4a;
+	border-radius: 15px;
+	padding: 6px 28px;
+	display: inline-block;
+	letter-spacing: 0.3px;
+	font-family: 'Jura-Bold', sans-serif;
+	background: linear-gradient(90deg, #745399 0%, #C18BFF 27%, #FFFFFF 100%);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	background-clip: text;
+}
+
+.main-title {
+	font-size: clamp(3rem, 4vw, 5rem);
+	font-weight: bold;
+	margin: 0px 30;
+	line-height: 1.1;
+	color: #ffffff;
+	font-family: 'KyivTypeSerif-Bold', serif;
+}
+
+.main-title .underline {
+	text-decoration: underline;
+	text-decoration-color: #ffffff;
+	text-underline-offset: 8px;
+	text-decoration-thickness: 2px;
+	font-family: 'KyivTypeSerif-Bold3', serif;
+}
+
+.main-description {
+	font-size: clamp(1.2rem, 1.5vw, 2rem);
+	color: #E6D0FF;
+	margin: 15px 30;
+	line-height: 1.5;
+	font-family: 'Jura-Regular', sans-serif;
+}
+
+.scroll-indicator {
+	margin-top: 40px;
+	display: flex;
+	justify-content: center;
+	position: fixed;
+	left: 50%;
+	transform: translateX(-50%);
+	bottom: 40px;
+	opacity: 1;
+	transition: opacity 0.3s ease-in-out;
+	z-index: 300;
+}
+
+.scroll-indicator.fade-out {
+	opacity: 0;
+	pointer-events: none;
+}
+
+.scroll-icon {
+	border: 2px solid #ffffff;
+	border-radius: 20px;
+	width: 40px;
+	height: 60px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	gap: 5px;
+	cursor: pointer;
+	transition: all 0.3s ease;
+}
+
+.scroll-icon:hover {
+	transform: translateY(5px);
+}
+
+.scroll-icon span {
+	font-size: 1.2rem;
+	color: #ffffff;
+	display: block;
+	animation: scrollDown 1.5s infinite;
+}
+
+.scroll-icon span:nth-child(2) {
+	animation-delay: 0.2s;
+}
+
+@keyframes scrollDown {
+	0%, 100% {
+		opacity: 0;
+		transform: translateY(-10px);
+	}
+	50% {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+@media (max-width: 768px) {
+	.main-title {
+		font-size: 3rem;
+	}
+	
+	.greeting-text {
+		font-size: 0.9rem;
+	}
+	
+	.main-description {
+		font-size: 1rem;
+	}
+}

@@ -1,0 +1,63 @@
+@import './importFont.css';
+
+.solar-system {
+	height: 220vh;
+	background-color: transparent;
+	position: relative;
+	width: 100%;
+}
+
+.boundary-line {
+	position: absolute;
+	left: 0;
+	width: 100%;
+	height: 1px;
+	background-color: #ffffff;
+	z-index: 5;
+}
+
+.boundary-line.top {
+	top: 0;
+}
+
+.boundary-line.bottom {
+	bottom: 0;
+}
+
+.solar-system-content {
+	position: relative;
+	width: 100%;
+	height: 100%;
+}
+
+.solar-system-text {
+	position: absolute;
+	top: 30%;
+	right: 10%;
+	text-align: right;
+	z-index: 10;
+}
+
+.solar-system-title {
+	font-size: clamp(4rem, 6vw, 7rem);
+	font-weight: bold;
+	margin: 0;
+	line-height: 1;
+	color: #ffffff;
+}
+
+.solar-system-title .title-solar {
+	font-family: 'KyivTypeSerif-Bold', serif;
+}
+
+.solar-system-title .title-system {
+	font-family: 'KyivTypeSerif-Bold3', serif;
+    text-decoration: underline;
+}
+
+.solar-system-description {
+	font-size: clamp(1.2rem, 1.8vw, 2rem);
+	color: #ffffff;
+	margin: 20px 0 0 0;
+	font-family: 'Jura-Bold', sans-serif;
+}
