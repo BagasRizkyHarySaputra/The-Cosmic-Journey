@@ -28,7 +28,7 @@ function BackgroundSet() {
 	const backgroundItems = [
 		{ id: 'item1', src: '/logo/LightBeam.png' },
 		{ id: 'item2', src: '/logo/LightBeam.png' },
-		{ id: 'item3', src: '/img/planet1.png' },
+		{ id: 'item3', src: '/img/keyboard_arrow_down.png' },
 		{ id: 'item4', src: '/img/star3.png' },
 		{ id: 'item5', src: '/img/planet2.png' },
 		{ id: 'item6', src: '/img/star4.png' },

@@ -1,0 +1,251 @@
+@import './importFont.css';
+
+/* ========== PLANET POPUP ========== */
+.planet-popup-overlay {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0, 0, 0, 0.7);
+	backdrop-filter: blur(8px);
+	z-index: 1000;
+	opacity: 0;
+	visibility: hidden;
+	transition: opacity 0.3s ease, visibility 0.3s ease;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.planet-popup-overlay.active {
+	opacity: 1;
+	visibility: visible;
+}
+
+.planet-popup {
+	position: relative;
+	width: 85%;
+	max-width: 1100px;
+	height: auto;
+	max-height: 85vh;
+	background: linear-gradient(
+		to bottom,
+		rgba(130, 130, 246, 0.2) 8%,
+		rgba(231, 184, 255, 0) 42%,
+		rgba(85, 84, 239, 0.2) 83%,
+		rgba(48, 51, 133, 0.2) 100%
+	);
+	backdrop-filter: blur(30px);
+	-webkit-backdrop-filter: blur(30px);
+	border: 1px solid rgba(255, 255, 255, 0.2);
+	border-radius: 20px;
+	box-shadow: 0 10px 40px rgba(0, 0, 0, 0.6),
+				0 0 80px rgba(130, 130, 246, 0.3);
+	transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+	z-index: 1001;
+	overflow-y: auto;
+	padding: 40px 40px 100px 40px;
+	display: flex;
+	opacity: 0;
+	transform: scale(0.9);
+}
+
+.planet-popup.active {
+	opacity: 1;
+	transform: scale(1);
+}
+
+.popup-close {
+	position: absolute;
+	top: 25px;
+	right: 25px;
+	background: none;
+	border: none;
+	color: #ffffff;
+	font-size: 2.5rem;
+	cursor: pointer;
+	z-index: 10;
+	transition: transform 0.2s ease;
+	width: 45px;
+	height: 45px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 0;
+}
+
+.popup-close:hover {
+	transform: rotate(90deg);
+}
+
+.popup-content-wrapper {
+	display: flex;
+	width: 100%;
+	gap: 30px;
+	align-items: flex-start;
+}
+
+.popup-left {
+	flex: 1;
+	display: flex;
+	flex-direction: column;
+	gap: 18px;
+	max-width: 520px;
+}
+
+.popup-right {
+	flex: 1;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: flex-start;
+	position: relative;
+	padding-top: 20px;
+}
+
+.popup-planet-image {
+	width: 100%;
+	max-width: 420px;
+	height: auto;
+	object-fit: contain;
+	filter: drop-shadow(0 0 40px rgba(255, 255, 255, 0.3));
+}
+
+.popup-planet-name {
+	position: absolute;
+	bottom: -120px;
+	left: 50%;
+	transform: translateX(-50%);
+	font-weight: bold;
+	text-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+	width: max-content;
+}
+
+.known-as-box {
+	background: rgba(255, 255, 255, 0.9);
+	backdrop-filter: blur(10px);
+	border-radius: 18px;
+	padding: 20px 25px;
+	box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.known-as-title {
+	margin: 0 0 8px 0;
+}
+
+.known-as-text {
+	margin: 0;
+}
+
+.known-as-text strong,
+.about-text strong {
+	font-weight: 800;
+}
+
+.about-section {
+}
+
+.about-title {
+	margin: 0 0 12px 0;
+}
+
+.about-text {
+	margin: 0 0 10px 0;
+}
+
+.info-boxes {
+	display: grid;
+	/* UBAH PERBANDINGAN DI SINI: 1:1 (default), 2:1, 1:2, dll */
+	--box-ratio-left: 6;
+	--box-ratio-right: 5;
+	grid-template-columns: 
+		minmax(0, calc((100% - 15px) * var(--box-ratio-left) / (var(--box-ratio-left) + var(--box-ratio-right))))
+		minmax(0, calc((100% - 15px) * var(--box-ratio-right) / (var(--box-ratio-left) + var(--box-ratio-right))));
+	gap: 15px;
+	margin-top: 0;
+}
+
+.info-box {
+	background: rgba(0, 0, 0, 0.3);
+	backdrop-filter: blur(10px);
+	border: 1px solid rgba(255, 255, 255, 0.2);
+	border-radius: 12px;
+	padding: 16px;
+}
+
+.info-box-title {
+	margin: 0 0 10px 0;
+}
+
+.info-item {
+	margin-bottom: 6px;
+	display: flex;
+	gap: 6px;
+	align-items: baseline;
+}
+
+.info-label {
+	margin: 0;
+}
+
+.info-value {
+	margin: 0;
+}
+
+.info-value.discovery-text {
+}
+
+.expedition-box {
+	background: rgba(0, 0, 0, 0.3);
+	backdrop-filter: blur(10px);
+	border: 1px solid rgba(255, 255, 255, 0.2);
+	border-radius: 12px;
+	padding: 16px;
+	margin-top: 0;
+}
+
+.expedition-title {
+	margin: 0 0 8px 0;
+}
+
+.expedition-text {
+	margin: 0;
+}
+
+.expedition-link {
+	color: #9d7ff5;
+	text-decoration: underline;
+}
+
+.popup-navigation {
+	position: absolute;
+	bottom: 40px;
+	left: 40px;
+	right: 40px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	z-index: 10;
+}
+
+.nav-arrow {
+	background: rgba(255, 255, 255, 0.15);
+	backdrop-filter: blur(10px);
+	border: 1px solid rgba(255, 255, 255, 0.3);
+	color: #ffffff;
+	font-size: 2rem;
+	width: 50px;
+	height: 50px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	cursor: pointer;
+	border-radius: 8px;
+	transition: all 0.3s ease;
+}
+
+.nav-arrow:hover {
+	background: rgba(255, 255, 255, 0.25);
+	transform: scale(1.1);
+}

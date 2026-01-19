@@ -1,0 +1,110 @@
+@import './importFont.css';
+
+/* ========== PLANET DATA TYPOGRAPHY ========== */
+
+/* Known As Box */
+.known-as-title {
+	font-family: 'Jura-Bold', sans-serif;
+	font-weight: bold;
+	background: linear-gradient(90deg, #C18BFF 0%, #0E0A35 61%);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	background-clip: text;
+	font-size: 1.3rem;
+	text-align: left;
+}
+
+.known-as-text {
+	font-family: 'Jura', sans-serif;
+	color: #1a1a1a;
+	font-size: 1rem;
+	line-height: 1.4;
+	text-align: left;
+}
+
+/* About Section */
+.about-title {
+	font-family: 'Jura-Bold', sans-serif;
+	font-weight: bold;
+	background: linear-gradient(90deg, #C18BFF 27%, #FFFFFF 100%);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	background-clip: text;
+	font-size: 1.6rem;
+	text-align: left;
+}
+
+.about-text {
+	font-family: 'Urbanist-Regular', sans-serif;
+	color: #ffffff;
+	font-size: 0.9rem;
+	line-height: 1.6;
+	text-align: left;
+}
+
+/* Info Boxes */
+.info-box-title {
+	font-family: 'Jura-Bold', sans-serif;
+	font-weight: bold;
+	background: linear-gradient(90deg, #C18BFF 27%, #FFFFFF 100%);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	background-clip: text;
+	font-size: 1.25rem;
+	text-align: left;
+}
+
+.info-label {
+	font-family: 'Urbanist-Bold', sans-serif;
+	font-weight: bold;
+	color: #ffffff;
+	font-size: 0.85rem;
+	text-align: left;
+}
+
+.info-value {
+	font-family: 'Urbanist-Regular', sans-serif;
+	color: #ffffff;
+	font-size: 0.8rem;
+	text-align: left;
+}
+
+.info-value.discovery-text {
+	font-family: 'Urbanist-Regular', sans-serif;
+	color: #ffffff;
+	font-size: 0.85rem;
+	line-height: 1.5;
+	text-align: left;
+}
+
+/* Expedition Box */
+.expedition-title {
+	font-family: 'Jura-Bold', sans-serif;
+	font-weight: bold;
+	background: linear-gradient(90deg, #C18BFF 27%, #FFFFFF 100%);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	background-clip: text;
+	font-size: 1.25rem;
+	text-align: left;
+}
+
+.expedition-text {
+	font-family: 'Urbanist-Regular', sans-serif;
+	color: #ffffff;
+	font-size: 0.85rem;
+	line-height: 1.5;
+	text-align: left;
+}
+
+/* Planet Name */
+.popup-planet-name {
+	font-family: 'Jura-Bold', sans-serif;
+	font-weight: bold;
+	background: linear-gradient(90deg, #4A7CFF 0%, #3BBC6A 55%, #FFFFFF 100%);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	background-clip: text;
+	font-size: 5rem;
+	text-align: center;
+}

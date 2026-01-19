@@ -1,0 +1,366 @@
+@import './importFont.css';
+
+/* ========== SPACE OBJECTS SECTION ========== */
+.space-objects {
+	height: 100vh;
+	background: linear-gradient(180deg, #1a1a5e 0%, #2d2d7a 50%, #1a1a5e 100%);
+	position: relative;
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	overflow: hidden;
+}
+
+.space-objects-boundary {
+	position: absolute;
+	left: 0;
+	width: 100%;
+	height: 1px;
+	background-color: #ffffff;
+	z-index: 5;
+}
+
+.space-objects-boundary.top {
+	top: 0;
+}
+
+.space-objects-boundary.bottom {
+	bottom: 0;
+}
+
+/* ========== TITLE ========== */
+.space-objects-header {
+	text-align: center;
+	margin-bottom: 60px;
+	z-index: 10;
+}
+
+.space-objects-title {
+	font-family: 'KyivTypeSerif-Bold', serif;
+	font-size: clamp(2.5rem, 4vw, 4rem);
+	color: #ffffff;
+	margin: 0;
+	line-height: 1.2;
+}
+
+.space-objects-subtitle {
+	font-family: 'KyivTypeSerif-Bold3', serif;
+	font-size: clamp(2rem, 3.5vw, 3.5rem);
+	color: #ffffff;
+	margin: 0;
+	text-decoration-color: rgba(255, 255, 255, 0.5);
+	text-underline-offset: 8px;
+}
+
+/* ========== CAROUSEL CONTAINER ========== */
+.space-objects-carousel {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 100%;
+	max-width: 1400px;
+	gap: 20px;
+	padding: 0 60px;
+	position: relative;
+	overflow: hidden;
+}
+
+/* ========== NAVIGATION ARROWS ========== */
+.carousel-arrow {
+	background: transparent;
+	border: none;
+	color: #ffffff;
+	font-size: 3.5rem;
+	cursor: pointer;
+	transition: all 0.3s ease;
+	z-index: 20;
+	padding: 20px;
+	opacity: 0.7;
+}
+
+.carousel-arrow:hover {
+	opacity: 1;
+	transform: scale(1.1);
+}
+
+.carousel-arrow.left {
+	margin-right: 20px;
+}
+
+.carousel-arrow.right {
+	margin-left: 20px;
+}
+
+/* ========== CARDS WRAPPER ========== */
+.cards-wrapper {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 30px;
+	perspective: 1200px;
+	position: relative;
+}
+
+/* ========== INDIVIDUAL CARD ANIMATIONS ========== */
+/* Animation duration variable */
+:root {
+	--card-animation-duration: 0.5s;
+}
+
+/* === CLICKING RIGHT ARROW (next) - Cards shift LEFT === */
+/* Left card exits to far-left */
+.object-card.animate-exit-left {
+	animation: exitLeft var(--card-animation-duration) ease-in-out forwards;
+}
+
+/* Center card moves to left position */
+.object-card.animate-center-to-left {
+	animation: centerToLeft var(--card-animation-duration) ease-in-out forwards;
+}
+
+/* Right card moves to center position */
+.object-card.animate-right-to-center {
+	animation: rightToCenter var(--card-animation-duration) ease-in-out forwards;
+}
+
+/* === CLICKING LEFT ARROW (prev) - Cards shift RIGHT === */
+/* Left card moves to center position */
+.object-card.animate-left-to-center {
+	animation: leftToCenter var(--card-animation-duration) ease-in-out forwards;
+}
+
+/* Center card moves to right position */
+.object-card.animate-center-to-right {
+	animation: centerToRight var(--card-animation-duration) ease-in-out forwards;
+}
+
+/* Right card exits to far-right */
+.object-card.animate-exit-right {
+	animation: exitRight var(--card-animation-duration) ease-in-out forwards;
+}
+
+/* === KEYFRAMES FOR RIGHT ARROW (next) - Shift LEFT === */
+/* Left card exits - fades out to far left */
+@keyframes exitLeft {
+	0% {
+		transform: translateX(0) rotateY(-30deg) scale(0.9);
+		opacity: 0.7;
+	}
+	100% {
+		transform: translateX(-310px) rotateY(-45deg) scale(0.7);
+		opacity: 0;
+	}
+}
+
+/* Center moves to left - end position matches .object-card.left default */
+@keyframes centerToLeft {
+	0% {
+		transform: translateX(0) rotateY(0deg) scale(1);
+		opacity: 1;
+	}
+	100% {
+		transform: translateX(-310px) rotateY(-30deg) scale(0.9);
+		opacity: 0.7;
+	}
+}
+
+/* Right moves to center - end position matches .object-card.center default */
+@keyframes rightToCenter {
+	0% {
+		transform: translateX(0) rotateY(30deg) scale(0.9);
+		opacity: 0.7;
+	}
+	100% {
+		transform: translateX(-310px) rotateY(0deg) scale(1);
+		opacity: 1;
+	}
+}
+
+/* === KEYFRAMES FOR LEFT ARROW (prev) - Shift RIGHT === */
+/* Left moves to center - end position matches .object-card.center default */
+@keyframes leftToCenter {
+	0% {
+		transform: translateX(0) rotateY(-30deg) scale(0.9);
+		opacity: 0.7;
+	}
+	100% {
+		transform: translateX(310px) rotateY(0deg) scale(1);
+		opacity: 1;
+	}
+}
+
+/* Center moves to right - end position matches .object-card.right default */
+@keyframes centerToRight {
+	0% {
+		transform: translateX(0) rotateY(0deg) scale(1);
+		opacity: 1;
+	}
+	100% {
+		transform: translateX(310px) rotateY(30deg) scale(0.9);
+		opacity: 0.7;
+	}
+}
+
+/* Right card exits - fades out to far right */
+@keyframes exitRight {
+	0% {
+		transform: translateX(0) rotateY(30deg) scale(0.9);
+		opacity: 0.7;
+	}
+	100% {
+		transform: translateX(310px) rotateY(45deg) scale(0.7);
+		opacity: 0;
+	}
+}
+
+/* ========== OBJECT CARD ========== */
+.object-card {
+	width: 280px;
+	height: 480px;
+	background: linear-gradient(
+		180deg,
+		rgba(100, 100, 200, 0.3) 0%,
+		rgba(60, 60, 150, 0.4) 50%,
+		rgba(80, 80, 180, 0.3) 100%
+	);
+	backdrop-filter: blur(10px);
+	-webkit-backdrop-filter: blur(10px);
+	border: 2px solid rgba(150, 130, 255, 0.5);
+	border-radius: 25px;
+	padding: 25px 20px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	transition: transform 0.4s ease-out, opacity 0.4s ease-out, box-shadow 0.4s ease-out;
+	box-shadow: 0 10px 40px rgba(100, 80, 200, 0.3),
+				inset 0 0 30px rgba(150, 130, 255, 0.1);
+	flex-shrink: 0;
+}
+
+.object-card.left {
+	transform: rotateY(-30deg) scale(0.9);
+	opacity: 0.7;
+}
+
+.object-card.center {
+	transform: rotateY(0deg) scale(1);
+	opacity: 1;
+	z-index: 10;
+	box-shadow: 0 15px 50px rgba(100, 80, 200, 0.5),
+				inset 0 0 40px rgba(150, 130, 255, 0.15);
+}
+
+.object-card.right {
+	transform: rotateY(30deg) scale(0.9);
+	opacity: 0.7;
+}
+
+/* ========== CARD IMAGE ========== */
+.object-card-image-wrapper {
+	width: 100%;
+	height: 200px;
+	border-radius: 15px;
+	overflow: hidden;
+	margin-bottom: 20px;
+	border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.object-card-image {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+
+/* ========== CARD CONTENT ========== */
+.object-card-name {
+	font-family: 'Jura-Bold', sans-serif;
+	font-size: 1.6rem;
+	background: linear-gradient(180deg, #FFFFFF 0%, #8282F6 65%);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	background-clip: text;
+	margin: 0 0 15px 0;
+	text-align: center;
+}
+
+.object-card-description {
+	font-family: 'Urbanist-Regular', sans-serif;
+	font-size: 0.85rem;
+	color: #FFFFFF;
+	line-height: 1.5;
+	text-align: left;
+	margin: 0;
+	overflow-y: auto;
+	flex: 1;
+}
+
+/* Scrollbar styling for description */
+.object-card-description::-webkit-scrollbar {
+	width: 4px;
+}
+
+.object-card-description::-webkit-scrollbar-track {
+	background: rgba(255, 255, 255, 0.1);
+	border-radius: 2px;
+}
+
+.object-card-description::-webkit-scrollbar-thumb {
+	background: rgba(255, 255, 255, 0.3);
+	border-radius: 2px;
+}
+
+/* ========== DECORATIVE ELEMENTS ========== */
+.space-objects::before,
+.space-objects::after {
+	content: '';
+	position: absolute;
+	width: 15px;
+	height: 15px;
+	border: 2px solid rgba(150, 200, 255, 0.5);
+	transform: rotate(45deg);
+}
+
+.space-objects::before {
+	top: 15%;
+	right: 15%;
+}
+
+.space-objects::after {
+	bottom: 20%;
+	left: 10%;
+}
+
+/* ========== RESPONSIVE ========== */
+@media (max-width: 1024px) {
+	.object-card {
+		width: 240px;
+		height: 420px;
+	}
+	
+	.cards-wrapper {
+		gap: 20px;
+	}
+}
+
+@media (max-width: 768px) {
+	.space-objects-carousel {
+		padding: 0 20px;
+	}
+	
+	.object-card.left,
+	.object-card.right {
+		display: none;
+	}
+	
+	.object-card.center {
+		width: 300px;
+		height: 500px;
+	}
+	
+	.carousel-arrow {
+		font-size: 2.5rem;
+		padding: 10px;
+	}
+}

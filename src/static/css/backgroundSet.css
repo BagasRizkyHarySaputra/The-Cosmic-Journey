@@ -7,6 +7,7 @@
 	z-index: 0;
 	pointer-events: none;
 	overflow: hidden;
+	background-color: #0B0316;
 }
 
 .bg-item {
@@ -42,11 +43,13 @@
 
 /* ========== ITEM 3 ========== */
 .item3 {
-	--item3-x: 50vw;
-	--item3-y: 20vh;
-	--item3-rotation: 0deg;
+	--item3-size: 500px;
+	--item3-x: 76vh;
+	--item3-y: 215vh;
+	--item3-rotation: 90deg;
 	left: var(--item3-x);
 	top: var(--item3-y);
+	width: var(--item3-size);
 	transform: rotate(var(--item3-rotation));
 }
 

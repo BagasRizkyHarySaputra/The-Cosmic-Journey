@@ -25,3 +25,17 @@
 	font-weight: normal;
 	font-style: normal;
 }
+
+@font-face {
+	font-family: 'Urbanist-Bold';
+	src: url('../../../public/font/Urbanist/Urbanist/static/Urbanist-Bold.ttf') format('truetype');
+	font-weight: bold;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Urbanist-Regular';
+	src: url('../../../public/font/Urbanist/Urbanist/static/Urbanist-Regular.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+}

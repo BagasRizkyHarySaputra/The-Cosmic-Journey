@@ -5,6 +5,7 @@
 	background-color: transparent;
 	position: relative;
 	width: 100%;
+	overflow: hidden;
 }
 
 .boundary-line {
@@ -28,12 +29,14 @@
 	position: relative;
 	width: 100%;
 	height: 100%;
+	overflow-x: auto;
+	overflow-y: hidden;
 }
 
 .solar-system-text {
 	position: absolute;
-	top: 30%;
-	right: 10%;
+	top: 25%;
+	right: 8%;
 	text-align: right;
 	z-index: 10;
 }
@@ -52,7 +55,7 @@
 
 .solar-system-title .title-system {
 	font-family: 'KyivTypeSerif-Bold3', serif;
-    text-decoration: underline;
+	text-decoration: underline;
 }
 
 .solar-system-description {
@@ -60,4 +63,129 @@
 	color: #ffffff;
 	margin: 20px 0 0 0;
 	font-family: 'Jura-Bold', sans-serif;
+}
+
+/* ========== PLANETS WRAPPER ========== */
+.planets-wrapper {
+	position: absolute;
+	top: 50%;
+	left: 0;
+	width: 1920px;
+	height: 100%;
+	min-width: 1920px;
+	z-index: 4;
+	/* UBAH NILAI INI UNTUK RESIZE SEMUA PLANET (0.5 = 50%, 1 = 100%, 1.5 = 150%) */
+	--planet-scale: 0.620;
+	--base-left: 600px;
+}
+
+/* ========== BASE PLANET STYLES ========== */
+.planet {
+	position: absolute;
+	object-fit: contain;
+	pointer-events: auto;
+	user-select: none;
+	height: auto;
+	transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.planet:hover {
+	transform: scale(1.08);
+	filter: brightness(1.1);
+}
+
+/* ========== NEPTUNE ========== */
+.planet.neptune {
+	--neptune-base-size: 500px;
+	--neptune-base-x: -400px;
+	--neptune-base-y: 180px;
+	left: calc(var(--base-left) + (var(--neptune-base-x) * var(--planet-scale)));
+	top: calc(var(--neptune-base-y) * var(--planet-scale));
+	width: calc(var(--neptune-base-size) * var(--planet-scale));
+}
+
+/* ========== URANUS ========== */
+.planet.uranus {
+	--uranus-base-size: 850px;
+	--uranus-base-x: -340px;
+	--uranus-base-y: 400px;
+	left: calc(var(--base-left) + (var(--uranus-base-x) * var(--planet-scale)));
+	top: calc(var(--uranus-base-y) * var(--planet-scale));
+	width: calc(var(--uranus-base-size) * var(--planet-scale));
+}
+
+/* ========== SATURN ========== */
+.planet.saturn {
+	--saturn-base-size: 720px;
+	--saturn-base-x: 155px;
+	--saturn-base-y: 980px;
+	left: calc(var(--base-left) + (var(--saturn-base-x) * var(--planet-scale)));
+	top: calc(var(--saturn-base-y) * var(--planet-scale));
+	width: calc(var(--saturn-base-size) * var(--planet-scale));
+}
+
+/* ========== JUPITER ========== */
+.planet.jupiter {
+	--jupiter-base-size: 700px;
+	--jupiter-base-x: 520px;
+	--jupiter-base-y: 520px;
+	left: calc(var(--base-left) + (var(--jupiter-base-x) * var(--planet-scale)));
+	top: calc(var(--jupiter-base-y) * var(--planet-scale));
+	width: calc(var(--jupiter-base-size) * var(--planet-scale));
+}
+
+/* ========== MARS ========== */
+.planet.mars {
+	--mars-base-size: 370px;
+	--mars-base-x: 975px;
+	--mars-base-y: 1100px;
+	left: calc(var(--base-left) + (var(--mars-base-x) * var(--planet-scale)));
+	top: calc(var(--mars-base-y) * var(--planet-scale));
+	width: calc(var(--mars-base-size) * var(--planet-scale));
+}
+
+/* ========== EARTH ========== */
+.planet.earth {
+	--earth-base-size: 300px;
+	--earth-base-x: 1185px;
+	--earth-base-y: 950px;
+	left: calc(var(--base-left) + (var(--earth-base-x) * var(--planet-scale)));
+	top: calc(var(--earth-base-y) * var(--planet-scale));
+	width: calc(var(--earth-base-size) * var(--planet-scale));
+}
+
+/* ========== MERCURY ========== */
+.planet.mercury {
+	--mercury-base-size: 170px;
+	--mercury-base-x: 1450px;
+	--mercury-base-y: 950px;
+	left: calc(var(--base-left) + (var(--mercury-base-x) * var(--planet-scale)));
+	top: calc(var(--mercury-base-y) * var(--planet-scale));
+	width: calc(var(--mercury-base-size) * var(--planet-scale));
+}
+
+/* ========== VENUS ========== */
+.planet.venus {
+	--venus-base-size: 200px;
+	--venus-base-x: 1380px;
+	--venus-base-y: 1110px;
+	left: calc(var(--base-left) + (var(--venus-base-x) * var(--planet-scale)));
+	top: calc(var(--venus-base-y) * var(--planet-scale));
+	width: calc(var(--venus-base-size) * var(--planet-scale));
+}
+
+/* ========== SUN ========== */
+.planet.sun {
+	--sun-base-size: 700px;
+	--sun-base-x: 1570px;
+	--sun-base-y: 720px;
+	left: calc(var(--base-left) + (var(--sun-base-x) * var(--planet-scale)));
+	top: calc(var(--sun-base-y) * var(--planet-scale));
+	width: calc(var(--sun-base-size) * var(--planet-scale));
+	filter: drop-shadow(0 0 60px rgba(255, 120, 0, 0.7));
+}
+
+.planet.sun:hover {
+	transform: scale(1.03);
+	filter: drop-shadow(0 0 80px rgba(255, 120, 0, 0.9));
 }
