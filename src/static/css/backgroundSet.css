@@ -522,3 +522,30 @@
 	top: var(--item50-y);
 	transform: rotate(var(--item50-rotation));
 }
+
+.item51 {
+    --item51-x: -10.5vw;
+    --item51-y: 49.4vh;
+    --item51-rotation: 90deg;
+    left: var(--item51-x);
+    top: var(--item51-y);
+    transform: rotate(var(--item51-rotation));
+}
+
+.item54 {
+    --item54-x: 66.7vw;   /* 1281.56/1920 * 100 */
+    --item54-y: 13.5vh;   /* 146/1080 * 100 */
+    --item54-rotation: 160.03deg;
+    left: var(--item54-x);
+    top: var(--item54-y);
+    transform: rotate(var(--item54-rotation));
+}
+
+.item55 {
+    --item55-x: 17.8vw;   /* 342/1920 * 100 */
+    --item55-y: 78.9vh;   /* 852/1080 * 100 */
+    --item55-rotation: -7.45deg;
+    left: var(--item55-x);
+    top: var(--item55-y);
+    transform: rotate(var(--item55-rotation));
+}

@@ -1,0 +1,217 @@
+@import './importFont.css';
+
+/* ========== FAQ OVERLAY ========== */
+.faq-overlay {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100vh;
+	background: rgba(10, 10, 30, 0.7);
+	backdrop-filter: blur(10px);
+	-webkit-backdrop-filter: blur(10px);
+	z-index: 150;
+	display: flex;
+	justify-content: center;
+	align-items: flex-start;
+	padding-top: 80px;
+	overflow-y: auto;
+}
+
+/* ========== FAQ CONTAINER ========== */
+.faq-container {
+	width: 100%;
+	max-width: 850px;
+	margin-left: 180px;
+	padding: 0 40px 60px 40px;
+}
+
+/* ========== FAQ HEADER ========== */
+.faq-header {
+	display: flex;
+	justify-content: space-between;
+	align-items: flex-start;
+	margin-bottom: 40px;
+	padding-right: 20px;
+}
+
+.faq-title-section {
+	text-align: left;
+}
+
+.faq-title {
+	font-family: 'KyivTypeSerif-Bold', serif;
+	font-size: clamp(2rem, 3.5vw, 2.8rem);
+	color: #ffffff;
+	margin: 0;
+	line-height: 1.2;
+}
+
+.faq-subtitle {
+	font-family: 'Urbanist', sans-serif;
+	font-size: 1.1rem;
+	color: rgba(255, 255, 255, 0.7);
+	margin: 10px 0 0 0;
+	letter-spacing: 1px;
+}
+
+/* ========== CLOSE BUTTON ========== */
+.faq-close-btn {
+	background: transparent;
+	border: none;
+	color: #ffffff;
+	font-size: 2.5rem;
+	cursor: pointer;
+	transition: all 0.3s ease;
+	line-height: 1;
+	padding: 0;
+	margin-top: -10px;
+}
+
+.faq-close-btn:hover {
+	color: rgba(255, 255, 255, 0.7);
+	transform: scale(1.1);
+}
+
+/* ========== FAQ CONTENT ========== */
+.faq-content {
+	display: flex;
+	flex-direction: column;
+	gap: 30px;
+}
+
+/* ========== FAQ SECTION ========== */
+.faq-section {
+	display: flex;
+	flex-direction: column;
+}
+
+.faq-category-title {
+	font-family: 'KyivTypeSerif-Bold', serif;
+	font-size: 1.3rem;
+	color: #ffffff;
+	margin: 0 0 20px 0;
+}
+
+/* ========== FAQ QUESTIONS ========== */
+.faq-questions {
+	display: flex;
+	flex-direction: column;
+	gap: 15px;
+}
+
+.faq-item {
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+}
+
+/* ========== QUESTION BOX ========== */
+.faq-question-box {
+	background: rgba(255, 255, 255, 0.95);
+	border-radius: 8px;
+	padding: 12px 20px;
+	display: flex;
+	align-items: center;
+	gap: 8px;
+}
+
+.faq-q-label {
+	font-family: 'Urbanist', sans-serif;
+	font-size: 1rem;
+	font-weight: 600;
+	color: #1a1a2e;
+}
+
+.faq-question-text {
+	font-family: 'Urbanist', sans-serif;
+	font-size: 1rem;
+	color: #1a1a2e;
+}
+
+/* ========== ANSWER ========== */
+.faq-answer {
+	display: flex;
+	align-items: flex-start;
+	gap: 15px;
+	padding-left: 20px;
+}
+
+.faq-answer-line {
+	width: 3px;
+	min-height: 20px;
+	background: rgba(255, 255, 255, 0.5);
+	border-radius: 2px;
+	flex-shrink: 0;
+}
+
+.faq-answer-text {
+	font-family: 'Urbanist', sans-serif;
+	font-size: 0.95rem;
+	color: rgba(255, 255, 255, 0.85);
+	margin: 0;
+	line-height: 1.5;
+}
+
+/* ========== CHEVRON ========== */
+.faq-chevron {
+	display: flex;
+	justify-content: center;
+	margin-top: 20px;
+}
+
+.chevron-icon {
+	font-size: 1.5rem;
+	color: rgba(150, 130, 255, 0.8);
+	transform: rotate(90deg);
+	display: inline-block;
+	cursor: pointer;
+	transition: all 0.3s ease;
+}
+
+.chevron-icon:hover {
+	color: rgba(180, 160, 255, 1);
+	transform: rotate(90deg) translateX(3px);
+}
+
+/* ========== RESPONSIVE ========== */
+@media (max-width: 1024px) {
+	.faq-container {
+		margin-left: 100px;
+		max-width: 700px;
+	}
+}
+
+@media (max-width: 768px) {
+	.faq-container {
+		margin-left: 60px;
+		padding: 0 20px 40px 20px;
+	}
+	
+	.faq-title {
+		font-size: 1.8rem;
+	}
+	
+	.faq-question-box {
+		padding: 10px 15px;
+	}
+}
+
+@media (max-width: 480px) {
+	.faq-overlay {
+		padding-top: 60px;
+	}
+	
+	.faq-container {
+		margin-left: 20px;
+		padding: 0 15px 30px 15px;
+	}
+	
+	.faq-question-text {
+		font-size: 0.9rem;
+	}
+	
+	.faq-answer-text {
+		font-size: 0.85rem;
+	}
+}
