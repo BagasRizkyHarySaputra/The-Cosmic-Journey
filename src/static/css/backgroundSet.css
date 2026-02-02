@@ -3,10 +3,10 @@
 	top: 0;
 	left: 0;
 	width: 100vw;
-	height: var(--dynamic-bg-height, 100vh);
+	height: var(--dynamic-bg-height, 1000vh);
 	z-index: 0;
 	pointer-events: none;
-	overflow: hidden;
+	overflow: visible;
 	background-color: #0B0316;
 }
 
@@ -45,7 +45,7 @@
 .item3 {
 	--item3-size: 500px;
 	--item3-x: 76vh;
-	--item3-y: 215vh;
+	--item3-y: 800vh;
 	--item3-rotation: 90deg;
 	left: var(--item3-x);
 	top: var(--item3-y);
@@ -532,6 +532,24 @@
     transform: rotate(var(--item51-rotation));
 }
 
+.item52 {
+    --item52-x: -202px;
+    --item52-y: 534px;
+    --item52-rotation: 90deg;
+    left: var(--item52-x);
+    top: var(--item52-y);
+    transform: rotate(var(--item52-rotation));
+}
+
+.item53 {
+    --item53-x: 1146px;
+    --item53-y: 666px;
+    --item53-rotation: 0deg;
+    left: var(--item53-x);
+    top: var(--item53-y);
+    transform: rotate(var(--item53-rotation));
+}
+
 .item54 {
     --item54-x: 66.7vw;   /* 1281.56/1920 * 100 */
     --item54-y: 13.5vh;   /* 146/1080 * 100 */
@@ -548,4 +566,13 @@
     left: var(--item55-x);
     top: var(--item55-y);
     transform: rotate(var(--item55-rotation));
+}
+
+.item56 {
+    --item56-x: 992px;   /* 342/1920 * 100 */
+    --item56-y: 409px;   /* 852/1080 * 100 */
+    --item55-rotation: -7.45deg;
+    left: var(--item56-x);
+    top: var(--item56-y);
+    transform: rotate(var(--item56-rotation));
 }

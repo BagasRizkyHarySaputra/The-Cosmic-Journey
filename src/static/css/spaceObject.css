@@ -2,9 +2,13 @@
 
 /* ========== SPACE OBJECTS SECTION ========== */
 .space-objects {
-	height: 100vh;
-	background: linear-gradient(180deg, #1a1a5e 0%, #2d2d7a 50%, #1a1a5e 100%);
+	height: 120vh;
+	background: linear-gradient(90deg, 
+		rgba(12, 12, 35, 1) 0%, 
+		rgba(77, 77, 207, 0.68) 60%, 
+		rgba(86, 48, 137, 0.34) 100%);
 	position: relative;
+	z-index: 1;
 	width: 100%;
 	display: flex;
 	flex-direction: column;
@@ -219,24 +223,59 @@
 .object-card {
 	width: 280px;
 	height: 480px;
-	background: linear-gradient(
-		180deg,
-		rgba(100, 100, 200, 0.3) 0%,
-		rgba(60, 60, 150, 0.4) 50%,
-		rgba(80, 80, 180, 0.3) 100%
-	);
-	backdrop-filter: blur(10px);
-	-webkit-backdrop-filter: blur(10px);
-	border: 2px solid rgba(150, 130, 255, 0.5);
+	background: #000000;
+	border: 2px solid transparent;
 	border-radius: 25px;
 	padding: 25px 20px;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	transition: transform 0.4s ease-out, opacity 0.4s ease-out, box-shadow 0.4s ease-out;
-	box-shadow: 0 10px 40px rgba(100, 80, 200, 0.3),
-				inset 0 0 30px rgba(150, 130, 255, 0.1);
+	transition: transform 0.4s ease-out, opacity 0.4s ease-out;
 	flex-shrink: 0;
+	position: relative;
+	z-index: 2;
+}
+
+/* 3D volume box behind each card - separate element */
+.object-card::after {
+	content: '';
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	width: 310px;
+	height: 510px;
+	background: linear-gradient(180deg, 
+		rgba(49, 50, 140, 1) 0%, 
+		rgba(71, 70, 191, 1) 5%, 
+		rgba(85, 84, 239, 1) 13%, 
+		rgba(130, 130, 246, 0) 47%, 
+		rgba(231, 184, 255, 0) 59%, 
+		rgba(101, 101, 247, 1) 82%, 
+		rgba(57, 56, 143, 1) 95%);
+	border-radius: 30px;
+	z-index: -1;
+	pointer-events: none;
+}
+
+/* Gradient border using pseudo-element */
+.object-card::before {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	border-radius: 25px;
+	padding: 2px;
+	background: linear-gradient(180deg, rgba(255, 255, 255, 1) 0%, rgba(83, 84, 214, 1) 100%);
+	-webkit-mask: 
+		linear-gradient(#fff 0 0) content-box, 
+		linear-gradient(#fff 0 0);
+	-webkit-mask-composite: xor;
+	mask-composite: exclude;
+	pointer-events: none;
+	z-index: 1;
 }
 
 .object-card.left {
@@ -248,8 +287,6 @@
 	transform: rotateY(0deg) scale(1);
 	opacity: 1;
 	z-index: 10;
-	box-shadow: 0 15px 50px rgba(100, 80, 200, 0.5),
-				inset 0 0 40px rgba(150, 130, 255, 0.15);
 }
 
 .object-card.right {

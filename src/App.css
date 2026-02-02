@@ -4,6 +4,8 @@
   min-height: 100vh;
   width: 100%;
   overflow-x: hidden; /* Clip items that go outside viewport horizontally */
+  overflow-y: visible;
+  background: transparent;
 }
 
 .App-logo {

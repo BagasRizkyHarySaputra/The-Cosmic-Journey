@@ -18,7 +18,7 @@ function AstronomicEvent() {
 					<div className="event-card-content">
 						<div className="event-card-image-wrapper">
 							<img 
-								src="/Space Expeditions/1.png" 
+								src="/Astronomy Events/1.png" 
 								alt="Space Expedition" 
 								className="event-card-image"
 							/>
@@ -33,7 +33,7 @@ function AstronomicEvent() {
 					<div className="event-card-content">
 						<div className="event-card-image-wrapper">
 							<img 
-								src="/Astronomy Calendar/1.png" 
+								src="/Astronomy Events/2.png" 
 								alt="Astronomy Calendar" 
 								className="event-card-image"
 							/>

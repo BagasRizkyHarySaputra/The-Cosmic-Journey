@@ -81,6 +81,7 @@ function BackgroundSet() {
 		{ id: 'item53', src: '/img/Ellipse3.png' },
 		{ id: 'item54', src: '/img/MiniStar1.png' },
 		{ id: 'item55', src: '/img/MiniStar2.png' },
+		{ id: 'item56', src: '/img/Ellipse4.png' },
 	];
 
 	return (
