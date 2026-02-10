@@ -2,16 +2,17 @@ import React, { useEffect } from 'react';
 import '../static/css/backgroundSet.css';
 
 function BackgroundSet() {
-	// Calculate dynamic height based on items' Y positions
+	// Calculate dynamic height based on items' Y positions (in vh)
 	useEffect(() => {
 		// Get all CSS variables for Y positions
 		const root = document.documentElement;
-		let maxY = 200; // Default minimum in vh
+		let maxY = 200; // Default minimum in vh (roughly 2 viewport heights)
 		
-		// Check all 50 items for their Y position
-		for (let i = 1; i <= 50; i++) {
+		// Check all 56 items for their Y position
+		for (let i = 1; i <= 56; i++) {
 			const yValue = getComputedStyle(root).getPropertyValue(`--item${i}-y`);
 			if (yValue) {
+				// Parse vh value (e.g., "55vh" -> 55)
 				const numericValue = parseFloat(yValue);
 				if (!isNaN(numericValue)) {
 					maxY = Math.max(maxY, numericValue);
@@ -19,8 +20,8 @@ function BackgroundSet() {
 			}
 		}
 		
-		// Add buffer (50vh) and set dynamic height
-		const dynamicHeight = maxY + 50;
+		// Add buffer (100vh) and set dynamic height in vh units
+		const dynamicHeight = maxY + 100;
 		root.style.setProperty('--dynamic-bg-height', `${dynamicHeight}vh`);
 	}, []);
 

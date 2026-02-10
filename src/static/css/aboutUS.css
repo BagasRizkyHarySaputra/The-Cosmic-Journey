@@ -1,343 +1,369 @@
 @import './importFont.css';
+@import './devPhoto.css';
 
 /* ========== ABOUT US SECTION ========== */
 .about-us {
 	height: 280vh;
-	background: transparent;
+	background: linear-gradient(
+		to right,
+		rgba(12, 12, 35, 1) 0%,
+		rgba(77, 76, 255, 0.68) 60%,
+		rgba(49, 48, 137, 0.34) 100%
+	);
 	position: relative;
-	z-index: 1;
+	/* ===== Z-INDEX - Set auto agar backgroundSet items bisa muncul ===== */
+	z-index: auto;
+	/* =================================================================== */
 	width: 100%;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 	overflow: hidden;
-	padding: 80px 0;
+	padding: 7.41vh 0;
 }
 
-.about-us-boundary {
+/* Background color layer - berada di belakang backgroundSet items */
+.about-us::before {
+	content: '';
 	position: absolute;
+	top: 0;
 	left: 0;
 	width: 100%;
-	height: 1px;
-	background-color: #ffffff;
-	z-index: 5;
-}
-
-.about-us-boundary.top {
-	top: 0;
-}
-
-.about-us-boundary.bottom {
-	bottom: 0;
+	height: 100%;
+	/* ===== BACKGROUND COLOR ABOUT US - UBAH DISINI ===== */
+	background: linear-gradient(
+		180deg,
+		#0A0514 0%,
+		#1A0F2E 100%
+	);
+	/* ==================================================== */
+	z-index: -1;
+	pointer-events: none;
 }
 
 /* ========== HEADER SECTION ========== */
-.about-us-header {
+.about-header {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
 	text-align: center;
-	margin-bottom: 40px;
+	gap: 1.85vh;
+	margin-bottom: 5.56vh;
+	position: relative;
 	z-index: 10;
 }
 
-.about-us-label {
-	font-family: 'Urbanist', sans-serif;
-	font-size: 1rem;
-	color: rgba(255, 255, 255, 0.7);
-	letter-spacing: 2px;
-	text-transform: uppercase;
-	display: block;
-	margin-bottom: 10px;
+.about-us-subtitle {
+	font-family: 'KyivTypeSerif-Medium3', serif;
+	/* ===== UKURAN SUBTITLE "ABOUT US" - UBAH DISINI ===== */
+	font-size: 1.67vw;  /* 32px / 1920px | Range: 1.3vw - 2.1vw */
+	/* ===================================================== */
+	color: #FFFFFF;
+	margin: 0;
+	font-weight: 500;
+	letter-spacing: 0.05vw;
 }
 
-.about-us-title {
+.about-us-main-title {
 	font-family: 'KyivTypeSerif-Bold', serif;
-	font-size: clamp(2rem, 3.5vw, 3rem);
-	color: #ffffff;
+	/* ===== UKURAN TITLE UTAMA - UBAH DISINI ===== */
+	font-size: 3.33vw;  /* 64px / 1920px | Range: 2.6vw - 4.2vw */
+	/* ============================================= */
+	color: #FFFFFF;
 	margin: 0;
+	font-weight: bold;
 	line-height: 1.2;
-}
-
-.about-us-title-highlight {
-	font-family: 'KyivTypeSerif-Bold3', serif;
-	font-size: clamp(2.5rem, 4vw, 4rem);
-	color: #ffffff;
-	margin: 0;
-	font-style: italic;
+	letter-spacing: 0.05vw;
 }
 
 .about-us-tagline {
-	font-family: 'Urbanist', sans-serif;
-	font-size: 1.1rem;
-	color: rgba(255, 255, 255, 0.8);
-	margin-top: 15px;
-	letter-spacing: 1px;
+	font-family: 'Urbanist-Regular', sans-serif;
+	/* ===== UKURAN TAGLINE - UBAH DISINI ===== */
+	font-size: 1.67vw;  /* 32px / 1920px | Range: 1.3vw - 2.1vw */
+	/* ======================================== */
+	color: #FFFFFF;
+	margin: 0;
+	font-weight: 400;
+	letter-spacing: 0.03vw;
 }
 
-/* ========== STORY BOX ========== */
-.about-us-story-container {
+/* ========== STORY BOX SECTION ========== */
+.story-container {
+	position: relative;
 	width: 100%;
-	max-width: 700px;
-	padding: 0 40px;
-	margin-bottom: 80px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 	z-index: 10;
 }
 
-.about-us-story-box {
-	background: linear-gradient(
-		145deg,
-		rgba(40, 40, 100, 0.6) 0%,
-		rgba(30, 30, 80, 0.7) 50%,
-		rgba(25, 25, 70, 0.8) 100%
-	);
-	border: 1px solid rgba(100, 100, 200, 0.4);
-	border-radius: 20px;
-	padding: 40px;
-	backdrop-filter: blur(10px);
-	box-shadow: 
-		0 0 40px rgba(80, 80, 180, 0.2),
-		inset 0 0 60px rgba(60, 60, 150, 0.1);
+.story-box-back {
+	position: relative;
+	/* ===== UKURAN BOX BELAKANG - UBAH DISINI ===== */
+	width: 62.5vw;  /* Default: 62.5vw (1200px / 1920px) | Range: 50vw - 75vw */
+	/* ============================================== */
+	/* Padding sama semua sisi agar box depan centered */
+	padding: 1vw;
+	background:  #0F0A21;
+	border-radius: 1.56vw;
+	border: 1.3vw solid transparent;
+	background-image: 
+		linear-gradient(#0F0A21, #0F0A21),
+		linear-gradient(
+			-15deg,
+			#31328C 0%,
+			#5554EF 20%,
+			rgba(231, 184, 255, 0) 41%,
+			rgba(130, 130, 246, 0) 69%,
+			#5554EF 88%,
+			#31328C 100%
+		);
+	background-origin: padding-box, border-box;
+	background-clip: padding-box, border-box;
+	-webkit-background-clip: padding-box, border-box;
+	overflow: hidden;
+	/* Force hardware acceleration for smoother rendering */
+	transform: translateZ(0);
+	-webkit-transform: translateZ(0);
 }
 
+.story-box-front {
+	position: relative;
+	width: 100%;
+	height: 100%;
+	border-radius: 0.83vw;
+	/* ===== PADDING DALAM BOX DEPAN - UBAH DISINI ===== */
+	padding: 2.08vw;  /* Sama di semua sisi untuk layout simetris */
+	/* ================================================== */
+	box-sizing: border-box;
+	z-index: 2;
+}
+
+/* Gradient border untuk box depan menggunakan pseudo-element */
+.story-box-front::before {
+	content: '';
+	position: absolute;
+	inset: 0;
+	border-radius: 0.9vw;
+	padding: 2px;
+	background: linear-gradient(
+		to right,
+		#533084 0%,
+		#9059DD 51%,
+		#FFFFFF 100%
+	);
+	-webkit-mask: 
+		linear-gradient(#fff 0 0) content-box, 
+		linear-gradient(#fff 0 0);
+	-webkit-mask-composite: xor;
+	mask-composite: exclude;
+	pointer-events: none;
+	z-index: -1;
+}
+
+/* Background fill untuk box depan */
+.story-box-front::after {
+	content: '';
+	position: absolute;
+	inset: 2px;
+	border-radius: 0.9vh;
+	background: #0F0A21;
+	z-index: -2;
+}
+
+/* ========== STORY TEXT CONTENT ========== */
 .story-text {
-	font-family: 'Urbanist', sans-serif;
-	font-size: 0.95rem;
-	color: rgba(255, 255, 255, 0.85);
-	line-height: 1.8;
-	margin-bottom: 20px;
+	font-family: 'Urbanist-Regular', sans-serif;
+	/* ===== UKURAN TEKS STORY - UBAH DISINI ===== */
+	font-size: 0.94vw;  /* 18px / 1920px | Range: 0.7vw - 1.2vw */
+	/* ============================================ */
+	color: #FFFFFF;
+	line-height: 1.6;
 	text-align: center;
+	margin: 0 0 1.85vh 0;
 }
 
 .story-text strong {
-	color: #ffffff;
-	font-weight: 600;
+	font-family: 'Urbanist-Bold', sans-serif;
+	font-weight: bold;
 }
 
 .story-closing {
-	font-family: 'Urbanist', sans-serif;
-	font-size: 0.95rem;
-	color: rgba(255, 255, 255, 0.9);
+	font-family: 'Urbanist-Bold', sans-serif;
+	/* ===== UKURAN TEKS CLOSING - UBAH DISINI ===== */
+	font-size: 1.04vw;  /* 20px / 1920px | Range: 0.8vw - 1.3vw */
+	/* ============================================== */
+	color: #FFFFFF;
+	font-weight: bold;
+	line-height: 1.6;
 	text-align: center;
-	margin-top: 30px;
-	margin-bottom: 0;
-	line-height: 1.8;
+	margin: 2.78vh 0 0 0;
 }
 
-/* ========== DEVELOPERS SECTION ========== */
-.developers-section {
-	text-align: center;
-	width: 100%;
-	z-index: 10;
-	padding: 0 40px;
+.story-star {
+	position: absolute;
+	/* ===== POSISI BINTANG - UBAH DISINI ===== */
+	bottom: 2.78vh;
+	right: 2.08vw;
+	width: 3.13vw;  /* Default: 3.13vw (60px / 1920px) | Range: 2vw - 4vw */
+	/* ========================================= */
+	height: auto;
+	pointer-events: none;
 }
 
-.developers-title {
-	font-family: 'KyivTypeSerif-Bold', serif;
-	font-size: clamp(2rem, 3.5vw, 3rem);
-	color: #ffffff;
-	margin: 0;
-	line-height: 1.2;
-}
-
-.developers-title-highlight {
-	font-family: 'KyivTypeSerif-Bold3', serif;
-	font-size: clamp(2.5rem, 4vw, 4rem);
-	color: #ffffff;
-	margin: 0 0 10px 0;
-	font-style: italic;
-}
-
-.developers-subtitle {
-	font-family: 'Urbanist', sans-serif;
-	font-size: 1.1rem;
-	color: rgba(255, 255, 255, 0.8);
-	margin-bottom: 50px;
-}
-
-/* ========== DEVELOPERS GRID ========== */
-.developers-grid {
+/* ========== DEVELOPER GREETING SECTION ========== */
+.developer-greeting {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	gap: 40px;
+	text-align: center;
+	margin-top: 9.26vh;
+	gap: 1.85vh;
+	position: relative;
+	z-index: 10;
 }
 
-.developers-row {
-	display: flex;
-	justify-content: center;
-	gap: 60px;
-	flex-wrap: wrap;
+.developer-title {
+	font-family: 'KyivTypeSerif-Bold', serif;
+	/* ===== UKURAN TITLE DEVELOPER - UBAH DISINI ===== */
+	font-size: 3.33vw;  /* 64px / 1920px | Range: 2.6vw - 4.2vw */
+	/* ================================================= */
+	color: #FFFFFF;
+	margin: 0;
+	font-weight: bold;
+	line-height: 1.2;
+	letter-spacing: 0.05vw;
 }
 
-/* ========== DEVELOPER CARD ========== */
+.developer-subtitle {
+	font-family: 'Urbanist-Regular', sans-serif;
+	/* ===== UKURAN SUBTITLE DEVELOPER - UBAH DISINI ===== */
+	font-size: 1.67vw;  /* 32px / 1920px | Range: 1.3vw - 2.1vw */
+	/* ==================================================== */
+	color: #FFFFFF;
+	margin: 0;
+	font-weight: 400;
+	letter-spacing: 0.03vw;
+}
+
+/* ========== DEVELOPER CARDS GRID ========== */
+.developers-grid {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	/* ===== GAP ANTAR CARD - UBAH DISINI ===== */
+	gap: 2.08vw;  /* 40px / 1920px | Range: 1.5vw - 3vw */
+	/* ========================================= */
+	margin-top: 7.41vh;
+	width: 83.33vw;
+	position: relative;
+	z-index: 10;
+}
+
 .developer-card {
 	position: relative;
-	width: 220px;
-	height: 320px;
-	border-radius: 20px;
-	cursor: pointer;
-	transition: all 0.4s ease;
+	/* ===== UKURAN CARD - UBAH DISINI ===== */
+	width: auto;
+	height: 80vh;  /* 600px / 1080px | Range: 48vh - 65vh */
+	/* ====================================== */
+	background-image: url('../../../public/aboutUs/background.png');
+	background-size: 80%;
+	background-repeat: no-repeat;
+	background-position: center;
+	transform: translateZ(0);
+	transition: transform 0.3s ease;
 }
 
-.developer-card-glow {
-	position: absolute;
-	inset: -3px;
-	border-radius: 23px;
-	background: linear-gradient(
-		135deg,
-		rgba(100, 100, 255, 0.5) 0%,
-		rgba(80, 80, 200, 0.3) 25%,
-		rgba(60, 60, 180, 0.2) 50%,
-		rgba(100, 100, 255, 0.4) 75%,
-		rgba(120, 120, 255, 0.5) 100%
-	);
-	z-index: -1;
-	filter: blur(6px);
-	opacity: 0.7;
-	transition: all 0.4s ease;
+.developer-card:hover {
+	transform: translateY(-0.93vh) translateZ(0);
 }
 
-.developer-card:hover .developer-card-glow {
-	filter: blur(10px);
-	opacity: 1;
-	inset: -6px;
-}
-
-.developer-card-content {
+.developer-card-inner {
+	position: relative;
 	width: 100%;
 	height: 100%;
+	background: transparent;
+}
+
+/* ========== INFO BOX WITH GRADIENT ========== */
+.developer-info-box {
+	position: absolute;
+	/* ===== POSISI INFO BOX - UBAH DISINI ===== */
+	top: 28vh;  /* Jarak dari atas card */
+	left: 49.8%;
+	transform: translateX(-50%);
+	/* ========================================== */
+	/* ===== UKURAN INFO BOX - UBAH DISINI ===== */
+	width: 15.7vw;  /* Default width | Range: 15vw - 25vw */
+	height: 19vh;  /* Default height | Range: 6vh - 12vh */
+	/* ========================================== */
 	background: linear-gradient(
-		145deg,
-		rgba(50, 50, 120, 0.9) 0%,
-		rgba(35, 35, 90, 0.95) 50%,
-		rgba(25, 25, 70, 1) 100%
+		to bottom,
+		#17122600 0%,
+		#171226b0 37%,
+		#171226e2 71%,
+		#171226 100%
 	);
-	border-radius: 20px;
-	border: 2px solid rgba(100, 100, 200, 0.5);
 	display: flex;
 	flex-direction: column;
+	justify-content: center;
 	align-items: center;
-	padding: 25px 15px;
-	overflow: hidden;
-	transition: all 0.4s ease;
-}
-
-.developer-card:hover .developer-card-content {
-	border-color: rgba(140, 140, 255, 0.7);
-	transform: translateY(-5px);
-}
-
-/* ========== DEVELOPER IMAGE ========== */
-.developer-image-wrapper {
-	width: 120px;
-	height: 120px;
-	border-radius: 50%;
-	overflow: hidden;
-	border: 3px solid rgba(100, 150, 255, 0.6);
-	box-shadow: 
-		0 0 20px rgba(100, 150, 255, 0.3),
-		inset 0 0 20px rgba(0, 0, 0, 0.3);
-	margin-bottom: 15px;
-	transition: all 0.4s ease;
-}
-
-.developer-card:hover .developer-image-wrapper {
-	border-color: rgba(130, 180, 255, 0.8);
-	box-shadow: 
-		0 0 30px rgba(130, 180, 255, 0.4),
-		inset 0 0 20px rgba(0, 0, 0, 0.3);
-}
-
-.developer-image {
-	width: 100%;
-	height: 100%;
-	object-fit: cover;
-	transition: transform 0.4s ease;
-}
-
-.developer-card:hover .developer-image {
-	transform: scale(1.05);
-}
-
-/* ========== DEVELOPER INFO ========== */
-.developer-info {
-	text-align: center;
-	margin-bottom: 15px;
+	gap: 0.46vh;
+	padding: 0.93vh 1.04vw;
 }
 
 .developer-name {
+	position: relative;
+	/* Tidak perlu positioning absolute karena sudah di dalam info-box */
 	font-family: 'KyivTypeSerif-Bold', serif;
-	font-size: 1.4rem;
-	color: #ffffff;
+	/* ===== UKURAN NAMA - UBAH DISINI ===== */
+	font-size: 1.67vw;  /* 32px / 1920px | Range: 1.3vw - 2.1vw */
+	/* ====================================== */
+	color: #FFFFFF;
 	margin: 0;
-	line-height: 1.2;
+	font-weight: bold;
+	letter-spacing: 0.03vw;
+	white-space: nowrap;
 }
 
 .developer-role {
-	font-family: 'Urbanist', sans-serif;
-	font-size: 0.85rem;
-	color: rgba(255, 255, 255, 0.6);
-	margin: 5px 0 0 0;
-	letter-spacing: 0.5px;
-}
-
-/* ========== DEVELOPER QUOTE ========== */
-.developer-quote {
-	font-family: 'Urbanist', sans-serif;
-	font-size: 0.8rem;
-	color: rgba(255, 255, 255, 0.7);
-	text-align: center;
-	font-style: italic;
-	line-height: 1.5;
+	position: relative;
+	/* Tidak perlu positioning absolute karena sudah di dalam info-box */
+	font-family: 'Urbanist-Regular', sans-serif;
+	/* ===== UKURAN ROLE - UBAH DISINI ===== */
+	font-size: 0.94vw;  /* 18px / 1920px | Range: 0.7vw - 1.2vw */
+	/* ====================================== */
+	color: #FFFFFF;
 	margin: 0;
-	padding: 0 5px;
+	font-weight: 400;
+	letter-spacing: 0.02vw;
+	white-space: nowrap;
 }
 
-/* ========== RESPONSIVE ========== */
-@media (max-width: 768px) {
-	.about-us {
-		height: auto;
-		min-height: 280vh;
-	}
-	
-	.developers-row {
-		gap: 30px;
-	}
-	
-	.developer-card {
-		width: 200px;
-		height: 300px;
-	}
-	
-	.developer-image-wrapper {
-		width: 100px;
-		height: 100px;
-	}
-	
-	.about-us-story-box {
-		padding: 30px 25px;
-	}
+.developer-quote {
+	position: absolute;
+	bottom: 21.5vh;
+	left: 50%;
+	transform: translateX(-50%);
+	/* ===== LEBAR QUOTE BOX - UBAH DISINI ===== */
+	width: 85%;
+	/* ========================================== */
+	/* ===== PADDING QUOTE BOX - UBAH DISINI ===== */
+	padding: 1.85vh 1.56vw;  /* 20px 30px */
+	/* ============================================ */
+	background: transparent;
+	border: none;
+	border-radius: 0;
+	text-align: center;
 }
 
-@media (max-width: 480px) {
-	.developers-row {
-		flex-direction: column;
-		gap: 25px;
-	}
-	
-	.developer-card {
-		width: 180px;
-		height: 280px;
-	}
-	
-	.developer-image-wrapper {
-		width: 90px;
-		height: 90px;
-	}
-	
-	.developer-name {
-		font-size: 1.2rem;
-	}
-	
-	.about-us-story-container {
-		padding: 0 20px;
-	}
+.developer-quote p {
+	font-family: 'Urbanist-Regular', sans-serif;
+	/* ===== UKURAN QUOTE - UBAH DISINI ===== */
+	font-size: 1vw;  /* 16px / 1920px | Range: 0.6vw - 1.1vw */
+	/* ======================================= */
+	color: #FFFFFF;
+	margin: 0;
+	font-style: italic;
+	line-height: 1.4;
+	letter-spacing: 0.01vw;
 }

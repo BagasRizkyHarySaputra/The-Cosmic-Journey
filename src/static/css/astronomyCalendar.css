@@ -1,0 +1,109 @@
+@import './importFont.css';
+
+/* ========== ASTRONOMY CALENDAR PAGE ========== */
+.astronomy-calendar-page {
+	min-height: 100vh;
+	background: linear-gradient(135deg, #0B0316 0%, #1A0B2E 50%, #0B0316 100%);
+	position: relative;
+	z-index: 1;
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	padding: 120px 40px 80px;
+}
+
+/* Background decorative elements */
+.astronomy-calendar-page::before {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-image: 
+		radial-gradient(2px 2px at 20% 30%, white, transparent),
+		radial-gradient(2px 2px at 60% 70%, white, transparent),
+		radial-gradient(1px 1px at 50% 50%, white, transparent),
+		radial-gradient(1px 1px at 80% 10%, white, transparent),
+		radial-gradient(2px 2px at 90% 60%, white, transparent),
+		radial-gradient(1px 1px at 33% 80%, white, transparent),
+		radial-gradient(1px 1px at 15% 90%, white, transparent);
+	background-size: 200% 200%;
+	background-position: 0% 0%;
+	opacity: 0.4;
+	z-index: 0;
+	pointer-events: none;
+}
+
+.astronomy-calendar-page::after {
+	content: '';
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	width: 800px;
+	height: 800px;
+	background: radial-gradient(circle, rgba(101, 101, 247, 0.1) 0%, transparent 70%);
+	filter: blur(80px);
+	z-index: 0;
+	pointer-events: none;
+}
+
+.content-container {
+	max-width: 1200px;
+	width: 100%;
+	margin: 0 auto;
+	position: relative;
+	z-index: 1;
+	background: linear-gradient(45deg,
+		rgba(49, 50, 140, 0.6) 0%,
+		rgba(71, 70, 191, 0.5) 25%,
+		rgba(85, 84, 239, 0.4) 50%,
+		rgba(101, 101, 247, 0.5) 75%,
+		rgba(57, 56, 143, 0.6) 100%
+	);
+	border-radius: 32px;
+	padding: 60px;
+	box-shadow: 0 8px 32px 0 rgba(49, 50, 140, 0.15);
+	backdrop-filter: blur(10px);
+	border: 1px solid rgba(101, 101, 247, 0.2);
+}
+
+.page-title {
+	font-family: 'Jura', sans-serif;
+	font-size: 3.5rem;
+	font-weight: 700;
+	color: #E8E4FF;
+	text-align: center;
+	margin-bottom: 40px;
+	text-shadow: 0 2px 20px rgba(101, 101, 247, 0.6);
+}
+
+.calendar-content {
+	font-family: 'Urbanist', sans-serif;
+	font-size: 1.2rem;
+	line-height: 1.8;
+	color: #D8D4FF;
+	text-align: center;
+}
+
+.calendar-content p {
+	margin-bottom: 20px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+	.content-container {
+		padding: 40px 30px;
+	}
+	
+	.page-title {
+		font-size: 2.5rem;
+	}
+	
+	.calendar-content {
+		font-size: 1rem;
+	}
+}

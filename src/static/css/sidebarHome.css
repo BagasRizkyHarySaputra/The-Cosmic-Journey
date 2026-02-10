@@ -1,11 +1,13 @@
 
 
 .sidebar {
-	--sidebar-spacing: 80px;
+	/* ===== UKURAN SIDEBAR - UBAH DISINI ===== */
+	--sidebar-spacing: 4.17vw;
+	width: 11.5vw;  /* Default: 11.5vw | Range: 10vw - 15vw */
+	/* ========================================= */
 	position: fixed;
 	left: 0;
 	top: 0;
-	width: 220px;
 	height: 100vh;
 	display: flex;
 	flex-direction: column;
@@ -26,17 +28,17 @@
 .sidebar-hamburger {
 	margin: 0 0 0 var(--sidebar-spacing);
 	cursor: pointer;
-	width: 32px;
-	height: 32px;
+	width: 1.67vw;
+	height: 2.96vh;
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
 }
 .sidebar-hamburger .bar {
-	width: 46px;
-	height: 3px;
+	width: 2.4vw;
+	height: 0.28vh;
 	background: #fff;
-	border-radius: 1px;
+	border-radius: 0.05vw;
 }
 
 
@@ -44,14 +46,16 @@
 	display: flex;
 	flex-direction: row;
 	align-items: flex-start;
-	margin-top: 32px;
+	margin-top: 2.96vh;
 }
 
 .sidebar-vertical-line {
-	margin-left: calc(var(--sidebar-spacing) + 20px);
-	margin-right: 32px;
-	width: 1px;
-	height: 340px;
+	margin-left: calc(var(--sidebar-spacing) + 1.04vw);
+	margin-right: 1.67vw;
+	/* ===== KETEBALAN GARIS - UBAH DISINI ===== */
+	width: 3px;  /* Fixed 1px agar selalu terlihat */
+	/* ========================================== */
+	height: 31.48vh;
 	background: rgba(255,255,255,0.3);
 	display: block;
 }
@@ -60,19 +64,21 @@
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
-	height: 340px;
-	gap: 72px;
+	height: 31.48vh;
+	gap: 6.67vh;
 	margin-top: 0;
 	margin-left: 0;
-	min-width: 100px;
+	min-width: 5.21vw;
 }
 
 
 .sidebar-menu-item {
 	color: #fff;
 	font-family: 'Jura-Regular', sans-serif;
-	font-size: 20px;
-	letter-spacing: 0.5px;
+	/* ===== UKURAN FONT SIDEBAR MENU - UBAH DISINI ===== */
+	font-size: 1.04vw;  /* Default: 1.04vw | Range: 0.85vw - 1.3vw */
+	/* =================================================== */
+	letter-spacing: 0.03vw;
 	position: relative;
 	transition: color 0.2s;
 	text-align: left;
@@ -85,5 +91,5 @@
 .sidebar-news {
 	display: flex;
 	align-items: center;
-	gap: 8px;
+	gap: 0.42vw;
 }

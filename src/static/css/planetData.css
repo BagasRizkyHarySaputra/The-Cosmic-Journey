@@ -10,14 +10,14 @@
 	-webkit-background-clip: text;
 	-webkit-text-fill-color: transparent;
 	background-clip: text;
-	font-size: 1.3rem;
+	font-size: 1.04vw;  /* Relatif terhadap viewport width */
 	text-align: left;
 }
 
 .known-as-text {
 	font-family: 'Jura', sans-serif;
 	color: #1a1a1a;
-	font-size: 1rem;
+	font-size: 0.83vw;  /* Relatif terhadap viewport width */
 	line-height: 1.4;
 	text-align: left;
 }
@@ -30,14 +30,14 @@
 	-webkit-background-clip: text;
 	-webkit-text-fill-color: transparent;
 	background-clip: text;
-	font-size: 1.6rem;
+	font-size: 1.25vw;  /* Relatif terhadap viewport width */
 	text-align: left;
 }
 
 .about-text {
 	font-family: 'Urbanist-Regular', sans-serif;
 	color: #ffffff;
-	font-size: 0.9rem;
+	font-size: 0.73vw;  /* Relatif terhadap viewport width */
 	line-height: 1.6;
 	text-align: left;
 }
@@ -50,7 +50,7 @@
 	-webkit-background-clip: text;
 	-webkit-text-fill-color: transparent;
 	background-clip: text;
-	font-size: 1.25rem;
+	font-size: 1.04vw;  /* Relatif terhadap viewport width */
 	text-align: left;
 }
 
@@ -58,21 +58,21 @@
 	font-family: 'Urbanist-Bold', sans-serif;
 	font-weight: bold;
 	color: #ffffff;
-	font-size: 0.85rem;
+	font-size: 0.68vw;  /* Relatif terhadap viewport width */
 	text-align: left;
 }
 
 .info-value {
 	font-family: 'Urbanist-Regular', sans-serif;
 	color: #ffffff;
-	font-size: 0.8rem;
+	font-size: 0.63vw;  /* Relatif terhadap viewport width */
 	text-align: left;
 }
 
 .info-value.discovery-text {
 	font-family: 'Urbanist-Regular', sans-serif;
 	color: #ffffff;
-	font-size: 0.85rem;
+	font-size: 0.68vw;  /* Relatif terhadap viewport width */
 	line-height: 1.5;
 	text-align: left;
 }
@@ -85,14 +85,14 @@
 	-webkit-background-clip: text;
 	-webkit-text-fill-color: transparent;
 	background-clip: text;
-	font-size: 1.25rem;
+	font-size: 1.04vw;  /* Relatif terhadap viewport width */
 	text-align: left;
 }
 
 .expedition-text {
 	font-family: 'Urbanist-Regular', sans-serif;
 	color: #ffffff;
-	font-size: 0.85rem;
+	font-size: 0.68vw;  /* Relatif terhadap viewport width */
 	line-height: 1.5;
 	text-align: left;
 }
@@ -105,6 +105,6 @@
 	-webkit-background-clip: text;
 	-webkit-text-fill-color: transparent;
 	background-clip: text;
-	font-size: 5rem;
+	font-size: 4.17vw;  /* Relatif terhadap viewport width */
 	text-align: center;
 }

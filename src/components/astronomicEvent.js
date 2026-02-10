@@ -1,49 +1,28 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import '../static/css/astronomicEvent.css';
 
 function AstronomicEvent() {
+	const navigate = useNavigate();
+
+	const handleSpaceExpeditionClick = () => {
+		navigate('/space-expedition');
+	};
+
+	const handleAstronomyCalendarClick = () => {
+		navigate('/astronomy-calendar');
+	};
+
 	return (
 		<section className="astronomic-events">
-			<div className="astronomic-events-boundary top"></div>
-			
-			<div className="astronomic-events-header">
-				<h2 className="astronomic-events-title">Astronomical</h2>
-				<p className="astronomic-events-subtitle">Events</p>
-			</div>
-
-			<div className="astronomic-events-cards">
-				{/* Space Expedition Card */}
-				<div className="event-card">
-					<div className="event-card-glow"></div>
-					<div className="event-card-content">
-						<div className="event-card-image-wrapper">
-							<img 
-								src="/Astronomy Events/1.png" 
-								alt="Space Expedition" 
-								className="event-card-image"
-							/>
-						</div>
-						<h3 className="event-card-title">Space<br/>Expedition</h3>
-					</div>
+			<div className='wrapper'>
+				<div className='event-item' onClick={handleSpaceExpeditionClick}>
+					<img src="/Astronomy Events/1.png" alt="Space Expedition" />
 				</div>
-
-				{/* Astronomy Calendar Card */}
-				<div className="event-card">
-					<div className="event-card-glow"></div>
-					<div className="event-card-content">
-						<div className="event-card-image-wrapper">
-							<img 
-								src="/Astronomy Events/2.png" 
-								alt="Astronomy Calendar" 
-								className="event-card-image"
-							/>
-						</div>
-						<h3 className="event-card-title">Astronomy<br/>Calendar</h3>
-					</div>
+				<div className='event-item' onClick={handleAstronomyCalendarClick}>
+					<img src="/Astronomy Events/2.png" alt="Astronomy Calendar" />
 				</div>
 			</div>
-
-			<div className="astronomic-events-boundary bottom"></div>
 		</section>
 	);
 }

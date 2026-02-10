@@ -3,23 +3,41 @@
 	top: 0;
 	left: 0;
 	width: 100vw;
+	min-height: 100vh;
+	/* Dynamic height calculated by JS - akan otomatis adjust berdasarkan item tertinggi */
 	height: var(--dynamic-bg-height, 1000vh);
-	z-index: 0;
+	/* ===== Z-INDEX - Di atas background color, di bawah content ===== */
+	z-index: 1;
+	/* ================================================================ */
 	pointer-events: none;
 	overflow: visible;
-	background-color: #0B0316;
+}
+
+/* Background fill - covers entire viewport */
+.background-set::before {
+	content: '';
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100vw;
+	height: 100vh;
+	background-color: transparent;
+	z-index: -1;
 }
 
 .bg-item {
 	position: absolute;
 	pointer-events: none;
 	user-select: none;
+	/* ===== UKURAN DEFAULT UNTUK SEMUA ITEMS - UBAH DISINI ===== */
+	width: 2.08vw;  /* Default size untuk items tanpa size spesifik (40px / 1920px) */
+	/* ============================================================ */
 	height: auto;
 }
 
 /* ========== ITEM 1 ========== */
 .item1 {
-	--item1-size: 1460px;
+	--item1-size: 76.04vw; /* 1460px / 1920px */
 	--item1-x: 25vw;
 	--item1-y: 55vh;
 	--item1-rotation: 0deg;
@@ -31,8 +49,8 @@
 
 /* ========== ITEM 2 ========== */
 .item2 {
-	--item2-size: 1460px;
-	--item2-x: 76vh;
+	--item2-size: 76.04vw; /* 1460px / 1920px */
+	--item2-x: 50vw;
 	--item2-y: 28vh;
 	--item2-rotation: 90deg;
 	left: var(--item2-x);
@@ -43,8 +61,8 @@
 
 /* ========== ITEM 3 ========== */
 .item3 {
-	--item3-size: 500px;
-	--item3-x: 76vh;
+	--item3-size: 26.04vw; /* 500px / 1920px */
+	--item3-x: 50vw;
 	--item3-y: 800vh;
 	--item3-rotation: 90deg;
 	left: var(--item3-x);
@@ -533,8 +551,8 @@
 }
 
 .item52 {
-    --item52-x: -202px;
-    --item52-y: 534px;
+    --item52-x: -10.5vw; /* -202px / 1920px */
+    --item52-y: 49.4vh; /* 534px / 1080px */
     --item52-rotation: 90deg;
     left: var(--item52-x);
     top: var(--item52-y);
@@ -542,8 +560,8 @@
 }
 
 .item53 {
-    --item53-x: 1146px;
-    --item53-y: 666px;
+    --item53-x: 59.7vw; /* 1146px / 1920px */
+    --item53-y: 61.7vh; /* 666px / 1080px */
     --item53-rotation: 0deg;
     left: var(--item53-x);
     top: var(--item53-y);
@@ -551,8 +569,8 @@
 }
 
 .item54 {
-    --item54-x: 66.7vw;   /* 1281.56/1920 * 100 */
-    --item54-y: 13.5vh;   /* 146/1080 * 100 */
+    --item54-x: 66.7vw; /* 1282px / 1920px */
+    --item54-y: 13.5vh; /* 146px / 1080px */
     --item54-rotation: 160.03deg;
     left: var(--item54-x);
     top: var(--item54-y);
@@ -560,8 +578,8 @@
 }
 
 .item55 {
-    --item55-x: 17.8vw;   /* 342/1920 * 100 */
-    --item55-y: 78.9vh;   /* 852/1080 * 100 */
+    --item55-x: 17.8vw; /* 342px / 1920px */
+    --item55-y: 78.9vh; /* 852px / 1080px */
     --item55-rotation: -7.45deg;
     left: var(--item55-x);
     top: var(--item55-y);
@@ -569,9 +587,9 @@
 }
 
 .item56 {
-    --item56-x: 992px;   /* 342/1920 * 100 */
-    --item56-y: 409px;   /* 852/1080 * 100 */
-    --item55-rotation: -7.45deg;
+    --item56-x: 51.7vw; /* 992px / 1920px */
+    --item56-y: 37.9vh; /* 409px / 1080px */
+    --item56-rotation: -7.45deg;
     left: var(--item56-x);
     top: var(--item56-y);
     transform: rotate(var(--item56-rotation));

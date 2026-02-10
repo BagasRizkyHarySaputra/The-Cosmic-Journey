@@ -8,7 +8,7 @@
   flex-direction: row;
   align-items: flex-end;
   justify-content: center;
-  padding: 10px 0 0 0;
+  padding: 0.93vh 0 0 0;
   gap: 0px;
   z-index: 100;
   background: transparent;
@@ -25,10 +25,12 @@
 }
 
 .header-logo {
-  height: 180px;
+  /* ===== UKURAN LOGO - UBAH DISINI ===== */
+  height: 10vh;  /* Default: 10vh | Range: 8vh - 14vh */
+  /* ====================================== */
   width: auto;
   display: block;
-  margin-left: 24px;
+  margin-left: 1.25vw;
   margin-right: 0px;
   transition: transform 0.3s cubic-bezier(.4,1.6,.6,1);
   flex-shrink: 0;
@@ -43,7 +45,7 @@
 .menu-active {
   color: #fff;
   font-weight: bold;
-  text-shadow: 0 0 8px #fff, 0 0 16px #fff2;
+  text-shadow: 0 0 0.42vw #fff, 0 0 0.83vw #fff2;
 }
 
 .header-menu li:not(:first-child) .menu-active {
@@ -59,14 +61,14 @@
 .header-menu li:focus .menu-num {
   color: #fff;
   font-weight: bold;
-  text-shadow: 0 0 8px #fff, 0 0 16px #fff2;
+  text-shadow: 0 0 0.42vw #fff, 0 0 0.83vw #fff2;
   transition: text-shadow 0.3s, color 0.3s;
 }
 .header-menu li:hover span:not(.menu-slash):not(.menu-num),
 .header-menu li:focus span:not(.menu-slash):not(.menu-num) {
   color: #fff;
   font-weight: bold;
-  text-shadow: 0 0 8px #fff, 0 0 16px #fff2;
+  text-shadow: 0 0 0.42vw #fff, 0 0 0.83vw #fff2;
   transition: text-shadow 0.3s, color 0.3s;
 }
 .header-menu li span:not(.menu-slash),
@@ -95,19 +97,19 @@
 
 @keyframes menu-glow {
   0% {
-    text-shadow: 0 0 0px #fff, 0 0 0px #fff2;
+    text-shadow: 0 0 0vw #fff, 0 0 0vw #fff2;
   }
   60% {
-    text-shadow: 0 0 12px #fff, 0 0 24px #fff2;
+    text-shadow: 0 0 0.63vw #fff, 0 0 1.25vw #fff2;
   }
   100% {
-    text-shadow: 0 0 8px #fff, 0 0 16px #fff2;
+    text-shadow: 0 0 0.42vw #fff, 0 0 0.83vw #fff2;
   }
 }
 
 /* Style untuk elemen menu */
 .header-menu {
-  --menu-offset-x: -200px; /* Ubah nilai ini untuk geser menu: positif = kanan, negatif = kiri */
+  --menu-offset-x: -10.42vw; /* Ubah nilai ini untuk geser menu: positif = kanan, negatif = kiri */
   display: flex;
   list-style: none;
   padding: 0;
@@ -115,18 +117,20 @@
   margin-left: var(--menu-offset-x);
   align-items: center;
   justify-content: center;
-  font-size: 22px;
+  /* ===== UKURAN FONT MENU - UBAH DISINI ===== */
+  font-size: 1.15vw;  /* Default: 1.15vw | Range: 0.9vw - 1.5vw */
+  /* ============================================ */
   font-family: 'Orbitron', 'Consolas', monospace;
   color: #fff;
-  gap: 28px;
+  gap: 1.46vw;
   background: transparent;
   justify-self: center;
 }
 .header-menu li {
   color: #fff;
-  letter-spacing: 0.5px;
+  letter-spacing: 0.03vw;
   transition: color 0.2s;
-  min-width: 100px;
+  min-width: 5.21vw;
   text-align: right;
   display: flex;
   flex-direction: column;
@@ -136,18 +140,20 @@
   white-space: nowrap;
 }
 .menu-num {
-  font-size: 11px;
-  margin-bottom: 2px;
+  /* ===== UKURAN FONT NOMOR MENU - UBAH DISINI ===== */
+  font-size: 0.57vw;  /* Default: 0.57vw | Range: 0.45vw - 0.8vw */
+  /* ================================================= */
+  margin-bottom: 0.19vh;
   color: #bcbcbc;
   font-family: 'Orbitron', 'Consolas', monospace;
-  letter-spacing: 0.5px;
+  letter-spacing: 0.03vw;
   text-align: right;
   width: 100%;
   display: block;
   pointer-events: none;
 }
 .menu-slash {
-  margin: 0 8px 0 8px;
+  margin: 0 0.42vw 0 0.42vw;
   color: #bcbcbc;
 }
 .menu-row {
@@ -155,35 +161,9 @@
   flex-direction: row;
   align-items: flex-end;
   justify-content: flex-end;
-  gap: 6px;
-  margin-top: 2px;
+  gap: 0.31vw;
+  margin-top: 0.19vh;
   width: 100%;
 }
 
-/* Responsive adjustments for smaller screens */
-@media (max-width: 1600px) {
-  .header-menu {
-    font-size: 18px;
-    gap: 20px;
-  }
-  
-  .header-logo {
-    height: 140px;
-  }
-}
-
-@media (max-width: 1366px) {
-  .header-menu {
-    font-size: 16px;
-    gap: 16px;
-  }
-  
-  .menu-num {
-    font-size: 10px;
-  }
-  
-  .header-logo {
-    height: 120px;
-    margin-left: 16px;
-  }
-}
+/* Responsive adjustments - Semua sudah menggunakan vw/vh, media query tidak diperlukan untuk zoom consistency */

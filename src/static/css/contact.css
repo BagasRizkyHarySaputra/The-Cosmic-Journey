@@ -1,0 +1,316 @@
+@import './importFont.css';
+
+/* ========== CONTACT SECTION ========== */
+.contact {
+	height: 100vh;
+	background: transparent;
+	position: relative;
+	/* ===== Z-INDEX - Set auto agar backgroundSet items bisa muncul ===== */
+	z-index: auto;
+	/* =================================================================== */
+	width: 100%;
+	display: flex;
+	/* ===== LAYOUT DIRECTION - Header dan Form bersebelahan ===== */
+	flex-direction: row;
+	/* ============================================================ */
+	align-items: flex-start;
+	justify-content: center;
+	/* ===== GAP ANTARA HEADER DAN FORM - UBAH DISINI ===== */
+	gap: 5.21vw;  /* 100px / 1920px | Range: 3vw - 8vw */
+	/* ===================================================== */
+	overflow: hidden;
+	padding: 7.41vh 0;
+}
+
+/* Background color layer - berada di belakang backgroundSet items */
+.contact::before {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	/* ===== BACKGROUND COLOR CONTACT - UBAH DISINI ===== */
+	background: linear-gradient(
+		180deg,
+		#1A0F2E 0%,
+		#0F0A21 100%
+	);
+	/* =================================================== */
+	z-index: -1;
+	pointer-events: none;
+}
+
+/* ========== HEADER SECTION ========== */
+.contact-header {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	text-align: left;
+	gap: 1.85vh;
+	position: relative;
+	z-index: 10;
+	/* ===== POSISI VERTIKAL HEADER - UBAH DISINI ===== */
+	margin-top: 30vh;  /* Offset vertikal | Range: -5vh - 10vh */
+	/* ================================================= */
+	/* ===== POSISI HORIZONTAL HEADER - UBAH DISINI ===== */
+	margin-left: 0vw;  /* Offset horizontal | Range: -10vw - 10vw */
+	/* =================================================== */
+}
+
+.contact-intro {
+	font-family: 'Urbanist-Regular', sans-serif;
+	/* ===== UKURAN INTRO - UBAH DISINI ===== */
+	font-size: 2.09vw;  /* 40px / 1920px (1.25x dari 32px) | Range: 1.6vw - 2.6vw */
+	/* ======================================= */
+	color: #767676;
+	margin: 0;
+	font-weight: 400;
+	letter-spacing: 0.03vw;
+}
+
+.contact-title {
+	font-family: 'KyivTypeSerif-Bold', serif;
+	/* ===== UKURAN TITLE - UBAH DISINI ===== */
+	font-size: 4.17vw;  /* 80px / 1920px (1.25x dari 64px) | Range: 3.3vw - 5.3vw */
+	/* ======================================= */
+	color: #FFFFFF;
+	margin: 0;
+	font-weight: bold;
+	line-height: 1.2;
+	letter-spacing: 0.05vw;
+}
+
+.contact-subtitle {
+	font-family: 'Urbanist-Regular', sans-serif;
+	/* ===== UKURAN SUBTITLE - UBAH DISINI ===== */
+	font-size: 2.09vw;  /* 40px / 1920px (1.25x dari 32px) | Range: 1.6vw - 2.6vw */
+	/* ========================================== */
+	color: #767676;
+	margin: 0;
+	font-weight: 400;
+	letter-spacing: 0.03vw;
+}
+
+/* ========== EMAIL SECTION ========== */
+.contact-email {
+	display: flex;
+	align-items: center;
+	/* ===== JARAK DARI SUBTITLE - UBAH DISINI ===== */
+	margin-top: 15vh;  /* 90px / 1080px | Range: 5vh - 12vh */
+	/* ============================================== */
+	gap: 0.52vw;  /* Gap between icon and text */
+}
+
+.email-icon {
+	/* ===== UKURAN ICON - UBAH DISINI ===== */
+	width: 1.25vw;  /* 24px / 1920px | Range: 1vw - 1.5vw */
+	height: 1.25vw;
+	/* ====================================== */
+	flex-shrink: 0;
+}
+
+.email-text {
+	font-family: 'Urbanist-Regular', sans-serif;
+	/* ===== UKURAN EMAIL TEXT - UBAH DISINI ===== */
+	font-size: 0.94vw;  /* 18px / 1920px | Range: 0.7vw - 1.2vw */
+	/* ============================================ */
+	color: #FFFFFF;
+	font-weight: 400;
+	letter-spacing: 0.02vw;
+}
+
+/* ========== FORM SECTION ========== */
+.contact-form {
+	position: relative;
+	z-index: 10;
+	display: flex;
+	flex-direction: column;
+	/* ===== LEBAR FORM - UBAH DISINI ===== */
+	width: 32.29vw;  /* 620px / 1920px | Range: 25vw - 40vw */
+	/* ===================================== */
+	/* ===== ALIGNMENT - Form top sejajar dengan title ===== */
+	/* Intro (2.09vw height ≈ 3.7vh) + gap (1.85vh) = ~5.55vh */
+	margin-top: 39vh;  /* Aligns with title | Range: 3vh - 8vh */
+	/* ====================================================== */
+	/* ===== POSISI HORIZONTAL FORM - UBAH DISINI ===== */
+	margin-left: 0vw;  /* Offset horizontal | Range: -10vw - 10vw */
+	/* ================================================= */
+	gap: 2.78vh;  /* Gap between form groups */
+}
+
+.form-row {
+	display: flex;
+	/* ===== GAP ANTARA KOLOM - UBAH DISINI ===== */
+	gap: 1.56vw;  /* 30px / 1920px | Range: 1vw - 2.5vw */
+	/* =========================================== */
+	width: 100%;
+}
+
+.form-group {
+	display: flex;
+	flex-direction: column;
+	/* ===== GAP LABEL KE INPUT - UBAH DISINI ===== */
+	gap: 1.11vh;  /* 12px / 1080px | Range: 0.7vh - 1.5vh */
+	/* ============================================= */
+	flex: 1;
+}
+
+.form-group.full-width {
+	width: 100%;
+}
+
+.form-label {
+	font-family: 'Urbanist-Regular', sans-serif;
+	/* ===== UKURAN LABEL - UBAH DISINI ===== */
+	font-size: 0.94vw;  /* 18px / 1920px | Range: 0.7vw - 1.2vw */
+	/* ======================================= */
+	color: #FFFFFF;
+	margin: 0;
+	font-weight: 400;
+	letter-spacing: 0.02vw;
+	text-align: left;
+}
+
+/* Input wrapper - untuk gradient border effect */
+.input-wrapper {
+	position: relative;
+	width: 100%;
+	/* ===== BORDER THICKNESS - UBAH DISINI ===== */
+	padding: 0.9vh;  /* 2px / 1080px | Range: 0.15vh - 0.3vh */
+	/* =========================================== */
+	background: linear-gradient(
+		10deg,  /* Bottom-left to top-right */
+		#31328C 0%,
+		#5554EF 20%,
+		#e7b8ff00 41%,
+		#8282F6 69%,
+		#5554EF 88%,
+		#31328C 100%
+	);
+	/* ===== BORDER RADIUS - UBAH DISINI ===== */
+	border-radius: 1.2vw;  /* 40px / 1920px | Range: 1.5vw - 3vw */
+	/* ======================================== */
+}
+
+.input-wrapper.textarea-wrapper {
+	/* Textarea wrapper menggunakan border yang sama */
+}
+
+.form-input {
+	width: 100%;
+	background: #FFFFFF;
+	border: none;
+	outline: none;
+	/* ===== BORDER RADIUS INPUT (inner) - UBAH DISINI ===== */
+	border-radius: 1vw;  /* Slightly smaller than wrapper */
+	/* ====================================================== */
+	/* ===== PADDING INPUT - UBAH DISINI ===== */
+	padding: 1.85vh 1.56vw;  /* 20px 30px | Range: 1.5vh 1vw - 2.5vh 2vw */
+	/* ======================================== */
+	font-family: 'Urbanist-Regular', sans-serif;
+	/* ===== UKURAN TEXT INPUT - UBAH DISINI ===== */
+	font-size: 0.83vw;  /* 16px / 1920px | Range: 0.7vw - 1vw */
+	/* ============================================ */
+	color: #000000;
+	box-sizing: border-box;
+	resize: none;
+	text-align: left;
+}
+
+.form-input::placeholder {
+	color: #BDBDBD;
+	font-family: 'Urbanist-Regular', sans-serif;
+	text-align: left;
+}
+
+.form-input:focus {
+	outline: none;
+}
+
+.form-textarea {
+	/* ===== TINGGI TEXTAREA - UBAH DISINI ===== */
+	min-height: 18.52vh;  /* 200px / 1080px | Range: 15vh - 25vh */
+	/* ========================================== */
+	resize: vertical;
+}
+
+/* ========== SEND BUTTON ========== */
+.send-button-wrapper {
+	display: flex;
+	justify-content: flex-end;
+	width: 100%;
+	/* ===== JARAK DARI MESSAGE BOX - UBAH DISINI ===== */
+	margin-top: 2.78vh;  /* Same as gap between form groups */
+	/* ================================================== */
+}
+
+/* Send button border wrapper - sama seperti input-wrapper */
+.send-button-border {
+	position: relative;
+	/* ===== BORDER THICKNESS - UBAH DISINI ===== */
+	padding: 0.19vh;  /* Same as input wrapper */
+	/* =========================================== */
+	background: linear-gradient(
+		135deg,  /* Bottom-left to top-right */
+		#533084 0%,
+		#9059DD 51%,
+		#FFFFFF 100%
+	);
+	/* ===== BORDER RADIUS - UBAH DISINI ===== */
+	border-radius: 1vw;  /* 60px / 1920px | Range: 2vw - 4vw */
+	/* ======================================== */
+	display: inline-block;
+}
+
+.send-button {
+	position: relative;
+	display: flex;
+	align-items: center;
+	gap: 0.52vw;
+	/* ===== PADDING BUTTON - UBAH DISINI ===== */
+	padding: 1.48vh 2.08vw;  /* 16px 40px | Range: 1vh 1.5vw - 2vh 3vw */
+	/* ========================================= */
+	/* ===== BACKGROUND BUTTON - UBAH DISINI ===== */
+	background: rgba(12, 12, 35, 1);  /* Dark background to match section */
+	/* ============================================ */
+	border: none;
+	cursor: pointer;
+	/* ===== BORDER RADIUS - UBAH DISINI (harus match wrapper) ===== */
+	border-radius: 1vw;  /* Slightly smaller than wrapper */
+	/* ============================================================== */
+	transition: all 0.3s ease;
+}
+
+.send-button:hover {
+	transform: translateY(-0.2vh);
+	background: rgba(12, 12, 35, 0.8);
+}
+
+.send-text {
+	font-family: 'Urbanist-Regular', sans-serif;
+	/* ===== UKURAN TEXT BUTTON - UBAH DISINI ===== */
+	font-size: 1.25vw;  /* 24px / 1920px | Range: 1vw - 1.5vw */
+	/* ============================================= */
+	color: #FFFFFF;
+	font-weight: 400;
+	letter-spacing: 0.02vw;
+	/* ===== GLOW EFFECT - UBAH DISINI ===== */
+	text-shadow: 0 0 0.52vw rgba(255, 255, 255, 0.6),
+	             0 0 1.04vw rgba(255, 255, 255, 0.4),
+	             0 0 1.56vw rgba(255, 255, 255, 0.2);
+	/* ====================================== */
+}
+
+.send-icon {
+	/* ===== UKURAN ICON - UBAH DISINI ===== */
+	width: 1.25vw;  /* 24px / 1920px | Range: 1vw - 1.5vw */
+	height: 1.25vw;
+	/* ====================================== */
+	flex-shrink: 0;
+	/* ===== GLOW EFFECT - UBAH DISINI ===== */
+	filter: drop-shadow(0 0 0.52vw rgba(255, 255, 255, 0.6))
+	        drop-shadow(0 0 1.04vw rgba(255, 255, 255, 0.4))
+	        drop-shadow(0 0 1.56vw rgba(255, 255, 255, 0.2));
+	/* ====================================== */
+}

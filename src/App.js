@@ -1,5 +1,6 @@
 
 import './App.css';
+import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import HeaderHome from './components/headerHome';
 import MainHome from './components/mainHome';
 import SidebarHome from './components/sidebarHome';
@@ -8,20 +9,48 @@ import SpaceObject from './components/spaceObject';
 import AstronomicEvent from './components/astronomicEvent';
 import AboutUS from './components/aboutUS';
 import BackgroundSet from './components/backgroundSet';
-
-
-function App() {
+import SpaceExpedition from './components/spaceExpedition';
+import AstronomyCalendar from './components/astronomyCalendar';
+import Contact from './components/contact';
+import Footer from './components/footer';
+function HomePage() {
   return (
-    <div className="App">
-      <BackgroundSet />
-      <HeaderHome />
+    <>
       <SidebarHome />
       <MainHome />
       <SolarSystem />
       <SpaceObject />
       <AstronomicEvent />
       <AboutUS />
+      <Contact />
+      <Footer />
+    </>
+  );
+}
+
+function AppContent() {
+  const location = useLocation();
+  const hideBackground = location.pathname === '/space-expedition' || location.pathname === '/astronomy-calendar';
+
+  return (
+    <div className="App">
+      {!hideBackground && <BackgroundSet />}
+      <HeaderHome />
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/space-expedition" element={<SpaceExpedition />} />
+        <Route path="/astronomy-calendar" element={<AstronomyCalendar />} />
+      </Routes>
     </div>
+  );
+}
+
+
+function App() {
+  return (
+    <Router>
+      <AppContent />
+    </Router>
   );
 }
 

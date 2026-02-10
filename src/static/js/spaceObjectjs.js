@@ -46,13 +46,17 @@ export const useSpaceObjectCarousel = () => {
 
 	const getVisibleObjects = () => {
 		const total = spaceObjectsData.length;
+		const farLeftIndex = (currentIndex - 2 + total) % total;
 		const prevIndex = (currentIndex - 1 + total) % total;
 		const nextIndex = (currentIndex + 1) % total;
+		const farRightIndex = (currentIndex + 2) % total;
 		
 		return {
+			farLeft: spaceObjectsData[farLeftIndex],
 			left: spaceObjectsData[prevIndex],
 			center: spaceObjectsData[currentIndex],
-			right: spaceObjectsData[nextIndex]
+			right: spaceObjectsData[nextIndex],
+			farRight: spaceObjectsData[farRightIndex]
 		};
 	};
 
@@ -85,18 +89,12 @@ export const useSpaceObjectCarousel = () => {
 		if (!slideDirection) return '';
 		
 		if (slideDirection === 'next') {
-			// Clicking right arrow - cards shift LEFT visually
-			// Left card exits to far-left
-			// Center card moves to left position
-			// Right card moves to center position
 			if (position === 'left') return 'animate-exit-left';
 			if (position === 'center') return 'animate-center-to-left';
 			if (position === 'right') return 'animate-right-to-center';
-		} else {
-			// Clicking left arrow - cards shift RIGHT visually
-			// Right card exits to far-right
-			// Center card moves to right position
-			// Left card moves to center position
+			if (position === 'far-right') return 'animate-far-right-to-right';
+		} else if (slideDirection === 'prev') {
+			if (position === 'far-left') return 'animate-far-left-to-left';
 			if (position === 'left') return 'animate-left-to-center';
 			if (position === 'center') return 'animate-center-to-right';
 			if (position === 'right') return 'animate-exit-right';

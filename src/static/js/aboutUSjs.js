@@ -6,26 +6,26 @@ export const developersData = [
 	{
 		name: 'Amelia',
 		role: 'UI/UX Designer',
-		image: '/Anggota Kelompok/Amel.png',
-		quote: '"The only way to do great work is to love what you do."'
+		image: '/aboutUs/amel.png',
+		quote: '"The only way to do great<br />work is to love what you do."'
 	},
 	{
 		name: 'Bagas',
 		role: 'Front End Developer',
-		image: '/Anggota Kelompok/Bagas.png',
+		image: '/aboutUs/bagas.png',
 		quote: '"Hell yeah."'
 	},
 	{
 		name: 'Bima',
 		role: 'Front End Developer',
-		image: '/Anggota Kelompok/Bima.png',
-		quote: '"In the middle of difficulty lies opportunity."'
+		image: '/aboutUs/bima.png',
+		quote: '"In the middle of difficulty<br />lies opportunity."'
 	},
 	{
 		name: 'Hanin',
 		role: 'UI/UX Designer',
-		image: '/Anggota Kelompok/Hanin.png',
-		quote: '"Happiness depends upon ourselves."'
+		image: '/aboutUs/hanin.png',
+		quote: '"Happiness depends upon<br />ourselves."'
 	}
 ];
 

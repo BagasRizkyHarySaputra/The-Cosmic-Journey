@@ -5,6 +5,20 @@ import { useSpaceObjectCarousel } from '../static/js/spaceObjectjs';
 function SpaceObject() {
 	const { visibleObjects, isAnimating, handlePrev, handleNext, getCardAnimationClass } = useSpaceObjectCarousel();
 
+	// Helper function to get background image based on position
+	const getCardBackgroundStyle = (position) => {
+		const backgroundImages = {
+			'far-left': '/Space Objects/kiri.png',
+			'left': '/Space Objects/kiri.png',
+			'center': '/Space Objects/tengah.png',
+			'right': '/Space Objects/kanan.png',
+			'far-right': '/Space Objects/kanan.png'
+		};
+		return {
+			'--card-bg-image': `url('${process.env.PUBLIC_URL}${backgroundImages[position]}')`
+		};
+	};
+
 	return (
 		<section className="space-objects">
 			<div className="space-objects-boundary top"></div>
@@ -20,8 +34,21 @@ function SpaceObject() {
 				</button>
 
 				<div className="cards-wrapper">
+					{/* Far Left Card (invisible, enters on prev) */}
+					<div className={`object-card far-left ${getCardAnimationClass('far-left')}`} style={getCardBackgroundStyle('far-left')}>
+						<div className="object-card-image-wrapper">
+							<img 
+								src={visibleObjects.farLeft.image} 
+								alt={visibleObjects.farLeft.name} 
+								className="object-card-image"
+							/>
+						</div>
+						<h3 className="object-card-name">{visibleObjects.farLeft.name}</h3>
+						<p className="object-card-description">{visibleObjects.farLeft.description}</p>
+					</div>
+
 					{/* Left Card */}
-					<div className={`object-card left ${getCardAnimationClass('left')}`}>
+					<div className={`object-card left ${getCardAnimationClass('left')}`} style={getCardBackgroundStyle('left')}>
 						<div className="object-card-image-wrapper">
 							<img 
 								src={visibleObjects.left.image} 
@@ -34,7 +61,7 @@ function SpaceObject() {
 					</div>
 
 					{/* Center Card */}
-					<div className={`object-card center ${getCardAnimationClass('center')}`}>
+					<div className={`object-card center ${getCardAnimationClass('center')}`} style={getCardBackgroundStyle('center')}>
 						<div className="object-card-image-wrapper">
 							<img 
 								src={visibleObjects.center.image} 
@@ -47,7 +74,7 @@ function SpaceObject() {
 					</div>
 
 					{/* Right Card */}
-					<div className={`object-card right ${getCardAnimationClass('right')}`}>
+					<div className={`object-card right ${getCardAnimationClass('right')}`} style={getCardBackgroundStyle('right')}>
 						<div className="object-card-image-wrapper">
 							<img 
 								src={visibleObjects.right.image} 
@@ -57,6 +84,19 @@ function SpaceObject() {
 						</div>
 						<h3 className="object-card-name">{visibleObjects.right.name}</h3>
 						<p className="object-card-description">{visibleObjects.right.description}</p>
+					</div>
+
+					{/* Far Right Card (invisible, enters on next) */}
+					<div className={`object-card far-right ${getCardAnimationClass('far-right')}`} style={getCardBackgroundStyle('far-right')}>
+						<div className="object-card-image-wrapper">
+							<img 
+								src={visibleObjects.farRight.image} 
+								alt={visibleObjects.farRight.name} 
+								className="object-card-image"
+							/>
+						</div>
+						<h3 className="object-card-name">{visibleObjects.farRight.name}</h3>
+						<p className="object-card-description">{visibleObjects.farRight.description}</p>
 					</div>
 				</div>
 

@@ -1,0 +1,62 @@
+/* ========== DEVELOPER PHOTO POSITIONS ========== */
+/* File khusus untuk mengatur posisi foto setiap developer */
+
+/* ===== AMELIA PHOTO - UBAH DISINI ===== */
+.developer-photo-amelia {
+	position: absolute;
+	top: -1.5vh;  /* Jarak dari atas card */
+	left: 50%;
+	transform: translateX(-50%);
+	width: 17.79vw;
+	height: auto;
+	border-radius: 0;
+	object-fit: cover;
+	border: none;
+	box-shadow: none;
+}
+/* ========================================= */
+
+/* ===== BAGAS PHOTO - UBAH DISINI ===== */
+.developer-photo-bagas {
+	position: absolute;
+	top: -8.2vh;  /* Jarak dari atas card */
+	left: 47%;
+	transform: translateX(-50%);
+	width: 20.1vw;
+	height: auto;
+	border-radius: 0;
+	object-fit: cover;
+	border: none;
+	box-shadow: none;
+}
+/* ========================================= */
+
+/* ===== BIMA PHOTO - UBAH DISINI ===== */
+.developer-photo-bima {
+	position: absolute;
+	top: -3.9vh;  /* Jarak dari atas card */
+	left: 49.8%;
+	transform: translateX(-50%);
+	width: 17.76vw;
+	height: auto;
+	border-radius: 0;
+	object-fit: cover;
+	border: none;
+	box-shadow: none;
+}
+/* ========================================= */
+
+/* ===== HANIN PHOTO - UBAH DISINI ===== */
+.developer-photo-hanin {
+	position: absolute;
+	top: 5.3vh;  /* Jarak dari atas card */
+	left: 49.8%;
+	transform: translateX(-50%);
+	width: 17.8vw;
+	height: auto;
+	border-radius: 0;
+	object-fit: cover;
+	border: none;
+	box-shadow: none;
+}
+/* ========================================= */
