@@ -1,114 +1,150 @@
-import { useState } from 'react';
+import { useState, useEffect, useRef } from 'react';
 
 export const spaceObjectsData = [
 	{
 		id: 'nebula',
 		name: 'Nebula',
-		image: '/img/nebula.jpg',
+		image: '/Space Objects/nebula.png',
 		description: 'A nebula is a giant cloud of dust and gas in space. Some nebulae come from the gas and dust thrown out by the explosion of a dying star. Other nebulae are regions where new stars are beginning to form. Nebulae are often called "star nurseries."'
 	},
 	{
 		id: 'moon',
 		name: 'The Moon',
-		image: '/img/moon.jpg',
-		description: 'The Moon is Earth\'s only natural satellite and the closest celestial body to our planet. It is a rocky, airless world covered in craters, mountains, and ancient lava plains called maria, which appear as dark patches when viewed from Earth. The Moon reflects sunlight, which is why it appears bright in the night sky, and its changing position relative to the Sun creates the familiar phases such as the new moon, crescent, and full moon.'
+		image: '/Space Objects/moon.png',
+		description: "The Moon is Earth’s only natural satellite and the closest celestial body to our planet. It is a rocky, airless world covered in craters, mountains, and ancient lava plains called maria, which appear as dark patches when viewed from Earth. The Moon reflects sunlight, which is why it appears bright in the night sky, and its changing position relative to the Sun creates the familiar phases such as the new moon, crescent, and full moon."
 	},
 	{
 		id: 'comet',
 		name: 'Comet',
-		image: '/img/comet.jpg',
+		image: '/Space Objects/comet.png',
 		description: 'A comet is a small icy body that orbits the Sun and becomes bright when it gets close to the Sun. Comets are made of ice, dust, and rock, often called "dirty snowballs." When a comet approaches the Sun, heat causes its ice to evaporate, creating a glowing coma (a cloud of gas and dust) and one or more tails that always point away from the Sun due to solar wind.'
-	},
-	{
-		id: 'asteroid',
-		name: 'Asteroid',
-		image: '/img/asteroid.jpg',
-		description: 'Asteroids are rocky, airless remnants left over from the early formation of our solar system about 4.6 billion years ago. Most asteroids are found in the asteroid belt, a region between Mars and Jupiter. They range in size from tiny pebbles to objects hundreds of kilometers across.'
-	},
-	{
-		id: 'blackhole',
-		name: 'Black Hole',
-		image: '/img/blackhole.jpg',
-		description: 'A black hole is a region of spacetime where gravity is so strong that nothing, not even light or other electromagnetic waves, can escape once it crosses the event horizon. Black holes are formed when massive stars collapse at the end of their life cycle.'
-	},
-	{
-		id: 'galaxy',
-		name: 'Galaxy',
-		image: '/img/galaxy.jpg',
-		description: 'A galaxy is a huge collection of gas, dust, and billions of stars and their solar systems, all held together by gravity. Our solar system is part of the Milky Way galaxy, which contains over 100 billion stars. There are billions of galaxies in the universe.'
 	}
 ];
 
 export const useSpaceObjectCarousel = () => {
-	const [currentIndex, setCurrentIndex] = useState(0);
-	const [slideDirection, setSlideDirection] = useState(null);
+	// positions array holds the position of each card (0=left, 1=center, 2=right)
+	const [positions, setPositions] = useState([0, 1, 2]);
 	const [isAnimating, setIsAnimating] = useState(false);
+	const [animationSpeed, setAnimationSpeed] = useState(700); // Default 700ms
+	
+	const lastActionTime = useRef(Date.now());
+	const animationTimeout = useRef(null);
+	const wheelTimeout = useRef(null);
 
 	const getVisibleObjects = () => {
-		const total = spaceObjectsData.length;
-		const farLeftIndex = (currentIndex - 2 + total) % total;
-		const prevIndex = (currentIndex - 1 + total) % total;
-		const nextIndex = (currentIndex + 1) % total;
-		const farRightIndex = (currentIndex + 2) % total;
-		
 		return {
-			farLeft: spaceObjectsData[farLeftIndex],
-			left: spaceObjectsData[prevIndex],
-			center: spaceObjectsData[currentIndex],
-			right: spaceObjectsData[nextIndex],
-			farRight: spaceObjectsData[farRightIndex]
+			left: spaceObjectsData[positions.indexOf(0)],
+			center: spaceObjectsData[positions.indexOf(1)],
+			right: spaceObjectsData[positions.indexOf(2)]
 		};
 	};
 
-	const handlePrev = () => {
-		if (isAnimating) return;
-		setIsAnimating(true);
-		setSlideDirection('prev');
+	const calculateSpeed = () => {
+		const now = Date.now();
+		const timeSinceLastAction = now - lastActionTime.current;
 		
-		setTimeout(() => {
-			setCurrentIndex((prev) => (prev - 1 + spaceObjectsData.length) % spaceObjectsData.length);
-			setSlideDirection(null);
+		// Jika action dilakukan dalam 500ms, percepat animasi
+		if (timeSinceLastAction < 500) {
+			// Semakin cepat spam, semakin cepat animasi (minimum 200ms)
+			return Math.max(200, 700 - (500 - timeSinceLastAction));
+		}
+		
+		// Reset ke kecepatan normal jika sudah lama tidak ada action
+		return 700;
+	};
+
+	const handlePrev = () => {
+		if (isAnimating) {
+			// Jika sedang animasi dan user klik lagi, percepat
+			const newSpeed = Math.max(200, animationSpeed - 100);
+			setAnimationSpeed(newSpeed);
+			return;
+		}
+		
+		const speed = calculateSpeed();
+		setAnimationSpeed(speed);
+		setIsAnimating(true);
+		lastActionTime.current = Date.now();
+		
+		// Shift positions to the right (increase index)
+		setPositions(prevPositions => 
+			prevPositions.map(pos => (pos + 1) % 3)
+		);
+		
+		if (animationTimeout.current) clearTimeout(animationTimeout.current);
+		animationTimeout.current = setTimeout(() => {
 			setIsAnimating(false);
-		}, 500);
+		}, speed);
 	};
 
 	const handleNext = () => {
-		if (isAnimating) return;
-		setIsAnimating(true);
-		setSlideDirection('next');
+		if (isAnimating) {
+			// Jika sedang animasi dan user klik lagi, percepat
+			const newSpeed = Math.max(200, animationSpeed - 100);
+			setAnimationSpeed(newSpeed);
+			return;
+		}
 		
-		setTimeout(() => {
-			setCurrentIndex((prev) => (prev + 1) % spaceObjectsData.length);
-			setSlideDirection(null);
+		const speed = calculateSpeed();
+		setAnimationSpeed(speed);
+		setIsAnimating(true);
+		lastActionTime.current = Date.now();
+		
+		// Shift positions to the left (decrease index)
+		setPositions(prevPositions => 
+			prevPositions.map(pos => (pos - 1 + 3) % 3)
+		);
+		
+		if (animationTimeout.current) clearTimeout(animationTimeout.current);
+		animationTimeout.current = setTimeout(() => {
 			setIsAnimating(false);
-		}, 500);
+		}, speed);
 	};
 
-	// Get animation class for each card position
-	const getCardAnimationClass = (position) => {
-		if (!slideDirection) return '';
+	// Handle wheel/scroll event
+	const handleWheel = (event) => {
+		event.preventDefault();
 		
-		if (slideDirection === 'next') {
-			if (position === 'left') return 'animate-exit-left';
-			if (position === 'center') return 'animate-center-to-left';
-			if (position === 'right') return 'animate-right-to-center';
-			if (position === 'far-right') return 'animate-far-right-to-right';
-		} else if (slideDirection === 'prev') {
-			if (position === 'far-left') return 'animate-far-left-to-left';
-			if (position === 'left') return 'animate-left-to-center';
-			if (position === 'center') return 'animate-center-to-right';
-			if (position === 'right') return 'animate-exit-right';
-		}
+		// Clear previous timeout
+		if (wheelTimeout.current) clearTimeout(wheelTimeout.current);
+		
+		// Debounce scroll events (tunggu 100ms sebelum action)
+		wheelTimeout.current = setTimeout(() => {
+			if (event.deltaY < 0) {
+				// Scroll up = geser ke kiri (prev)
+				handlePrev();
+			} else if (event.deltaY > 0) {
+				// Scroll down = geser ke kanan (next)
+				handleNext();
+			}
+		}, 50);
+	};
+
+	// Get position class for each card
+	const getCardPosition = (index) => {
+		const pos = positions[index];
+		if (pos === 0) return 'position-left';
+		if (pos === 1) return 'position-center';
+		if (pos === 2) return 'position-right';
 		return '';
 	};
 
+	// Cleanup on unmount
+	useEffect(() => {
+		return () => {
+			if (animationTimeout.current) clearTimeout(animationTimeout.current);
+			if (wheelTimeout.current) clearTimeout(wheelTimeout.current);
+		};
+	}, []);
+
 	return {
-		currentIndex,
 		visibleObjects: getVisibleObjects(),
-		slideDirection,
 		isAnimating,
 		handlePrev,
 		handleNext,
-		getCardAnimationClass
+		handleWheel,
+		getCardPosition,
+		positions,
+		animationSpeed
 	};
 };

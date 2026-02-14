@@ -1,26 +1,32 @@
-import React from 'react';
+import React, { useRef, useEffect } from 'react';
 import '../static/css/spaceObject.css';
-import { useSpaceObjectCarousel } from '../static/js/spaceObjectjs';
+import { useSpaceObjectCarousel, spaceObjectsData } from '../static/js/spaceObjectjs';
 
 function SpaceObject() {
-	const { visibleObjects, isAnimating, handlePrev, handleNext, getCardAnimationClass } = useSpaceObjectCarousel();
+	const { handlePrev, handleNext, handleWheel, isAnimating, getCardPosition, animationSpeed } = useSpaceObjectCarousel();
+	const cardRefs = useRef([]);
 
-	// Helper function to get background image based on position
-	const getCardBackgroundStyle = (position) => {
-		const backgroundImages = {
-			'far-left': '/Space Objects/kiri.png',
-			'left': '/Space Objects/kiri.png',
-			'center': '/Space Objects/tengah.png',
-			'right': '/Space Objects/kanan.png',
-			'far-right': '/Space Objects/kanan.png'
+	// Add wheel event listener to each individual card
+	useEffect(() => {
+		const cards = cardRefs.current;
+		
+		cards.forEach(card => {
+			if (card) {
+				card.addEventListener('wheel', handleWheel, { passive: false });
+			}
+		});
+
+		return () => {
+			cards.forEach(card => {
+				if (card) {
+					card.removeEventListener('wheel', handleWheel);
+				}
+			});
 		};
-		return {
-			'--card-bg-image': `url('${process.env.PUBLIC_URL}${backgroundImages[position]}')`
-		};
-	};
+	}, [handleWheel]);
 
 	return (
-		<section className="space-objects">
+		<section id="spaceObject" className="space-objects">
 			<div className="space-objects-boundary top"></div>
 			
 			<div className="space-objects-header">
@@ -30,78 +36,41 @@ function SpaceObject() {
 
 			<div className="space-objects-carousel">
 				<button className="carousel-arrow left" onClick={handlePrev} disabled={isAnimating}>
-					«
+					<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+						<polyline points="15 18 9 12 15 6"></polyline>
+					</svg>
 				</button>
 
 				<div className="cards-wrapper">
-					{/* Far Left Card (invisible, enters on prev) */}
-					<div className={`object-card far-left ${getCardAnimationClass('far-left')}`} style={getCardBackgroundStyle('far-left')}>
-						<div className="object-card-image-wrapper">
-							<img 
-								src={visibleObjects.farLeft.image} 
-								alt={visibleObjects.farLeft.name} 
-								className="object-card-image"
-							/>
+					{spaceObjectsData.slice(0, 3).map((object, index) => (
+						<div 
+							key={object.id} 
+							ref={el => cardRefs.current[index] = el}
+							className={`object-card ${getCardPosition(index)}`}
+							style={{
+								transition: `all ${animationSpeed}ms cubic-bezier(0.4, 0, 0.2, 1)`
+							}}
+						>
+							<div className="object-card-light"></div>
+							<div className="object-card-screen">
+								<div className="object-card-image-wrapper">
+									<img 
+										src={process.env.PUBLIC_URL + object.image}
+										alt={object.name} 
+										className="object-card-image"
+									/>
+								</div>
+								<h3 className="object-card-name">{object.name}</h3>
+								<p className="object-card-description">{object.description}</p>
+							</div>
 						</div>
-						<h3 className="object-card-name">{visibleObjects.farLeft.name}</h3>
-						<p className="object-card-description">{visibleObjects.farLeft.description}</p>
-					</div>
-
-					{/* Left Card */}
-					<div className={`object-card left ${getCardAnimationClass('left')}`} style={getCardBackgroundStyle('left')}>
-						<div className="object-card-image-wrapper">
-							<img 
-								src={visibleObjects.left.image} 
-								alt={visibleObjects.left.name} 
-								className="object-card-image"
-							/>
-						</div>
-						<h3 className="object-card-name">{visibleObjects.left.name}</h3>
-						<p className="object-card-description">{visibleObjects.left.description}</p>
-					</div>
-
-					{/* Center Card */}
-					<div className={`object-card center ${getCardAnimationClass('center')}`} style={getCardBackgroundStyle('center')}>
-						<div className="object-card-image-wrapper">
-							<img 
-								src={visibleObjects.center.image} 
-								alt={visibleObjects.center.name} 
-								className="object-card-image"
-							/>
-						</div>
-						<h3 className="object-card-name">{visibleObjects.center.name}</h3>
-						<p className="object-card-description">{visibleObjects.center.description}</p>
-					</div>
-
-					{/* Right Card */}
-					<div className={`object-card right ${getCardAnimationClass('right')}`} style={getCardBackgroundStyle('right')}>
-						<div className="object-card-image-wrapper">
-							<img 
-								src={visibleObjects.right.image} 
-								alt={visibleObjects.right.name} 
-								className="object-card-image"
-							/>
-						</div>
-						<h3 className="object-card-name">{visibleObjects.right.name}</h3>
-						<p className="object-card-description">{visibleObjects.right.description}</p>
-					</div>
-
-					{/* Far Right Card (invisible, enters on next) */}
-					<div className={`object-card far-right ${getCardAnimationClass('far-right')}`} style={getCardBackgroundStyle('far-right')}>
-						<div className="object-card-image-wrapper">
-							<img 
-								src={visibleObjects.farRight.image} 
-								alt={visibleObjects.farRight.name} 
-								className="object-card-image"
-							/>
-						</div>
-						<h3 className="object-card-name">{visibleObjects.farRight.name}</h3>
-						<p className="object-card-description">{visibleObjects.farRight.description}</p>
-					</div>
+					))}
 				</div>
 
 				<button className="carousel-arrow right" onClick={handleNext} disabled={isAnimating}>
-					»
+					<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+						<polyline points="9 18 15 12 9 6"></polyline>
+					</svg>
 				</button>
 			</div>
 

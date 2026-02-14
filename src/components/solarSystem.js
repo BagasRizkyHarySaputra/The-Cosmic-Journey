@@ -15,7 +15,7 @@ function SolarSystem() {
 	} = usePlanetPopup();
 
 	return (
-		<section className="solar-system">
+		<section id="solarSystem" className="solar-system">
 			<div className="boundary-line top"></div>
 			<div className="solar-system-content">
 				<div className="solar-system-text">

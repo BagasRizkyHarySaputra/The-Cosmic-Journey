@@ -48,12 +48,6 @@
   text-shadow: 0 0 0.42vw #fff, 0 0 0.83vw #fff2;
 }
 
-.header-menu li:not(:first-child) .menu-active {
-  color: #fff;
-  text-shadow: none;
-  font-weight: normal;
-}
-
 /* Efek glow pada menu saat hover */
 
 /* Hover: menu-num dan teks menu menjadi menu-active, menu-slash tetap statis */

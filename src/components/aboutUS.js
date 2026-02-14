@@ -4,7 +4,7 @@ import { developersData } from '../static/js/aboutUSjs';
 
 function AboutUS() {
 	return (
-		<section className="about-us">
+		<section id="aboutUS" className="about-us">
 			<div className="about-header">
 				<h3 className="about-us-subtitle">About Us</h3>
 				<h1 className="about-us-main-title">

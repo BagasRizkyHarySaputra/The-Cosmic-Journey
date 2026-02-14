@@ -2,7 +2,7 @@
 
 /* ========== SPACE OBJECTS SECTION ========== */
 .space-objects {
-	height: 120vh;
+	min-height: 120vh;
 	background: linear-gradient(90deg, 
 		rgba(12, 12, 35, 1) 0%, 
 		rgba(77, 77, 207, 0.68) 60%, 
@@ -15,6 +15,7 @@
 	align-items: center;
 	justify-content: center;
 	overflow: hidden;
+	padding: 5vh 0;
 }
 
 .space-objects-boundary {
@@ -64,37 +65,53 @@
 	align-items: center;
 	justify-content: center;
 	width: 100%;
-	max-width: 72.92vw;
-	gap: 1.04vw;
 	padding: 0 3.13vw;
 	position: relative;
+	perspective: 1000px;
 }
 
 /* ========== NAVIGATION ARROWS ========== */
 .carousel-arrow {
-	background: transparent;
-	border: none;
-	color: #ffffff;
-	font-size: 3.24vw;
+	position: fixed;
+	background: rgba(102, 126, 234, 0.3);
+	border: 2px solid rgba(102, 126, 234, 0.5);
+	color: #667eea;
+	width: 50px;
+	height: 50px;
+	border-radius: 50%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
 	cursor: pointer;
+	z-index: 100;
+	backdrop-filter: blur(10px);
 	transition: all 0.3s ease;
-	z-index: 20;
-	padding: 1.04vw;
-	opacity: 0.7;
+	font-size: 1.5rem;
 	flex-shrink: 0;
 }
 
 .carousel-arrow:hover {
-	opacity: 1;
+	background: rgba(102, 126, 234, 0.5);
+	border-color: #667eea;
+	color: #fff;
 	transform: scale(1.1);
 }
 
+.carousel-arrow:active {
+	transform: scale(0.95);
+}
+
+.carousel-arrow:disabled {
+	opacity: 0.3;
+	cursor: not-allowed;
+}
+
 .carousel-arrow.left {
-	margin-right: 1.04vw;
+	left: 2vw;
 }
 
 .carousel-arrow.right {
-	margin-left: 1.04vw;
+	right: 2vw;
 }
 
 /* ========== CARDS WRAPPER ========== */
@@ -102,226 +119,158 @@
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	gap: var(--card-gap);
-	perspective: 1200px;
 	position: relative;
-	overflow: hidden;
-}
-
-/* ========== INDIVIDUAL CARD ANIMATIONS ========== */
-/* Animation duration variable */
-:root {
-	--card-animation-duration: 0.5s;
-	--card-gap: 1.56vw;
-	--card-slide-pos: 18.44vw;   /* card total width (16.88vw) + gap (1.56vw) */
-	--card-slide-neg: -18.44vw;
-}
-
-/* === CLICKING RIGHT ARROW (next) - Cards shift LEFT === */
-/* Left card exits to far-left */
-.object-card.animate-exit-left {
-	animation: exitLeft var(--card-animation-duration) ease-in-out forwards;
-}
-
-/* Center card moves to left position */
-.object-card.animate-center-to-left {
-	animation: centerToLeft var(--card-animation-duration) ease-in-out forwards;
-}
-
-/* Right card moves to center position */
-.object-card.animate-right-to-center {
-	animation: rightToCenter var(--card-animation-duration) ease-in-out forwards;
-}
-
-/* === CLICKING LEFT ARROW (prev) - Cards shift RIGHT === */
-/* Left card moves to center position */
-.object-card.animate-left-to-center {
-	animation: leftToCenter var(--card-animation-duration) ease-in-out forwards;
-}
-
-/* Center card moves to right position */
-.object-card.animate-center-to-right {
-	animation: centerToRight var(--card-animation-duration) ease-in-out forwards;
-}
-
-/* Right card exits to far-right */
-.object-card.animate-exit-right {
-	animation: exitRight var(--card-animation-duration) ease-in-out forwards;
-}
-
-/* === KEYFRAMES FOR RIGHT ARROW (next) - Shift LEFT === */
-/* Left card exits - fades out to far left */
-@keyframes exitLeft {
-	0% {
-		transform: translateX(0) rotateY(-30deg) scale(0.9);
-		opacity: 0.7;
-	}
-	100% {
-		transform: translateX(var(--card-slide-neg)) rotateY(-45deg) scale(0.7);
-		opacity: 0;
-	}
-}
-
-/* Center moves to left - end position matches .object-card.left default */
-@keyframes centerToLeft {
-	0% {
-		transform: translateX(0) rotateY(0deg) scale(1);
-		opacity: 1;
-	}
-	100% {
-		transform: translateX(var(--card-slide-neg)) rotateY(-30deg) scale(0.9);
-		opacity: 0.7;
-	}
-}
-
-/* Right moves to center - end position matches .object-card.center default */
-@keyframes rightToCenter {
-	0% {
-		transform: translateX(0) rotateY(30deg) scale(0.9);
-		opacity: 0.7;
-	}
-	100% {
-		transform: translateX(var(--card-slide-neg)) rotateY(0deg) scale(1);
-		opacity: 1;
-	}
-}
-
-/* === KEYFRAMES FOR LEFT ARROW (prev) - Shift RIGHT === */
-/* Left moves to center - end position matches .object-card.center default */
-@keyframes leftToCenter {
-	0% {
-		transform: translateX(0) rotateY(-30deg) scale(0.9);
-		opacity: 0.7;
-	}
-	100% {
-		transform: translateX(var(--card-slide-pos)) rotateY(0deg) scale(1);
-		opacity: 1;
-	}
-}
-
-/* Center moves to right - end position matches .object-card.right default */
-@keyframes centerToRight {
-	0% {
-		transform: translateX(0) rotateY(0deg) scale(1);
-		opacity: 1;
-	}
-	100% {
-		transform: translateX(var(--card-slide-pos)) rotateY(30deg) scale(0.9);
-		opacity: 0.7;
-	}
-}
-
-/* Right card exits - fades out to far right */
-@keyframes exitRight {
-	0% {
-		transform: translateX(0) rotateY(30deg) scale(0.9);
-		opacity: 0.7;
-	}
-	100% {
-		transform: translateX(var(--card-slide-pos)) rotateY(45deg) scale(0.7);
-		opacity: 0;
-	}
-}
-
-/* === FAR CARD ANIMATIONS (5-card flex approach) === */
-/* Far-right card enters to right position (clicking next) */
-.object-card.animate-far-right-to-right {
-	animation: farRightToRight var(--card-animation-duration) ease-in-out forwards;
-}
-
-/* Far-left card enters to left position (clicking prev) */
-.object-card.animate-far-left-to-left {
-	animation: farLeftToLeft var(--card-animation-duration) ease-in-out forwards;
-}
-
-/* Far-right slides left into right position (same translateX(-310px) as others) */
-@keyframes farRightToRight {
-	0% {
-		transform: translateX(0) rotateY(45deg) scale(0.7);
-		opacity: 0;
-	}
-	100% {
-		transform: translateX(var(--card-slide-neg)) rotateY(30deg) scale(0.9);
-		opacity: 0.7;
-	}
-}
-
-/* Far-left slides right into left position (same translateX(310px) as others) */
-@keyframes farLeftToLeft {
-	0% {
-		transform: translateX(0) rotateY(-45deg) scale(0.7);
-		opacity: 0;
-	}
-	100% {
-		transform: translateX(var(--card-slide-pos)) rotateY(-30deg) scale(0.9);
-		opacity: 0.7;
-	}
+	width: 100%;
+	min-height: 80vh;
 }
 
 /* ========== OBJECT CARD ========== */
 .object-card {
-	width: 16.15vw;
-	height: 47.22vh;
-	background-image: var(--card-bg-image);
-	background-size: 150%;
-	background-repeat: no-repeat;
-	background-position: center;
-	border: none;
-	padding: 5.56vh 2.34vw 4.63vh 2.34vw;
-	display: flex;
-	flex-direction: column;
-	align-items: center;
+	width: 25vw;
+	height: 80vh;
+	background: linear-gradient(125deg, 
+		#31328C 0%, 
+		#4746BF 5%, 
+		#5554EF 13%, 
+		transparent 47%, 
+		transparent 59%, 
+		#6565F7 82%, 
+		#39388F 95%);
+	/* Custom corner radius */
+	--corner-top-left: 2vw;
+	--corner-top-right: 2vw;
+	--corner-bottom-right: 2vw;
+	--corner-bottom-left: 2vw;
+	border-radius: var(--corner-top-left) var(--corner-top-right) var(--corner-bottom-right) var(--corner-bottom-left);
+	/* Shadow offset */
+	--shadow-offset-x: 0vw;
+	--shadow-offset-y: 0.6vw;
+	--shadow-thickness: 2.5vw;
+	padding-top: calc(var(--shadow-thickness) - var(--shadow-offset-y));
+	padding-right: calc(var(--shadow-thickness) - var(--shadow-offset-x));
+	padding-bottom: calc(var(--shadow-thickness) + var(--shadow-offset-y));
+	padding-left: calc(var(--shadow-thickness) + var(--shadow-offset-x));
+	aspect-ratio: 9/16;
+	/* Smooth animation - transition akan di-override oleh inline style untuk dynamic speed */
+	position: absolute;
+	left: 50%;
+	margin-left: -12.5vw;
+	/* Light settings */
+	--light-blur: 80px;
+	--light-spread: 1;
+	--light-opacity: 0.8;
+	--light-brightness: 1.5;
+	--light-position: 50%;
+	--light-height-scale: 0.5;
+	/* Image height settings - ubah nilai ini untuk mengatur tinggi image */
+	--image-height-ratio: 0.5;  /* 0.5 = 1/2 dari tinggi card, 0.3 = 1/3, 0.6 = 60%, dst */
 	flex-shrink: 0;
-	position: relative;
 	z-index: 2;
 	will-change: transform, opacity;
 }
 
-.object-card.left {
-	transform: rotateY(-30deg) scale(0.9);
-	opacity: 0.7;
+/* Light effect */
+.object-card-light {
+	position: absolute;
+	bottom: 0;
+	left: var(--light-position);
+	transform: translateX(-50%);
+	width: calc(100% - var(--shadow-thickness) * 2);
+	height: calc((108% * var(--light-height-scale)) - var(--shadow-thickness));
+	background: linear-gradient(to top, 
+		#5554EF 0%, 
+		#8282F6 100%);
+	border-radius: 0 0 
+		calc(var(--corner-bottom-right) - var(--screen-corner-offset)) 
+		calc(var(--corner-bottom-left) - var(--screen-corner-offset));
+	filter: blur(var(--light-blur)) brightness(var(--light-brightness));
+	opacity: var(--light-opacity);
+	z-index: -1;
+	pointer-events: none;
+	transform-origin: center bottom;
+	transform: translateX(-50%) scale(var(--light-spread));
+	transition: opacity 0.7s cubic-bezier(0.4, 0, 0.2, 1), 
+				filter 0.7s cubic-bezier(0.4, 0, 0.2, 1),
+				left 0.7s cubic-bezier(0.4, 0, 0.2, 1),
+				height 0.7s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.object-card.center {
-	transform: rotateY(0deg) scale(1);
+/* Screen container */
+.object-card-screen {
+	width: 100%;
+	height: 108%;
+	background-color: #000000;
+	/* Screen corner radius follows phone-box with offset */
+	--screen-corner-offset: 0.3vw;
+	border-radius: 
+		calc(var(--corner-top-left) - var(--screen-corner-offset)) 
+		calc(var(--corner-top-right) - var(--screen-corner-offset)) 
+		calc(var(--corner-bottom-right) - var(--screen-corner-offset)) 
+		calc(var(--corner-bottom-left) - var(--screen-corner-offset));
+	border: 0.5vh solid transparent;
+	background-image: 
+		linear-gradient(#000000, #000000),
+		linear-gradient(to bottom, #FFFFFF 0%, #9059DD 51%, #533084 100%);
+	background-origin: border-box;
+	background-clip: padding-box, border-box;
+	display: flex;
+	flex-direction: column;
+	padding: 3vh 1.5vw;
+	overflow: hidden;
+}
+
+/* Position states */
+.object-card.position-left {
+	transform: translateX(-25vw) rotateY(-20deg) rotateZ(-5deg) scale(0.70);
+	opacity: 0.7;
+	z-index: 1;
+	--light-opacity: 0.9;
+	--light-position: 10%;
+	--light-height-scale: 0.25;
+	--light-brightness: 1.8;
+	--light-blur: 80px;
+	--light-spread: 1;
+}
+
+.object-card.position-center {
+	transform: translateX(0) rotateY(0deg) rotateZ(0deg) scale(0.75);
 	opacity: 1;
-	z-index: 10;
+	z-index: 3;
+	--light-opacity: 0.8;
+	--light-position: 50%;
+	--light-height-scale: 0.5;
+	--light-brightness: 1.5;
+	--light-blur: 80px;
+	--light-spread: 1;
 }
 
-.object-card.right {
-	transform: rotateY(30deg) scale(0.9);
+.object-card.position-right {
+	transform: translateX(25vw) rotateY(20deg) rotateZ(5deg) scale(0.70);
 	opacity: 0.7;
+	z-index: 1;
+	--light-opacity: 0.9;
+	--light-position: 90%;
+	--light-height-scale: 0.25;
+	--light-brightness: 1.8;
+	--light-blur: 80px;
+	--light-spread: 1;
 }
 
-.object-card.far-left {
-	position: absolute;
-	top: 0;
-	right: 100%;
-	margin-right: var(--card-gap);
-	transform: rotateY(-45deg) scale(0.7);
-	opacity: 0;
-	pointer-events: none;
-}
-
-.object-card.far-right {
-	position: absolute;
-	top: 0;
-	left: 100%;
-	margin-left: var(--card-gap);
-	transform: rotateY(45deg) scale(0.7);
-	opacity: 0;
-	pointer-events: none;
+/* Hover effect */
+.object-card:hover {
+	filter: brightness(1.1);
 }
 
 /* ========== CARD IMAGE ========== */
 .object-card-image-wrapper {
 	width: 100%;
-	height: 18.52vh;
-	border-radius: 0.78vw;
+	height: calc(80vh * var(--image-height-ratio));  /* Menggunakan ratio dari tinggi card (80vh) */
+	border-radius: 1vw;
 	overflow: hidden;
-	margin-bottom: 1.39vh;
-	border: 1px solid rgba(255, 255, 255, 0.2);
+	margin-bottom: 2vh;
+	border: 1px solid rgba(255, 255, 255, 0.1);
 	background: #000000;
+	flex-shrink: 0;
 }
 
 .object-card-image {
@@ -333,39 +282,45 @@
 /* ========== CARD CONTENT ========== */
 .object-card-name {
 	font-family: 'Jura-Bold', sans-serif;
-	font-size: 1.57vw;
+	font-size: 1.8vw;
 	background: linear-gradient(180deg, #FFFFFF 0%, #8282F6 65%);
 	-webkit-background-clip: text;
 	-webkit-text-fill-color: transparent;
 	background-clip: text;
-	margin: 0 0 1.11vh 0;
+	margin: 0 0 1.5vh 0;
 	text-align: center;
+	flex-shrink: 0;
 }
 
 .object-card-description {
 	font-family: 'Urbanist-Regular', sans-serif;
-	font-size: 0.83vw;
+	font-size: 1.15vw;
 	color: #FFFFFF;
-	line-height: 1.45;
+	line-height: 1.6;
 	text-align: left;
 	margin: 0;
 	overflow-y: auto;
 	flex: 1;
+	padding-right: 0.5vw;
 }
 
 /* Scrollbar styling for description */
 .object-card-description::-webkit-scrollbar {
-	width: 0.21vw;
+	width: 0.3vw;
 }
 
 .object-card-description::-webkit-scrollbar-track {
 	background: rgba(255, 255, 255, 0.1);
-	border-radius: 0.1vw;
+	border-radius: 0.15vw;
 }
 
 .object-card-description::-webkit-scrollbar-thumb {
 	background: rgba(255, 255, 255, 0.3);
-	border-radius: 0.1vw;
+	border-radius: 0.15vw;
+}
+
+.object-card-description::-webkit-scrollbar-thumb:hover {
+	background: rgba(255, 255, 255, 0.5);
 }
 
 /* ========== DECORATIVE ELEMENTS ========== */
@@ -390,17 +345,57 @@
 }
 
 /* ========== RESPONSIVE ========== */
-@media (max-width: 1024px) {
-	:root {
-		--card-gap: 20px;
-		--card-slide-pos: 304px;   /* card total width (284px) + gap (20px) */
-		--card-slide-neg: -304px;
-	}
-
+@media (max-width: 1440px) {
 	.object-card {
-		width: 340px;
-		height: 550px;
-		padding: 70px 50px 60px 50px;
+		width: 28vw;
+		height: 75vh;
+		--shadow-thickness: 2.2vw;
+	}
+	
+	.object-card-image-wrapper {
+		height: calc(75vh * var(--image-height-ratio));  /* Sesuaikan dengan tinggi card di breakpoint ini */
+	}
+	
+	.object-card-name {
+		font-size: 2vw;
+	}
+	
+	.object-card-description {
+		font-size: 1.1vw;
+	}
+}
+
+@media (max-width: 1024px) {
+	.object-card {
+		width: 35vw;
+		height: 70vh;
+		--shadow-thickness: 2vw;
+	}
+	
+	.object-card-image-wrapper {
+		height: calc(70vh * var(--image-height-ratio));  /* Sesuaikan dengan tinggi card di breakpoint ini */
+	}
+	
+	.object-card.position-left {
+		transform: translateX(-40vw) rotateY(-20deg) rotateZ(-5deg) scale(0.8);
+	}
+	
+	.object-card.position-right {
+		transform: translateX(40vw) rotateY(20deg) rotateZ(5deg) scale(0.8);
+	}
+	
+	.object-card-name {
+		font-size: 2.5vw;
+	}
+	
+	.object-card-description {
+		font-size: 1.4vw;
+	}
+	
+	.carousel-arrow {
+		width: 45px;
+		height: 45px;
+		font-size: 1.3rem;
 	}
 }
 
@@ -409,20 +404,44 @@
 		padding: 0 20px;
 	}
 	
-	.object-card.left,
-	.object-card.right,
-	.object-card.far-left,
-	.object-card.far-right {
+	.object-card {
+		width: 70vw;
+		height: 65vh;
+		--shadow-thickness: 1.5vw;
+	}
+	
+	.object-card-image-wrapper {
+		height: calc(65vh * var(--image-height-ratio));  /* Sesuaikan dengan tinggi card di breakpoint ini */
+	}
+	
+	.object-card.position-left,
+	.object-card.position-right {
 		display: none;
 	}
 	
-	.object-card.center {
-		width: 300px;
-		height: 500px;
+	.object-card.position-center {
+		transform: scale(1);
+	}
+	
+	.object-card-name {
+		font-size: 5vw;
+	}
+	
+	.object-card-description {
+		font-size: 3.5vw;
 	}
 	
 	.carousel-arrow {
-		font-size: 2.5rem;
-		padding: 10px;
+		width: 40px;
+		height: 40px;
+		font-size: 1.2rem;
+	}
+	
+	.carousel-arrow.left {
+		left: 10px;
+	}
+	
+	.carousel-arrow.right {
+		right: 10px;
 	}
 }

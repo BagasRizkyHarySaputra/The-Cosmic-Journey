@@ -14,7 +14,7 @@ function AstronomicEvent() {
 	};
 
 	return (
-		<section className="astronomic-events">
+		<section id="astronomicEvent" className="astronomic-events">
 			<div className='wrapper'>
 				<div className='event-item' onClick={handleSpaceExpeditionClick}>
 					<img src="/Astronomy Events/1.png" alt="Space Expedition" />

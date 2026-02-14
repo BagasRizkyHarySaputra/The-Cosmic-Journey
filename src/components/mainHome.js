@@ -22,7 +22,7 @@ function MainHome() {
 	}, []);
 
 	return (
-<main className="main-home">
+<main id="mainHome" className="main-home">
 	<div className="main-container">
 		<p className="greeting-text">Dear passanger, welcome to</p>
 		<h1 className="main-title">
