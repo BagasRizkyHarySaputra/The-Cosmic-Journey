@@ -1,3 +1,28 @@
+/* SIDEBAR MENU ACTIVE STATE */
+.sidebar-menu-item.active {
+	background: linear-gradient(90deg, rgba(12,12,35,0.36) 0%, rgba(77,76,255,0.36) 60%, rgba(49,48,137,0.36) 100%);
+	padding: 0.74vh 1.04vw;
+	border-radius: 1.04vw;
+	margin-left: -1.04vw;
+	/* Glass effect */
+	backdrop-filter: blur(8px) saturate(180%);
+	-webkit-backdrop-filter: blur(8px) saturate(180%);
+	box-shadow: 0 4px 32px 0 rgba(80, 80, 255, 0.15), 0 1.5px 8px 0 rgba(60, 60, 120, 0.10);
+	border: 1px solid rgba(255,255,255,0.18);
+}
+
+.sidebar-menu-item.active {
+	/* Text glow effect: strong white drop shadow (Figma style) */
+	font-family: 'Jura-Bold', sans-serif;
+	color: #fff !important;
+	font-weight: 1000;
+	text-shadow:
+		0 0 12px #fff,
+		0 0 24px #fff,
+		0 0 48px #fff,
+		0 0 96px #fff,
+		0 0 192px #fff;
+}
 
 
 .sidebar {
@@ -14,6 +39,7 @@
 	align-items: flex-start;
 	z-index: 200;
 	background: none;
+	pointer-events: none;
 }
 
 .sidebar-center-wrapper {
@@ -33,6 +59,7 @@
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
+	pointer-events: auto;
 }
 .sidebar-hamburger .bar {
 	width: 2.4vw;
@@ -58,6 +85,7 @@
 	height: 31.48vh;
 	background: rgba(255,255,255,0.3);
 	display: block;
+	transition: opacity 0.3s;
 }
 
 .sidebar-menu {
@@ -83,9 +111,14 @@
 	transition: color 0.2s;
 	text-align: left;
 	cursor: pointer;
+	pointer-events: auto;
 }
 .sidebar-menu-item:hover {
 	color: #b6aaff;
+	text-shadow:
+		0 0 8px #b6aaff,
+		0 0 16px #4D4CFF,
+		0 0 24px #4D4CFF;
 }
 
 .sidebar-news {

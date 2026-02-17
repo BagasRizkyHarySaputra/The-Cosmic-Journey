@@ -24,19 +24,21 @@ function BackgroundSet() {
 		const dynamicHeight = maxY + 100;
 		root.style.setProperty('--dynamic-bg-height', `${dynamicHeight}vh`);
 	}, []);
-
+	
 	// Array of background items - easy to add/edit
 	const backgroundItems = [
-		{ id: 'item1', src: '/logo/LightBeam.png' },
-		{ id: 'item2', src: '/logo/LightBeam.png' },
-		{ id: 'item3', src: '/img/keyboard_arrow_down.png' },
-		{ id: 'item4', src: '/img/star3.png' },
-		{ id: 'item5', src: '/img/planet2.png' },
-		{ id: 'item6', src: '/img/star4.png' },
+		{ id: 'item1', src: '/headerHome/Ellipse 11.png' },	
+		{ id: 'item4', src: '/headerHome/Ellipse 17.svg' },
+		{ id: 'item2', src: '/headerHome/LightBeam.png' },
+		{ id: 'item3', src: '/headerHome/LightBeam.png' },
+		{ id: 'item5', src: '/headerHome/Ellipse 18.svg' },
+		
+		{ id: 'item6', src: '/headerHome/star.svg' },
 		{ id: 'item7', src: '/img/nebula1.png' },
 		{ id: 'item8', src: '/img/star5.png' },
 		{ id: 'item9', src: '/img/planet3.png' },
 		{ id: 'item10', src: '/img/star6.png' },
+		
 		{ id: 'item11', src: '/img/comet1.png' },
 		{ id: 'item12', src: '/img/star7.png' },
 		{ id: 'item13', src: '/img/planet4.png' },
@@ -85,18 +87,18 @@ function BackgroundSet() {
 		{ id: 'item56', src: '/img/Ellipse4.png' },
 	];
 
-	return (
-		<div className="background-set">
-			{backgroundItems.map((item) => (
-				<img
-					key={item.id}
-					className={`bg-item ${item.id}`}
-					src={item.src}
-					alt=""
-				/>
-			))}
-		</div>
-	);
+		return (
+			<div className="background-set">
+				{backgroundItems.map((item) => (
+					<img
+						key={item.id}
+						className={`bg-item ${item.id}`}
+						src={item.src}
+						alt=""
+					/>
+				))}
+			</div>
+		);
 }
 
 export default BackgroundSet;

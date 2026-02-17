@@ -114,14 +114,6 @@
 	transform: scale(1.1);
 }
 
-/* ========== SIDEBAR MENU ACTIVE STATE ========== */
-.sidebar-menu-item.active {
-	background: rgba(255, 255, 255, 0.15);
-	padding: 0.74vh 1.04vw;
-	border-radius: 1.04vw;
-	margin-left: -1.04vw;
-}
-
 /* ========== RESPONSIVE ========== */
 @media (max-width: 1024px) {
 	.gallery-container {

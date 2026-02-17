@@ -37,10 +37,10 @@
 
 /* ========== ITEM 1 ========== */
 .item1 {
-	--item1-size: 76.04vw; /* 1460px / 1920px */
-	--item1-x: 25vw;
-	--item1-y: 55vh;
-	--item1-rotation: 0deg;
+	--item1-size: 35vw; /* 500px / 1920px */
+	--item1-x: 60vw;
+	--item1-y: 18vh;
+	--item1-rotation: 90deg;
 	left: var(--item1-x);
 	top: var(--item1-y);
 	width: var(--item1-size);
@@ -49,10 +49,10 @@
 
 /* ========== ITEM 2 ========== */
 .item2 {
-	--item2-size: 76.04vw; /* 1460px / 1920px */
-	--item2-x: 50vw;
-	--item2-y: 28vh;
-	--item2-rotation: 90deg;
+	--item2-size: 84vw; /* 1460px / 1920px */
+	--item2-x: 23vw;
+	--item2-y: 55vh;
+	--item2-rotation: 0deg;
 	left: var(--item2-x);
 	top: var(--item2-y);
 	width: var(--item2-size);
@@ -61,9 +61,9 @@
 
 /* ========== ITEM 3 ========== */
 .item3 {
-	--item3-size: 26.04vw; /* 500px / 1920px */
-	--item3-x: 50vw;
-	--item3-y: 800vh;
+	--item3-size: 76.04vw; /* 1460px / 1920px */
+	--item3-x: 40vw;
+	--item3-y: 28vh;
 	--item3-rotation: 90deg;
 	left: var(--item3-x);
 	top: var(--item3-y);
@@ -73,31 +73,37 @@
 
 /* ========== ITEM 4 ========== */
 .item4 {
-	--item4-x: 25vw;
+	--item4-size: 40vw; /* 1460px / 1920px */
+	--item4-x: 64vw;
 	--item4-y: 35vh;
-	--item4-rotation: 90deg;
+	--item4-rotation: 0deg;
 	left: var(--item4-x);
 	top: var(--item4-y);
+	width: var(--item4-size);
 	transform: rotate(var(--item4-rotation));
 }
 
 /* ========== ITEM 5 ========== */
 .item5 {
+	--item5-size: 55vw; /* 1560px / 1920px */
 	--item5-x: 70vw;
-	--item5-y: 40vh;
+	--item5-y: 70vh;
 	--item5-rotation: 0deg;
 	left: var(--item5-x);
 	top: var(--item5-y);
+	width: var(--item5-size);
 	transform: rotate(var(--item5-rotation));
 }
 
 /* ========== ITEM 6 ========== */
 .item6 {
-	--item6-x: 15vw;
-	--item6-y: 55vh;
-	--item6-rotation: 120deg;
+	--item6-size: 1.5vw; /* 1660px / 1920px */
+	--item6-x: 0vw;
+	--item6-y: 0vh;
+	--item6-rotation: 0deg;
 	left: var(--item6-x);
 	top: var(--item6-y);
+	width: var(--item6-size);
 	transform: rotate(var(--item6-rotation));
 }
 

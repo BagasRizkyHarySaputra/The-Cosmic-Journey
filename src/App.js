@@ -13,6 +13,8 @@ import SpaceExpedition from './components/spaceExpedition';
 import AstronomyCalendar from './components/astronomyCalendar';
 import Contact from './components/contact';
 import Footer from './components/footer';
+import TargetCursor from './components/TargetCursor';
+import { useEffect } from 'react';
 function HomePage() {
   return (
     <>
@@ -29,11 +31,18 @@ function HomePage() {
 }
 
 function AppContent() {
+  useEffect(() => {
+    document.body.classList.add('target-cursor-global-hide-cursor');
+    return () => {
+      document.body.classList.remove('target-cursor-global-hide-cursor');
+    };
+  }, []);
   const location = useLocation();
   const hideBackground = location.pathname === '/space-expedition' || location.pathname === '/astronomy-calendar';
 
   return (
     <div className="App">
+      <TargetCursor spinDuration={2} hideDefaultCursor parallaxOn hoverDuration={0.2} />
       {!hideBackground && <BackgroundSet />}
       <HeaderHome />
       <Routes>

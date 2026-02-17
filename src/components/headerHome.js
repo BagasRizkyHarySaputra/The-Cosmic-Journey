@@ -68,44 +68,44 @@ function HeaderHome() {
       transition={{ duration: 0.3, ease: [0.4, 0, 0.2, 1] }}
     >
       <div className="header-container">
-        <img src="/img/LOGO.png" alt="Logo" className="header-logo" onClick={() => scrollToSection('mainHome')} style={{ cursor: 'pointer' }} />
+        <img src="/headerHome/LOGO.png" alt="Logo" className="header-logo" onClick={() => scrollToSection('mainHome')} style={{ cursor: 'pointer' }} />
         <ul className="header-menu">
-          <li onClick={() => scrollToSection('mainHome')} style={{ cursor: 'pointer' }}>
+          <li className="cursor-target" onClick={() => scrollToSection('mainHome')} style={{ cursor: 'pointer' }}>
             <span className={`menu-num ${isActive('mainHome') ? 'menu-active' : ''}`}>01</span>
             <span className="menu-row">
               <span className="menu-slash">{'//'}</span>
               <span className={isActive('mainHome') ? 'menu-active' : ''}>Home</span>
             </span>
           </li>
-          <li onClick={() => scrollToSection('solarSystem')} style={{ cursor: 'pointer' }}>
+          <li className="cursor-target" onClick={() => scrollToSection('solarSystem')} style={{ cursor: 'pointer' }}>
             <span className={`menu-num ${isActive('solarSystem') ? 'menu-active' : ''}`}>02</span>
             <span className="menu-row">
               <span className="menu-slash">{'//'}</span>
               <span className={isActive('solarSystem') ? 'menu-active' : ''}>Solar system</span>
             </span>
           </li>
-          <li onClick={() => scrollToSection('spaceObject')} style={{ cursor: 'pointer' }}>
+          <li className="cursor-target" onClick={() => scrollToSection('spaceObject')} style={{ cursor: 'pointer' }}>
             <span className={`menu-num ${isActive('spaceObject') ? 'menu-active' : ''}`}>03</span>
             <span className="menu-row">
               <span className="menu-slash">{'//'}</span>
               <span className={isActive('spaceObject') ? 'menu-active' : ''}>Objects</span>
             </span>
           </li>
-          <li onClick={() => scrollToSection('astronomicEvent')} style={{ cursor: 'pointer' }}>
+          <li className="cursor-target" onClick={() => scrollToSection('astronomicEvent')} style={{ cursor: 'pointer' }}>
             <span className={`menu-num ${isActive('astronomicEvent') ? 'menu-active' : ''}`}>04</span>
             <span className="menu-row">
               <span className="menu-slash">{'//'}</span>
               <span className={isActive('astronomicEvent') ? 'menu-active' : ''}>Events</span>
             </span>
           </li>
-          <li onClick={() => scrollToSection('aboutUS')} style={{ cursor: 'pointer' }}>
+          <li className="cursor-target" onClick={() => scrollToSection('aboutUS')} style={{ cursor: 'pointer' }}>
             <span className={`menu-num ${isActive('aboutUS') ? 'menu-active' : ''}`}>05</span>
             <span className="menu-row">
               <span className="menu-slash">{'//'}</span>
               <span className={isActive('aboutUS') ? 'menu-active' : ''}>About Us</span>
             </span>
           </li>
-          <li onClick={() => scrollToSection('contact')} style={{ cursor: 'pointer' }}>
+          <li className="cursor-target" onClick={() => scrollToSection('contact')} style={{ cursor: 'pointer' }}>
             <span className={`menu-num ${isActive('contact') ? 'menu-active' : ''}`}>06</span>
             <span className="menu-row">
               <span className="menu-slash">{'//'}</span>
