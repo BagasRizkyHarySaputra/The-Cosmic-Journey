@@ -353,7 +353,7 @@
 	}
 	
 	.object-card-image-wrapper {
-		height: calc(75vh * var(--image-height-ratio));  /* Sesuaikan dengan tinggi card di breakpoint ini */
+		height: 1vw;  /* Sesuaikan dengan tinggi card di breakpoint ini */
 	}
 	
 	.object-card-name {

@@ -1,4 +1,10 @@
 @font-face {
+	font-family: 'Lilita One';
+	src: url('../../../public/font/lilita-one/LilitaOne-Regular.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+}
+@font-face {
 	font-family: 'KyivTypeSerif-Bold';
 	src: url('../../../public/font/kyiv/KyivTypeSerif-Bold.otf') format('opentype');
 	font-weight: bold;

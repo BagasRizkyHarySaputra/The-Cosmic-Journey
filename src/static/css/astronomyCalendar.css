@@ -1,8 +1,266 @@
 @import './importFont.css';
+.back {
+	position: absolute;
+	top: 7vw;
+	right: 10vw;
+	width: 5vw;
+	height: auto;
+	z-index: 30;
+	cursor: pointer;
+	transition: filter 0.2s;
+}
+.back:hover {
+	filter: brightness(1.2) drop-shadow(0 0 0.5vw #E7B8FF);
+}
+.special-arrow-right {
+	right: -5vw;
+	top: -20vw;
+	position: absolute;
+	z-index: 20;
+	pointer-events: auto;
+}
+.special-arrow-left {
+	left: -5vw;
+	top: -20vw;
+	position: absolute;
+	z-index: 20;
+	pointer-events: auto;
+	transform: rotate(180deg);
+}
+.calendar-active-box-info {
+	width: 100%;
+	display: flex;
+	flex-direction: row;
+	align-items: flex-start;
+	justify-content: flex-start;
+	gap: 1vw;
+}
+.calendar-active-box-img {
+	width: 15vw;
+	height: 15vw;
+	margin-top: 0.3vw;
+	margin-left: 5vh;
+	object-fit: cover;
+	border-radius: 0.7vw;
+	box-shadow: 0 0.2vw 1vw 0 rgba(49, 50, 140, 0.10);
+	flex-shrink: 0;
+}
+.calendar-active-box-desc {
+	font-family: 'Urbanist-Regular', sans-serif;
+	font-size: 1vw;
+	color: rgba(255, 255, 255, 0.8);
+	line-height: 1.15;
+	text-align: left;
+	width: 18vw;
+	margin-left: 1vw;
+	margin-top: 0.2vw;
+	display: block;
+}
+.calendar-active-content {
+	width: 100%;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: flex-start;
+	position: relative;
+	padding-top: 3vw;
+}
+.calendar-square.active {
+	width:43vw;
+	height: 28vw;
+	margin-left: 58vh;
+	margin-right: auto;
+	border-radius: 1vw;
+	box-shadow: 0 2vw 8vw 0 rgba(49, 50, 140, 0.25);
+	color: linear-gradient(150deg, #8282f6 8%, rgba(231,184,255,0) 42%, #5554EF 83%, #5554EF 83%, #303385 100%);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	position: relative;
+	z-index: 2;
+	opacity: 1;
+}
+.calendar-active-box {
+	position: absolute;
+	width: 40vw;
+	height: 20.5vw;
+	background: rgba(231, 184, 255, 0.4);
+	border-radius: 1vw;
+	margin-top: 1vw;
+	margin-bottom: 0vw;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	box-shadow: 0 0.5vw 2vw 0 rgba(49, 50, 140, 0.10);
+	z-index: 2;
+}
+.calendar-active-box-title {
+	font-family: 'Lilita One', sans-serif;
+	font-size: 2.4vw;
+	color: rgba(235, 231, 248, 0.7);
+	text-align: center;
+	margin-bottom: 1vw;
+	margin-top: -0.2vw;
+}
+
+/* Square box for Astronomy Calendar */
+.calendar-square {
+	width:43vw;
+	height: 36vw;
+	margin-left: 58vh;
+	margin-right: auto;
+	border-radius: 1vw;
+	box-shadow: 0 1vw 4vw 0 rgba(49, 50, 140, 0.15);
+	background: linear-gradient(
+		140deg,
+		#8282F6 8%,
+		rgba(231,184,255,0) 48%,
+		#5554EF 83%,
+		#5554EF 83%,
+		#303385 100%
+	);
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+	position: relative;
+	z-index: 2;
+	opacity: 0.6;
+}
+.calendar-active-content {
+	width: 100%;
+	height: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.calendar-active-label {
+	font-family: 'Lilita One', sans-serif;
+	font-size: 4vw;
+	color: #5554EF;
+	background: #E7B8FF;
+	border-radius: 2vw;
+	padding: 2vw 4vw;
+	box-shadow: 0 0.5vw 2vw 0 rgba(49, 50, 140, 0.15);
+}
+
+
+/* Custom positioned boxes inside calendar-square */
+.calendar-box {
+	position: absolute;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background: rgba(231, 184, 255, 0.4);
+	border-radius: 1vw;
+	transition: all 0.3s;
+}
+.calendar-box.active {
+	position: absolute;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background: rgba(231, 184, 255, 0.4);
+	border-radius: 1vw;
+	z-index: 3;
+}
+.calendar-box-left {
+	width: 19.8vw;
+	height: 3vw;
+	left: 1.4vw;
+	top: 1.8vw;
+}
+.calendar-box-right {
+	width: 19.8vw;
+	height: 3vw;
+	right: 1.4vw;
+	top: 1.8vw;
+}
+.calendar-box-text {
+	color: rgba(235, 231, 248, 1);
+	font-family: 'Lilita One', sans-serif;
+	font-size: 2.5vw;
+	text-align: center;
+	width: 100%;
+	user-select: none;
+}
+
+
+/* ===== Calendar Grid of Small Boxes ===== */
+.calendar-grid-container {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: flex-start;
+	margin-top: 5vw;
+	/* Responsive width: match calendar-square width */
+	width: 40vw;
+}
+.calendar-grid-row-wrapper {
+	position: relative;
+	width: 100%;
+	display: flex;
+	align-items: center;
+}
+.calendar-grid-row {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	margin-bottom: 0.2vh;
+	position: relative;
+}
+.calendar-grid-row:last-child {
+	margin-bottom: 0;
+}
+.calendar-grid-box {
+	position: relative;
+	background: rgba(231, 184, 255, 0.4);
+	border-radius: 2vh;
+	aspect-ratio: 1 / 1;
+	/* Responsive size: fit 7 boxes + 8 gaps in 100% width */
+	width: calc((100% - 8 * 0.5vh) / 7);
+	margin-left: 0.5vh;
+	margin-right: 0.5vh;
+	margin-top: 0.5vh;
+	margin-bottom: 0.5vh;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.calendar-grid-date {
+	color: #ebe7f8;
+	font-family: 'Lilita One', sans-serif;
+	font-size: 4vw;
+	user-select: none;
+	pointer-events: none;
+}
+.calendar-grid-circle {
+	position: absolute;
+	left: 100%;
+	top: 5%;
+	transform: translate(-50%, -50%);
+	width: 2vw;
+	height: 2vw;
+	border-radius: 50%;
+	background: #E7B8FF;
+	z-index: 1;
+	pointer-events: none;
+}
+
+.calendar-grid-box:first-child {
+	margin-left: 0;
+}
+.calendar-grid-box:last-child {
+	margin-right: 0;
+}
+
 
 /* ========== ASTRONOMY CALENDAR PAGE ========== */
 .astronomy-calendar-page {
-	min-height: 100vh;
+	height: 100vh;
 	background: linear-gradient(135deg, #0B0316 0%, #1A0B2E 50%, #0B0316 100%);
 	position: relative;
 	z-index: 1;
@@ -10,8 +268,41 @@
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	justify-content: center;
-	padding: 120px 40px 80px;
+	justify-content: flex-start;
+	padding: 0;
+	padding-top: 12vh;
+}
+
+.calendar-title {
+	font-family: 'KyivTypeSerif-Bold', serif;
+	font-weight: bold;
+	color: #FFFFFF;
+	font-size: 3vw;
+	text-align: center;
+	margin-top: 4vw;
+	margin-bottom: 4vw;
+	margin-left: 3vw;
+	letter-spacing: 0.05em;
+	width: 100%;
+	z-index: 3;
+}
+
+/* Calendar navigation arrows */
+.calendar-arrow {
+	position: absolute;
+	top: calc(12vh + 2vw + 18vw - 2vw); /* center vertically relative to calendar-square */
+	width: 5vw;
+	height: auto;
+	z-index: 10;
+	cursor: pointer;
+	user-select: none;
+}
+.calendar-arrow-left {
+	left: 24vw; /* left of calendar-square */
+	transform: rotate(180deg);
+}
+.calendar-arrow-right {
+	right: 20vw;
 }
 
 /* Background decorative elements */
@@ -22,14 +313,6 @@
 	left: 0;
 	width: 100%;
 	height: 100%;
-	background-image: 
-		radial-gradient(2px 2px at 20% 30%, white, transparent),
-		radial-gradient(2px 2px at 60% 70%, white, transparent),
-		radial-gradient(1px 1px at 50% 50%, white, transparent),
-		radial-gradient(1px 1px at 80% 10%, white, transparent),
-		radial-gradient(2px 2px at 90% 60%, white, transparent),
-		radial-gradient(1px 1px at 33% 80%, white, transparent),
-		radial-gradient(1px 1px at 15% 90%, white, transparent);
 	background-size: 200% 200%;
 	background-position: 0% 0%;
 	opacity: 0.4;
@@ -43,67 +326,11 @@
 	top: 50%;
 	left: 50%;
 	transform: translate(-50%, -50%);
-	width: 800px;
-	height: 800px;
+	width: 55vw;
+	height: 55vw;
 	background: radial-gradient(circle, rgba(101, 101, 247, 0.1) 0%, transparent 70%);
-	filter: blur(80px);
+	filter: blur(5vw);
 	z-index: 0;
 	pointer-events: none;
 }
 
-.content-container {
-	max-width: 1200px;
-	width: 100%;
-	margin: 0 auto;
-	position: relative;
-	z-index: 1;
-	background: linear-gradient(45deg,
-		rgba(49, 50, 140, 0.6) 0%,
-		rgba(71, 70, 191, 0.5) 25%,
-		rgba(85, 84, 239, 0.4) 50%,
-		rgba(101, 101, 247, 0.5) 75%,
-		rgba(57, 56, 143, 0.6) 100%
-	);
-	border-radius: 32px;
-	padding: 60px;
-	box-shadow: 0 8px 32px 0 rgba(49, 50, 140, 0.15);
-	backdrop-filter: blur(10px);
-	border: 1px solid rgba(101, 101, 247, 0.2);
-}
-
-.page-title {
-	font-family: 'Jura', sans-serif;
-	font-size: 3.5rem;
-	font-weight: 700;
-	color: #E8E4FF;
-	text-align: center;
-	margin-bottom: 40px;
-	text-shadow: 0 2px 20px rgba(101, 101, 247, 0.6);
-}
-
-.calendar-content {
-	font-family: 'Urbanist', sans-serif;
-	font-size: 1.2rem;
-	line-height: 1.8;
-	color: #D8D4FF;
-	text-align: center;
-}
-
-.calendar-content p {
-	margin-bottom: 20px;
-}
-
-/* Responsive */
-@media (max-width: 768px) {
-	.content-container {
-		padding: 40px 30px;
-	}
-	
-	.page-title {
-		font-size: 2.5rem;
-	}
-	
-	.calendar-content {
-		font-size: 1rem;
-	}
-}

@@ -66,7 +66,7 @@ function Contact() {
 				</div>
 				
 				<div className="send-button-wrapper">
-					<div className="send-button-border">
+					<div className="send-button-border cursor-target">
 						<button className="send-button">
 							<span className="send-text">Send</span>
 							<img src="/contact/send.png" alt="Send" className="send-icon" />

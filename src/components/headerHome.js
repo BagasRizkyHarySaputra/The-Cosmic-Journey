@@ -91,7 +91,7 @@ function HeaderHome() {
               <span className={isActive('spaceObject') ? 'menu-active' : ''}>Objects</span>
             </span>
           </li>
-          <li className="cursor-target" onClick={() => scrollToSection('astronomicEvent')} style={{ cursor: 'pointer' }}>
+          <li id="header-events-link" className="cursor-target" onClick={() => scrollToSection('astronomicEvent')} style={{ cursor: 'pointer' }}>
             <span className={`menu-num ${isActive('astronomicEvent') ? 'menu-active' : ''}`}>04</span>
             <span className="menu-row">
               <span className="menu-slash">{'//'}</span>

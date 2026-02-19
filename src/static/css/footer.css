@@ -12,9 +12,10 @@
 .footer-content {
 	/* ===== BACKGROUND COLOR - UBAH DISINI ===== */
 	background: linear-gradient(
-		90deg,
-		#4A3A7A 0%,
-		#5B4A8F 100%
+		to right,
+		#8282f6d2 0%,
+		#5554EF 40%,
+		#31338c9a 78%
 	);
 	/* =========================================== */
 	/* ===== PADDING CONTENT - UBAH DISINI ===== */
