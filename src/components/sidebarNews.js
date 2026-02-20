@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import '../static/css/sidebarNews.css';
+import BackgroundSet from './backgroundSet';
 
 function SidebarNews({ isOpen, onClose }) {
 	const [currentPage, setCurrentPage] = useState(1);
@@ -7,91 +8,59 @@ function SidebarNews({ isOpen, onClose }) {
 	const newsData = [
 		{
 			id: 1,
-			image: '/What Happens Recently/1.png',
-			title: ['Sunday Night Doubleheader:', 'Catch the 2025 Leonid Meteors', 'and an Aurora Encore'],
-			highlights: ['Sunday Night', '2025', 'Aurora'],
-			link: '#'
+			image: '/Sidebar News/sunday-night.png',
+			title: ['Sunday Night', 'Doubleheader:', 'Catch the 2025','Leonid Meteors', 'and an Aurora', 'Encore'],
+			link: 'https://www.universetoday.com/articles/sunday-night-doubleheader-catch-the-2025-leonid-meteors-and-an-aurora-encore'
 		},
 		{
 			id: 2,
-			image: '/What Happens Recently/2.png',
+			image: '/Sidebar News/the-seven.png',
 			title: ['The Seven', 'Sisters Have', 'Thousands of', 'Hidden Siblings'],
-			highlights: ['Seven', 'Have', 'Hidden Siblings'],
-			link: '#'
+			link: 'https://www.universetoday.com/articles/the-seven-sisters-have-thousands-of-hidden-siblings'
 		},
 		{
 			id: 3,
-			image: '/What Happens Recently/3.png',
+			image: '/Sidebar News/the-impossible.png',
 			title: ['The Impossible', 'Black Holes', 'That Shouldn\'t', 'Exist'],
 			highlights: ['Impossible', 'Holes', 'Exist'],
-			link: '#'
+			link: 'https://www.universetoday.com/articles/the-impossible-black-holes-that-shouldnt-exist'
 		}
 	];
 
-	const renderTitle = (titleParts, highlights) => {
-		return titleParts.map((part, index) => {
-			const words = part.split(' ');
-			return (
-				<span key={index}>
-					{words.map((word, wordIndex) => {
-						const isHighlight = highlights.some(h => 
-							word.toLowerCase().includes(h.toLowerCase()) || 
-							h.toLowerCase().includes(word.toLowerCase())
-						);
-						return (
-							<span key={wordIndex}>
-								{isHighlight ? (
-									<span className="highlight">{word}</span>
-								) : (
-									word
-								)}
-								{wordIndex < words.length - 1 ? ' ' : ''}
-							</span>
-						);
-					})}
-					{index < titleParts.length - 1 ? <br /> : ''}
-				</span>
-			);
-		});
+	// Render the news title as separate lines/blocks, unified style
+	const renderTitle = (titleParts) => {
+		return (
+			<span>
+				{titleParts.map((part, idx) => (
+					<span key={idx} className="news-title-part">{part}{idx < titleParts.length - 1 ? <br /> : null}</span>
+				))}
+			</span>
+		);
 	};
 
 	const renderPagination = () => {
-		const pages = [];
-		
-		for (let i = 1; i <= 3; i++) {
-			pages.push(
-				<span 
-					key={i}
-					className={`pagination-item ${currentPage === i ? 'active' : ''}`}
-					onClick={() => setCurrentPage(i)}
-				>
-					{i}
-				</span>
-			);
-		}
-		
-		pages.push(<span key="dots" className="pagination-dots">...</span>);
-		
-		for (let i = 9; i <= 10; i++) {
-			pages.push(
-				<span 
-					key={i}
-					className={`pagination-item ${currentPage === i ? 'active' : ''}`}
-					onClick={() => setCurrentPage(i)}
-				>
-					{i}
-				</span>
-			);
-		}
-		
-		return pages;
+		return newsData.map((news, idx) => (
+			<a
+				key={idx}
+				className={`pagination-item${currentPage === idx + 1 ? ' active' : ''}`}
+				href={news.link}
+				target="_blank"
+				rel="noopener noreferrer"
+				onClick={() => setCurrentPage(idx + 1)}
+			>
+				{idx + 1}
+			</a>
+		));
 	};
 
 	if (!isOpen) return null;
 
 	return (
 		<div className="news-overlay">
-			<div className="news-container">
+			<div style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100vh', overflow: 'hidden', zIndex: 1 }}>
+				<BackgroundSet hideLightBeam />
+			</div>
+			<div className="news-container" style={{ position: 'relative', zIndex: 2 }}>
 				{/* Header */}
 				<div className="news-header">
 					<div className="news-title-section">
@@ -116,9 +85,9 @@ function SidebarNews({ isOpen, onClose }) {
 							</div>
 							<div className="news-card-content">
 								<h3 className="news-card-title">
-									{renderTitle(news.title, news.highlights)}
+									{renderTitle(news.title)}
 								</h3>
-								<a href={news.link} className="news-read-more">
+								<a href={news.link} className="news-read-more cursor-target">
 									Read More...
 								</a>
 							</div>

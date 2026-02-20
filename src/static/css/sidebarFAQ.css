@@ -2,28 +2,41 @@
 
 /* ========== FAQ OVERLAY ========== */
 .faq-overlay {
+	width: 100vw;
+	height: 100vh;
+	aspect-ratio: 16/9;
 	position: fixed;
 	top: 0;
 	left: 0;
-	width: 100%;
-	height: 100vh;
-	background: rgba(10, 10, 30, 0.7);
-	backdrop-filter: blur(0.52vw);
-	-webkit-backdrop-filter: blur(0.52vw);
-	z-index: 150;
+	background: #0B0316;
+	z-index: 100;
 	display: flex;
+	align-items: center;
 	justify-content: center;
-	align-items: flex-start;
-	padding-top: 7.41vh;
-	overflow-y: auto;
+	overflow: hidden;
+	margin: 0;
+	padding: 0;
 }
 
 /* ========== FAQ CONTAINER ========== */
 .faq-container {
-	width: 100%;
-	max-width: 44.27vw;
-	margin-left: 9.38vw;
-	padding: 0 2.08vw 5.56vh 2.08vw;
+	width: 75vw;
+	height: 45vw;
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	background: linear-gradient(to right, #0C0C23 0%, rgba(77,76,255,0.30) 60%, rgba(49,48,137,0.20) 100%);
+	backdrop-filter: blur(1vw);
+	-webkit-backdrop-filter: blur(0.52vw);
+	border-radius: 1vw;
+	box-sizing: border-box;
+	padding: 0;
+	margin-top: 4vw;
+	margin-left: 10vw ;
+	border-top: 0.1vw solid #ffffffa6;
+	border-bottom: 0.1vw solid #ffffffa6;
 }
 
 /* ========== FAQ HEADER ========== */
@@ -31,28 +44,39 @@
 	display: flex;
 	justify-content: space-between;
 	align-items: flex-start;
-	margin-bottom: 3.7vh;
-	padding-right: 1.04vw;
+	margin-bottom: 8vh;
+	margin-top: 0vw;
 }
 
 .faq-title-section {
-	text-align: left;
+	text-align: center;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	height: 100%;
+	padding: 0;
+	margin: 0;
 }
 
 .faq-title {
 	font-family: 'KyivTypeSerif-Bold', serif;
-	font-size: clamp(2rem, 3.5vw, 2.8rem);
+	font-size: 2.8vw;
 	color: #ffffff;
 	margin: 0;
-	line-height: 1.2;
+	line-height: 1.1;
+	padding: 0;
+	width: 100%;
+	box-sizing: border-box;
 }
 
 .faq-subtitle {
-	font-family: 'Urbanist', sans-serif;
-	font-size: 1.02vw;
-	color: rgba(255, 255, 255, 0.7);
-	margin: 0.93vh 0 0 0;
-	letter-spacing: 0.05vw;
+	font-family: 'Jura-Regular', sans-serif;
+	font-size: 1.6vw;
+	color: rgba(255, 255, 255, 0.8);
+	margin: 0.5vw 0 0 0;
+	letter-spacing: 0.1vw;
+	width: 100%;
+	box-sizing: border-box;
 }
 
 /* ========== CLOSE BUTTON ========== */
@@ -60,12 +84,19 @@
 	background: transparent;
 	border: none;
 	color: #ffffff;
-	font-size: 2.31vw;
+	font-size: 5vw;
+	font-family: 'Jura-Regular', sans-serif;
 	cursor: pointer;
 	transition: all 0.3s ease;
 	line-height: 1;
 	padding: 0;
-	margin-top: -0.93vh;
+	translate: 22vw 0vw;
+	align-self: flex-start;
+	width: 2vw;
+	height: 2vw;
+	display: flex;
+	align-items: center;
+	justify-content: center;
 }
 
 .faq-close-btn:hover {
@@ -78,19 +109,22 @@
 	display: flex;
 	flex-direction: column;
 	gap: 2.78vh;
+	width: 100%;
+	box-sizing: border-box;
 }
 
 /* ========== FAQ SECTION ========== */
 .faq-section {
 	display: flex;
 	flex-direction: column;
+	width: 100%;
 }
 
 .faq-category-title {
 	font-family: 'KyivTypeSerif-Bold', serif;
 	font-size: 1.2vw;
 	color: #ffffff;
-	margin: 0 0 1.85vh 0;
+	margin: 0 0 1.85vh 2vw;
 }
 
 /* ========== FAQ QUESTIONS ========== */
@@ -98,22 +132,27 @@
 	display: flex;
 	flex-direction: column;
 	gap: 1.39vh;
+	width: 100%;
 }
 
 .faq-item {
 	display: flex;
 	flex-direction: column;
 	gap: 0.93vh;
+	width: 100%;
 }
 
 /* ========== QUESTION BOX ========== */
 .faq-question-box {
 	background: rgba(255, 255, 255, 0.95);
-	border-radius: 0.42vw;
+	border-radius: 1vw;
 	padding: 1.11vh 1.04vw;
 	display: flex;
 	align-items: center;
 	gap: 0.42vw;
+	height: 2vw;
+	width: 90%;
+	margin-left: 2vw;
 }
 
 .faq-q-label {
@@ -134,12 +173,13 @@
 	display: flex;
 	align-items: flex-start;
 	gap: 0.78vw;
-	padding-left: 1.04vw;
+	padding-left: 3vw;
+	width: 90%;
 }
 
 .faq-answer-line {
 	width: 0.16vw;
-	min-height: 1.85vh;
+	height: 1.85vh;
 	background: rgba(255, 255, 255, 0.5);
 	border-radius: 0.1vw;
 	flex-shrink: 0;
@@ -158,6 +198,7 @@
 	display: flex;
 	justify-content: center;
 	margin-top: 1.85vh;
+	width: 100%;
 }
 
 .chevron-icon {
@@ -172,46 +213,4 @@
 .chevron-icon:hover {
 	color: rgba(180, 160, 255, 1);
 	transform: rotate(90deg) translateX(0.16vw);
-}
-
-/* ========== RESPONSIVE ========== */
-@media (max-width: 1024px) {
-	.faq-container {
-		margin-left: 100px;
-		max-width: 700px;
-	}
-}
-
-@media (max-width: 768px) {
-	.faq-container {
-		margin-left: 60px;
-		padding: 0 20px 40px 20px;
-	}
-	
-	.faq-title {
-		font-size: 1.8rem;
-	}
-	
-	.faq-question-box {
-		padding: 10px 15px;
-	}
-}
-
-@media (max-width: 480px) {
-	.faq-overlay {
-		padding-top: 60px;
-	}
-	
-	.faq-container {
-		margin-left: 20px;
-		padding: 0 15px 30px 15px;
-	}
-	
-	.faq-question-text {
-		font-size: 0.9rem;
-	}
-	
-	.faq-answer-text {
-		font-size: 0.85rem;
-	}
 }

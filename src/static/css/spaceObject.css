@@ -72,28 +72,27 @@
 
 /* ========== NAVIGATION ARROWS ========== */
 .carousel-arrow {
-	position: fixed;
-	background: rgba(102, 126, 234, 0.3);
-	border: 2px solid rgba(102, 126, 234, 0.5);
-	color: #667eea;
-	width: 50px;
-	height: 50px;
-	border-radius: 50%;
-	display: flex;
+	position: absolute;
+	background: transparent;
+	border: transparent;
+		width: 5vw;
+		height: auto;
+		display: flex;
 	align-items: center;
 	justify-content: center;
 	cursor: pointer;
 	z-index: 250;
-	backdrop-filter: blur(10px);
+	backdrop-filter: blur(0.5em);
 	transition: all 0.3s ease;
-	font-size: 1.5rem;
+		font-size: 1.5vw;
 	flex-shrink: 0;
+}
+.carousel-arrow img{
+	width: 100%;
+	height: auto;
 }
 
 .carousel-arrow:hover {
-	background: rgba(102, 126, 234, 0.5);
-	border-color: #667eea;
-	color: #fff;
 	transform: scale(1.1);
 }
 
@@ -107,11 +106,15 @@
 }
 
 .carousel-arrow.left {
-	left: 2vw;
+	left: 14vw;
+	top: 50%;
+	transform: translateY(-50%) rotate(180deg);
 }
 
 .carousel-arrow.right {
-	right: 2vw;
+	right: 13.5vw;
+	top: 50%;
+	transform: translateY(-50%);
 }
 
 /* ========== CARDS WRAPPER ========== */
@@ -121,13 +124,17 @@
 	justify-content: center;
 	position: relative;
 	width: 100%;
-	min-height: 80vh;
+	aspect-ratio: 16/9;
+	min-height: 0;
+	max-width: 100%;
+	margin: 0 auto;
 }
 
 /* ========== OBJECT CARD ========== */
 .object-card {
-	width: 25vw;
-	height: 80vh;
+	width: 25%;
+	height: auto;
+	aspect-ratio: 16/9;
 	background: linear-gradient(125deg, 
 		#31328C 0%, 
 		#4746BF 5%, 
@@ -154,7 +161,9 @@
 	/* Smooth animation - transition akan di-override oleh inline style untuk dynamic speed */
 	position: absolute;
 	left: 50%;
-	margin-left: -12.5vw;
+	top: 50%;
+	transform: translate(-50%, -50%);
+	margin-left: 0;
 	/* Light settings */
 	--light-blur: 80px;
 	--light-spread: 1;
@@ -198,7 +207,7 @@
 /* Screen container */
 .object-card-screen {
 	width: 100%;
-	height: 108%;
+	height: 100%;
 	background-color: #000000;
 	/* Screen corner radius follows phone-box with offset */
 	--screen-corner-offset: 0.3vw;
@@ -221,38 +230,38 @@
 
 /* Position states */
 .object-card.position-left {
-	transform: translateX(-25vw) rotateY(-20deg) rotateZ(-5deg) scale(0.70);
+	transform: translate(-130%, -60%) rotateY(-20deg) rotateZ(-5deg) scale(0.70);
 	opacity: 0.7;
 	z-index: 1;
 	--light-opacity: 0.9;
 	--light-position: 10%;
 	--light-height-scale: 0.25;
 	--light-brightness: 1.8;
-	--light-blur: 80px;
+	--light-blur: 4.17vw;
 	--light-spread: 1;
 }
 
 .object-card.position-center {
-	transform: translateX(0) rotateY(0deg) rotateZ(0deg) scale(0.75);
+	transform: translate(-50%, -60%) rotateY(0deg) rotateZ(0deg) scale(0.75);
 	opacity: 1;
 	z-index: 3;
 	--light-opacity: 0.8;
 	--light-position: 50%;
 	--light-height-scale: 0.5;
 	--light-brightness: 1.5;
-	--light-blur: 80px;
+	--light-blur: 4.17vw;
 	--light-spread: 1;
 }
 
 .object-card.position-right {
-	transform: translateX(25vw) rotateY(20deg) rotateZ(5deg) scale(0.70);
+	transform: translate(30%, -60%) rotateY(20deg) rotateZ(5deg) scale(0.70);
 	opacity: 0.7;
 	z-index: 1;
 	--light-opacity: 0.9;
 	--light-position: 90%;
 	--light-height-scale: 0.25;
 	--light-brightness: 1.8;
-	--light-blur: 80px;
+	--light-blur: 4.17vw;
 	--light-spread: 1;
 }
 
@@ -264,10 +273,10 @@
 /* ========== CARD IMAGE ========== */
 .object-card-image-wrapper {
 	width: 100%;
-	height: calc(80vh * var(--image-height-ratio));  /* Menggunakan ratio dari tinggi card (80vh) */
-	border-radius: 1vw;
+	height: 50%;
+	border-radius: 2%;
 	overflow: hidden;
-	margin-bottom: 2vh;
+	margin-bottom: 2%;
 	border: 1px solid rgba(255, 255, 255, 0.1);
 	background: #000000;
 	flex-shrink: 0;
@@ -342,106 +351,4 @@
 .space-objects::after {
 	bottom: 20%;
 	left: 10%;
-}
-
-/* ========== RESPONSIVE ========== */
-@media (max-width: 1440px) {
-	.object-card {
-		width: 28vw;
-		height: 75vh;
-		--shadow-thickness: 2.2vw;
-	}
-	
-	.object-card-image-wrapper {
-		height: 1vw;  /* Sesuaikan dengan tinggi card di breakpoint ini */
-	}
-	
-	.object-card-name {
-		font-size: 2vw;
-	}
-	
-	.object-card-description {
-		font-size: 1.1vw;
-	}
-}
-
-@media (max-width: 1024px) {
-	.object-card {
-		width: 35vw;
-		height: 70vh;
-		--shadow-thickness: 2vw;
-	}
-	
-	.object-card-image-wrapper {
-		height: calc(70vh * var(--image-height-ratio));  /* Sesuaikan dengan tinggi card di breakpoint ini */
-	}
-	
-	.object-card.position-left {
-		transform: translateX(-40vw) rotateY(-20deg) rotateZ(-5deg) scale(0.8);
-	}
-	
-	.object-card.position-right {
-		transform: translateX(40vw) rotateY(20deg) rotateZ(5deg) scale(0.8);
-	}
-	
-	.object-card-name {
-		font-size: 2.5vw;
-	}
-	
-	.object-card-description {
-		font-size: 1.4vw;
-	}
-	
-	.carousel-arrow {
-		width: 45px;
-		height: 45px;
-		font-size: 1.3rem;
-	}
-}
-
-@media (max-width: 768px) {
-	.space-objects-carousel {
-		padding: 0 20px;
-	}
-	
-	.object-card {
-		width: 70vw;
-		height: 65vh;
-		--shadow-thickness: 1.5vw;
-	}
-	
-	.object-card-image-wrapper {
-		height: calc(65vh * var(--image-height-ratio));  /* Sesuaikan dengan tinggi card di breakpoint ini */
-	}
-	
-	.object-card.position-left,
-	.object-card.position-right {
-		display: none;
-	}
-	
-	.object-card.position-center {
-		transform: scale(1);
-	}
-	
-	.object-card-name {
-		font-size: 5vw;
-	}
-	
-	.object-card-description {
-		font-size: 3.5vw;
-	}
-	
-	.carousel-arrow {
-		width: 40px;
-		height: 40px;
-		font-size: 1.2rem;
-	}
-	
-	.carousel-arrow.left {
-		left: 10px;
-	}
-	
-	.carousel-arrow.right {
-		right: 10px;
-	}
 }

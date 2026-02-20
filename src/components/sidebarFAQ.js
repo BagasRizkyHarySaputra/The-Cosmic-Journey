@@ -1,5 +1,6 @@
 import React from 'react';
 import '../static/css/sidebarFAQ.css';
+import BackgroundSet from './backgroundSet';
 
 function SidebarFAQ({ isOpen, onClose }) {
 	const faqData = [
@@ -31,7 +32,10 @@ function SidebarFAQ({ isOpen, onClose }) {
 
 	return (
 		<div className="faq-overlay">
-			<div className="faq-container">
+			<div style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100vh', overflow: 'hidden', zIndex: 1 }}>
+				<BackgroundSet hideLightBeam />
+			</div>
+			<div className="faq-container" style={{ position: 'relative', zIndex: 2 }}>
 				{/* Header */}
 				<div className="faq-header">
 					<div className="faq-title-section">

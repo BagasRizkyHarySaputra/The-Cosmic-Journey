@@ -36,9 +36,7 @@ function SpaceObject() {
 
 			<div className="space-objects-carousel">
 				<button className="carousel-arrow left" onClick={handlePrev} disabled={isAnimating}>
-					<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-						<polyline points="15 18 9 12 15 6"></polyline>
-					</svg>
+					<img src="/Space Objects/keyboard_arrow_down.svg" alt="<<"/>
 				</button>
 
 				<div className="cards-wrapper">
@@ -68,9 +66,7 @@ function SpaceObject() {
 				</div>
 
 				<button className="carousel-arrow right" onClick={handleNext} disabled={isAnimating}>
-					<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-						<polyline points="9 18 15 12 9 6"></polyline>
-					</svg>
+					<img src="/Space Objects/keyboard_arrow_down.svg" alt=">>"/>
 				</button>
 			</div>
 
