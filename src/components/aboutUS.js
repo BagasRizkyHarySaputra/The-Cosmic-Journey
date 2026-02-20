@@ -30,7 +30,7 @@ function AboutUS() {
 							Because every star has a story.<br />
 							And together, we are here to tell it.
 						</p>
-						<img src="/img/MiniStar1.png" alt="" className="story-star" />
+						<img src="/background/Star6.svg" alt="" className="story-star" />
 					</div>
 				</div>
 			</div>

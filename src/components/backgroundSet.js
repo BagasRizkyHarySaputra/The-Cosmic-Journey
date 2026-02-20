@@ -27,6 +27,7 @@ function BackgroundSet({ hideLightBeam }) {
 	
 	// Array of background items - easy to add/edit
 	const backgroundItems = [
+		// PAGE 1
 		{ id: 'item1', src: '/headerHome/Ellipse 11.png' },	
 		{ id: 'item4', src: '/headerHome/Ellipse 17.svg' },
 		{ id: 'item2', src: '/headerHome/LightBeam.png' },
@@ -39,8 +40,24 @@ function BackgroundSet({ hideLightBeam }) {
 		{ id: 'item9', src: '/background/Star2.svg' },
 		{ id: 'item10', src: '/background/Star3.svg' },
 		{ id: 'item11', src: '/background/Star4.svg' },
-	
-		
+		// PAGE 2
+		{ id: 'item12', src: '/background/Star5.svg' },
+		{ id: 'item13', src: '/background/Star6.svg' },
+		{ id: 'item14', src: '/background/Star7.svg' },
+		{ id: 'item17', src: '/background/Ellipse 6.svg' },
+		// PAGE 3
+		{ id: 'item18', src: '/background/Star10.svg' },
+		{ id: 'item21', src: '/background/Star13.svg' },
+		// PAGE 4
+		{ id: 'item22', src: '/background/Star14.svg' },
+		{ id: 'item23', src: '/background/Star15.svg' },
+		{ id: 'item24', src: '/background/Group 180.svg' },
+		{ id: 'item25', src: '/background/Ellipse 30.svg' },
+		// PAGE 6
+		{ id: 'item27', src: '/background/Star17.svg' },
+		{ id: 'item28', src: '/background/Star18.svg' },
+		{ id: 'item29', src: '/background/Star19.svg' },
+		{ id: 'item30', src: '/background/Star20.svg' },
 	];
 
 	const filteredItems = hideLightBeam
