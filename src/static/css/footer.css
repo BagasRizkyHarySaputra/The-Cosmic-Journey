@@ -32,7 +32,7 @@
 	display: flex;
 	flex-direction: column;
 	/* ===== GAP INTERNAL KOLOM - UBAH DISINI ===== */
-	gap: 2.78vh;  /* 30px / 1080px | Range: 2vh - 4vh */
+	gap: 2.5vh;  /* 30px / 1080px | Range: 2vh - 4vh */
 	/* ============================================= */
 }
 
@@ -45,6 +45,10 @@
 .footer-contact,
 .footer-social {
 	flex: 1;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	width: 100%;
 }
 
 .footer-title {
@@ -56,6 +60,8 @@
 	margin: 0;
 	font-weight: bold;
 	letter-spacing: 0.02vw;
+	text-align: center;
+	width: 100%;
 }
 
 .footer-description {
@@ -107,10 +113,12 @@
 /* ========== SOCIAL MEDIA SECTION ========== */
 .footer-social-icons {
 	display: flex;
-	align-items: center;
-	/* ===== GAP ANTAR ICON - UBAH DISINI ===== */
+	flex-direction: row;
+	justify-content: center;
 	gap: 1.56vw;  /* 30px / 1920px | Range: 1vw - 2vw */
-	/* ========================================= */
+	margin-top: 1.2vh;
+	align-self: center;
+	width: auto;
 }
 
 .footer-social-link {

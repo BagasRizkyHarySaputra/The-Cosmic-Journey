@@ -27,7 +27,6 @@ function SpaceObject() {
 
 	return (
 		<section id="spaceObject" className="space-objects">
-			<div className="space-objects-boundary top"></div>
 			
 			<div className="space-objects-header">
 				<h2 className="space-objects-title">Space Objects</h2>
@@ -70,7 +69,6 @@ function SpaceObject() {
 				</button>
 			</div>
 
-			<div className="space-objects-boundary bottom"></div>
 		</section>
 	);
 }

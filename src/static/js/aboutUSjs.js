@@ -4,10 +4,10 @@
 // Developer data
 export const developersData = [
 	{
-		name: 'Amelia',
+		name: 'Hanin',
 		role: 'UI/UX Designer',
-		image: '/aboutUs/amel.png',
-		quote: '"The only way to do great<br />work is to love what you do."'
+		image: '/aboutUs/hanin.png',
+		quote: '"Happiness depends upon<br />ourselves."'
 	},
 	{
 		name: 'Bagas',
@@ -22,10 +22,10 @@ export const developersData = [
 		quote: '"In the middle of difficulty<br />lies opportunity."'
 	},
 	{
-		name: 'Hanin',
+		name: 'Amelia',
 		role: 'UI/UX Designer',
-		image: '/aboutUs/hanin.png',
-		quote: '"Happiness depends upon<br />ourselves."'
+		image: '/aboutUs/amel.png',
+		quote: '"The only way to do great<br />work is to love what you do."'
 	}
 ];
 

@@ -16,7 +16,6 @@ function SolarSystem() {
 
 	return (
 		<section id="solarSystem" className="solar-system">
-			<div className="boundary-line top"></div>
 			<div className="solar-system-content">
 				<div className="solar-system-text">
 					<h2 className="solar-system-title">
@@ -41,7 +40,6 @@ function SolarSystem() {
 					<img src="/planet/Sun.png" alt="The Sun" className="planet sun" onClick={() => handlePlanetClick('sun')} />
 				</div>
 			</div>
-			<div className="boundary-line bottom"></div>
 
 			{/* Planet Popup */}
 			{selectedPlanet && (

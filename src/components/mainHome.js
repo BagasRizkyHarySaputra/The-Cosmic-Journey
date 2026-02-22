@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import '../static/css/mainHome.css';
-import '../static/js/mainHomejs.js';
+
 function MainHome() {
 	const [isScrolled, setIsScrolled] = useState(false);
 

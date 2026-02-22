@@ -9,23 +9,6 @@
 	overflow: visible;
 }
 
-.boundary-line {
-	position: absolute;
-	left: 0;
-	width: 100%;
-	height: 1px;
-	background-color: #ffffff;
-	z-index: 5;
-}
-
-.boundary-line.top {
-	top: 0;
-}
-
-.boundary-line.bottom {
-	bottom: 0;
-}
-
 .solar-system-content {
 	position: relative;
 	width: 100%;

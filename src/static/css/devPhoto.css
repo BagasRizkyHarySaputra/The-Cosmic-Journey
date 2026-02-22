@@ -19,10 +19,10 @@
 /* ===== BAGAS PHOTO - UBAH DISINI ===== */
 .developer-photo-bagas {
 	position: absolute;
-	top: -8.2vh;  /* Jarak dari atas card */
-	left: 47%;
+	top: -4vh;  /* Jarak dari atas card */
+	left: 47.1%;
 	transform: translateX(-50%);
-	width: 20.1vw;
+	width: 20vw;
 	height: auto;
 	border-radius: 0;
 	object-fit: cover;

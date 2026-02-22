@@ -36,21 +36,21 @@ function BackgroundSet({ hideLightBeam }) {
 
 		{ id: 'item6', src: '/background/Ellipse 33.svg' },
 		{ id: 'item7', src: '/background/Ellipse 22.svg' },
-		{ id: 'item8', src: '/background/Star1.svg' },
-		{ id: 'item9', src: '/background/Star2.svg' },
-		{ id: 'item10', src: '/background/Star3.svg' },
-		{ id: 'item11', src: '/background/Star4.svg' },
+		// { id: 'item8', src: '/background/Star1.svg' },
+		// { id: 'item9', src: '/background/Star2.svg' },
+		// { id: 'item10', src: '/background/Star3.svg' },
+		// { id: 'item11', src: '/background/Star4.svg' },
 		// PAGE 2
 		{ id: 'item12', src: '/background/Star5.svg' },
 		{ id: 'item13', src: '/background/Star6.svg' },
 		{ id: 'item14', src: '/background/Star7.svg' },
 		{ id: 'item17', src: '/background/Ellipse 6.svg' },
 		// PAGE 3
-		{ id: 'item18', src: '/background/Star10.svg' },
-		{ id: 'item21', src: '/background/Star13.svg' },
+		// { id: 'item18', src: '/background/Star10.svg' },
+		// { id: 'item21', src: '/background/Star13.svg' },
 		// PAGE 4
-		{ id: 'item22', src: '/background/Star14.svg' },
-		{ id: 'item23', src: '/background/Star15.svg' },
+		// { id: 'item22', src: '/background/Star14.svg' },
+		// { id: 'item23', src: '/background/Star15.svg' },
 		{ id: 'item24', src: '/background/Group 180.svg' },
 		{ id: 'item25', src: '/background/Ellipse 30.svg' },
 		// PAGE 6

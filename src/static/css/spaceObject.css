@@ -18,23 +18,6 @@
 	padding: 5vh 0;
 }
 
-.space-objects-boundary {
-	position: absolute;
-	left: 0;
-	width: 100%;
-	height: 1px;
-	background-color: #ffffff;
-	z-index: 5;
-}
-
-.space-objects-boundary.top {
-	top: 0;
-}
-
-.space-objects-boundary.bottom {
-	bottom: 0;
-}
-
 /* ========== TITLE ========== */
 .space-objects-header {
 	text-align: center;
