@@ -5,9 +5,9 @@
 export const contactData = {
 	email: 'contact@thecosmicjourney.com',
 	social: {
-		twitter: '#',
-		instagram: '#',
-		facebook: '#',
+		twitter: '',
+		instagram: 'https://www.instagram.com/bagasrizky.hss/',
+		facebook: 'https://www.facebook.com/smknegeri7semarang/?locale=id_ID',
 		linkedin: '#'
 	}
 };
