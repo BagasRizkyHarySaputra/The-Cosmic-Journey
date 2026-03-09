@@ -26,7 +26,14 @@ body, html {
 	height: 100%;
 	overflow-x: auto;
 	overflow-y: hidden;
+	scrollbar-width: none; /* Firefox */
+	-ms-overflow-style: none; /* IE/Edge */
 }
+
+.solar-system-content::-webkit-scrollbar {
+	display: none; /* Chrome/Safari */
+}
+
 
 .solar-system-text {
 	position: absolute;
