@@ -1,3 +1,14 @@
+/* Hide horizontal scrollbar without affecting layout/content */
+body, html {
+	overflow-x: hidden;
+}
+
+/* For specific container if needed, e.g., .solar-system-container */
+/*
+.solar-system-container {
+	overflow-x: hidden;
+}
+*/
 @import './importFont.css';
 
 .solar-system {
